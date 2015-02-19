@@ -1,3 +1,12 @@
+/*
+    Farben:
+        Logo:
+            e:      #92D050;
+                    rgb(146,208,80);
+            ParCar: #548DD4;
+                    rgb(84,141,212);
+*/
+
 *{
     margin: 0;
     padding: 0;
@@ -78,9 +87,11 @@ body{
     border-right: 2px solid #548DD4;
     line-height: 50px;
     font-size: 20px;
+    background-color: #92D050;
+    color: white;
 }
 
-.menu-button:hover{
+.menu-button:active{
     color: #497CBB;   
 }
 
