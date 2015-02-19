@@ -4,25 +4,30 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Roboto', sans-serif;   
+}
+
 .side-menu{
     width:190px;
     height: 100vh;
-    background-color: #92D050;
+    background-color: #548DD4;
     color: white;
     position:fixed;
     left: -190px;
+    top: 50px;
     -webkit-transition: all .3s;
     text-align: center;
 }
 
 .side-menu li{
-    font-size: 20px;
+    font-size: 25px;
     padding: 20px;
-    border-bottom: 1px solid #81B747;
+    border-bottom: 2px solid #497CBB;
 }
 
 .side-menu li:active{
-    background-color: #81B747;    
+    background-color: #497CBB;    
 }
 
 .showMenu{
@@ -35,10 +40,13 @@
 
 .main{
     width: 100%;
-    position: fixed;
+    position: relative;
     left: 0px;
     -webkit-transition: all .3s;
-    border-right: 5px solid black;
+}
+
+.no-scroll{
+    position: fixed;   
 }
 
 .shadow{
@@ -53,12 +61,16 @@
 .header{
     background-color: white;
     width: 100%;
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 50px;
     color: #548DD4;
     border: 2px solid #548DD4;
     margin-bottom: 5px;
     box-sizing: content-box;
+    z-index: 10000;
+    -webkit-transition: all .3s
 }
 
 .menu-button{
@@ -69,19 +81,19 @@
 }
 
 .menu-button:hover{
-    color: blue;   
+    color: #497CBB;   
 }
 
 .header-logo{
     vertical-align: top;
-    height: 45px;
+    height: 50px;
 }
 
 .content{
     background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     position: relative;
-
+    margin-top: 55px;
 }
 
 @media handheld, screen and (max-width: 70em){

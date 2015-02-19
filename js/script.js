@@ -2,11 +2,13 @@ $(document).ready(function(){
     $('.menu-button').on('click',function(){
         $('ul').toggleClass('showMenu');
         $('.main').toggleClass('slideBody');
+        $('.main').toggleClass('no-scroll');
         $('.shadow').fadeToggle("fast","linear");
     });
     $('.shadow').on('click',function(){
         $('ul').toggleClass('showMenu');
         $('.main').toggleClass('slideBody');
+        $('.main').toggleClass('no-scroll');
         $('.shadow').fadeToggle("fast","linear");
     });
 });
