@@ -7,11 +7,22 @@
 .side-menu{
     width:190px;
     height: 100vh;
-    background-color: blue;
+    background-color: #92D050;
     color: white;
     position:fixed;
     left: -190px;
     -webkit-transition: all .3s;
+    text-align: center;
+}
+
+.side-menu li{
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #81B747;
+}
+
+.side-menu li:active{
+    background-color: #81B747;    
 }
 
 .showMenu{
@@ -40,24 +51,34 @@
 }
 
 .header{
-    background-color: orange;
+    background-color: white;
     width: 100%;
     position: relative;
-    height: 40px;
+    height: 50px;
+    color: #548DD4;
+    border: 2px solid #548DD4;
+    margin-bottom: 5px;
+    box-sizing: content-box;
 }
 
 .menu-button{
-    padding: 2px 20px;
-    border-right: 2px solid black;
-    line-height: 40px;
+    padding: 0px 20px;
+    border-right: 2px solid #548DD4;
+    line-height: 50px;
+    font-size: 20px;
 }
 
 .menu-button:hover{
-    color: white;   
+    color: blue;   
+}
+
+.header-logo{
+    vertical-align: top;
+    height: 45px;
 }
 
 .content{
-    background-color: yellow;
+    background-color: rgba(0, 0, 0, 0.2);
     width: 100%;
     position: relative;
 
