@@ -107,6 +107,10 @@ body{
     margin-top: 55px;
 }
 
+.ui-loader{
+    display:none;    
+}
+
 @media handheld, screen and (max-width: 70em){
 
 }
