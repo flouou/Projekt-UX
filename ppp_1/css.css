@@ -1,0 +1,30 @@
+body{
+    margin: 0px;
+}
+#start, #map, #options{
+    margin: 0px;
+    height: 100%;
+    position: fixed;
+}
+
+#start{
+    background-color: green;
+    /*position: relative;
+    left: 0%;*/
+    left: 0px;
+    width: 95%;
+}
+#map{
+    background-color: blue;
+    /*position: relative;
+    left:100%;*/
+    left: 95%;
+    width: 110%;
+}
+#options{
+    background-color: grey;
+    /*position: relative;
+    left: 200%;*/
+    width:95%;
+    left: 205%;
+}
