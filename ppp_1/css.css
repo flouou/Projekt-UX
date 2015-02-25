@@ -1,4 +1,4 @@
-body{
+﻿body{
     margin: 0px;
     background-color: red;
 }
@@ -10,7 +10,6 @@ body{
     position: fixed;
 }
 #start, #map, #options{
-    position: absolute;
     margin: 0px;
     height: 100%;
 }
