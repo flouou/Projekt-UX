@@ -1,0 +1,95 @@
+/*
+    Farben:
+        Logo:
+            e:      #92D050;
+                    rgb(146,208,80);
+            ParCar: #548DD4;
+                    rgb(84,141,212);
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #548DD4;
+}
+
+.sidebar-left{
+    width:300px;
+    min-height: 500px;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    left: -360px; /*360px nach link*/
+    -webkit-transition: all .3s;
+    text-align: left;
+    border-left: 40px solid #548DD4;
+    overflow-y: visible;
+}
+
+.left-show{
+    left: 0px;
+    top: 0px;
+    overflow-y:visible;
+}
+
+.logo-span{
+    width: 260px;   
+}
+
+.sidebar-logo{
+    margin-top: 10px;
+    margin-left: 40px;
+    width: 180px;
+}
+
+.sidebar-logo img{
+    display:inline-block;
+}
+
+.sidebar-left span i{
+    display: inline-block;
+    box-sizing: content-box;
+    font-size: 30px;
+    padding: 15px 17px;
+    vertical-align: top;
+    color: #548DD4;
+    background-color: white;
+    position: relative;
+    top: 0px;
+    left: 40px;
+}
+
+.side-list{
+    list-style: none;
+    font-size: 30px;
+    margin-top:80px;
+}
+
+.side-list li{
+    border: 1px solid #92D050;
+    margin: 5px 0px 5px 10px;
+    width: 280px;
+    background-color: white;
+    color: #548DD4;
+    padding: 5px;
+    -webkit-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px -6px rgba(0,0,0,0.75);
+}
+
+.side-list li i{
+    color: #92D050;    
+}
+
+.content{
+    background-color: grey;    
+}
+    
+@media handheld, screen and (max-width: 70em){
+
+}
