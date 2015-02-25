@@ -1,30 +1,55 @@
 body{
     margin: 0px;
+    background-color: red;
+}
+#content{
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+.fixedPos{
+    position: fixed;
 }
 #start, #map, #options{
+    position: absolute;
     margin: 0px;
     height: 100%;
-    position: fixed;
 }
 
 #start{
     background-color: green;
-    /*position: relative;
-    left: 0%;*/
     left: 0px;
-    width: 95%;
+    width: 80%;
 }
 #map{
     background-color: blue;
-    /*position: relative;
-    left:100%;*/
-    left: 95%;
-    width: 110%;
+    left: 100%;
+    width: 140%;
+    margin-left: -20%;
+    margin-right: 20%;
 }
 #options{
     background-color: grey;
-    /*position: relative;
-    left: 200%;*/
-    width:95%;
-    left: 205%;
+    width:80%;
+    left: 220%;
+}
+.mapButton{
+    top: 0px;
+    width: 20%;
+    height: 60px;
+    z-index: 10000;
+    background-color: yellow;
+}
+#mapButtonRight{
+    left: 80%;
+}
+#mapButtonLeft{
+    left: 200%;
+}
+
+/*CSS-Angaben für die Animationen*/
+.swipeToLeft{
+    left: -100px;
+}
+.swipeToRight{
+    
 }
