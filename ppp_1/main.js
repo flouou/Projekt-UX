@@ -20,7 +20,12 @@ $(document).ready(function(){
         $('.main').toggleClass('no-scroll');
         $('.shadow').fadeToggle("fast","linear");
     });*/
-    $('#body').on('swipeleft',function(){
-        $(body).toggleClass('swipeToLeft');
+    $('#start').on('swipeleft',function(){
+        $('#start').toggleClass('swipeToLeft100');
+        $('#mapButtonRight').toggleClass('swipeTo0px');
+        $('#mapButtonRight i').toggleClass('fa-globe');
+        $('#mapButtonRight i').toggleClass('fa-bars');
+        $('#map').toggleClass('swipeTo0px');
+        $('#options').toggleClass('swipeTo100');
     });
 });
