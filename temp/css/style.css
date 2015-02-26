@@ -26,6 +26,7 @@ body{
     position: fixed;
     left: -360px; /*360px nach link*/
     -webkit-transition: all .3s;
+    transition: all .3s;
     text-align: left;
     border-left: 40px solid #548DD4;
     overflow-y: visible;

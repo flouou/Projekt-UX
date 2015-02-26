@@ -1,6 +1,11 @@
 $(document).ready(function(){
     $('#mapButtonRight').on('click',function(){
-       $('#content').toggleClass('swipeToLeft');
+        $('#start').toggleClass('swipeToLeft100');
+        $('#mapButtonRight').toggleClass('swipeTo0px');
+        $('#mapButtonRight i').toggleClass('fa-globe');
+        $('#mapButtonRight i').toggleClass('fa-bars');
+        $('#map').toggleClass('swipeTo0px');
+        $('#options').toggleClass('swipeTo100');
         //alert("Hello!");
     });
     /*$('body').on('swiperight',function(){
