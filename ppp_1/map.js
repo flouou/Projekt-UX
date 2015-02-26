@@ -12,7 +12,6 @@ $(document).ready(function () {
         id: 'examples.map-i875mjb7'
     }).addTo(map);
 
-    //L.marker([49.003871, 8.405114]).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
     refresh();
 });
 
@@ -33,17 +32,24 @@ function refresh() {
 }
 
 function printParkmarker() {
-    //var tab = getTable();
-    //clearNode(tab);
     var result = JSON.parse(xmlhttp.responseText);
+    var t;
     for (var j in result) {
-        var x = (result[j].X_KOORDINATE) / 70536.73474081261866;
-        var y = (result[j].Y_KOORDINATE) / 646778.79070596207075;
-        var t = "<strong>" + result[j].PH_NAME + "</strong>, " + result[j].PH_STRASSE + " (" + result[j].STADTTEIL + ")<br>" + result[j].FREIE_PARKPLAETZE + " von " + result[j].GESAMTE_PARKPLAETZE + " Plätzen frei.";
+        var x = result[j].LAT;
+        var y = result[j].LONG;
+        if(result[j].TYPE == 'Parkhaus'){
+            var t = "<strong>" + result[j].PH_NAME + "</strong>, " + result[j].PH_STRASSE + " (" + result[j].STADTTEIL + ")<br>" + result[j].FREIE_PARKPLAETZE + " von " + result[j].GESAMTE_PARKPLAETZE + " Plätzen frei."; 
+        } else if(result[j].TYPE == 'Parkplatz'){
+            var t = "<strong>" + result[j].STANDORT + "</strong><br>" +
+                    result[j].STELLPLÄTZE + " Plätze verfügbar<br>" +
+                    "Höchst-Park-Dauer: " + result[j].HÖCHST_PARK_DAUER + ",<br>" +
+                    "Gebührenpflichtiger Zeitraum: " + result[j].GEBÜHRENPFL_PARKZEIT + ",<br>" +
+                    "Gebühren: " + result[j].GEBÜHREN;
+        } else if(result[j].TYPE == 'ELadestation'){
+            var t = "<strong>" + result[j].STANDORT + "</strong> ("+result[j].STADTTEIL+")<br>" +
+                    "Steckertyp: " + result[j].STECKDOSE+",<br>" +
+                   "Ladestation ist "+result[j].LADESTATION+"." ;
+        }
         L.marker([x, y]).addTo(map).bindPopup(t);
     }
-    //document.getElementById('anzahlPH').innerHTML = result.length;
-
-    //document.getElementById('uhrzeit').innerHTML = getUhrzeit();
-
 }
