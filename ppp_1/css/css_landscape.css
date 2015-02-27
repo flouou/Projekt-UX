@@ -23,6 +23,8 @@
 
 .botSideButton{
     width: 16%;
+    font-size: 35px;
+    padding-top: 0px;
 }
 
 .botSideButton:nth-child(2){
