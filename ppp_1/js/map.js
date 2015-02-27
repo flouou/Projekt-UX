@@ -26,7 +26,7 @@ function refresh() {
             printParkmarker();
         }
     }
-    xmlhttp.open('GET', 'read_park.php', true);
+    xmlhttp.open('GET', 'backend/read_park.php', true);
 
     xmlhttp.send();
 }
