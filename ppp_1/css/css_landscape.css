@@ -18,15 +18,15 @@
 }
 
 .bottomButtons{
-    left: 7%;    
+    left: 9%;    
 }
 
 .botSideButton{
-    width: 20%;
+    width: 16%;
 }
 
 .botSideButton:nth-child(2){
-    margin-left: 11%;
+    margin-left: 25%;
 }
 
 .mapButton{
