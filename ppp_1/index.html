@@ -14,7 +14,11 @@
     <!--Inhalte für die Karte einbinden-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    <!--Icon Pack-->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <!--Eigenes JavaScript-->
+    <script src="shake.js"></script>
     <script src="map.js"></script>
     <script src="main.js"></script>
 </head>
@@ -22,9 +26,33 @@
 <body>
     <div id="content">
         <div class="fixedPos" id="start">
-
-            <h1>Hallo, ich bin die Startseite!</h1>
-            <p>Und 95% breit. D.h. rechts ist noch ein Rand übrig.</p>
+            <img class="logoImage" src="images/logo_transparent.png" />
+            <div class="buttonGroup">
+                <div class="sideButton">
+                    <i class="fa fa-globe"></i>
+                    <span>Karte anzeigen</span>
+                </div>
+                <div class="sideButton">
+                    <i class="fa fa-ticket"></i>
+                    <span>Ticket Einlösen</span>
+                </div>
+                <div class="sideButton">
+                    <i class="fa fa-sign-in"></i>
+                    <span>Parkhaus einchecken</span>
+                </div>
+                <div class="sideButton">
+                    <i class="fa fa-user"></i>
+                    <span>Vorhandene Tickets<br /></span>
+                </div>
+            </div>
+            <div class="bottomButtons">
+                <div class="botSideButton">
+                    <i class="fa fa-gear"></i>
+                </div>
+                <div class="botSideButton">
+                    <i class="fa fa-question"></i>
+                </div>
+            </div>
         </div>
 
         <div class="mapButton fixedPos" id="mapButtonRight"><i class="fa fa-globe"></i></div>

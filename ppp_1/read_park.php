@@ -7,7 +7,7 @@ $positions = array(
                 "PH K01" => array("lat" => "49.003934", "long" => "8.402119"),
                 "PH K02" => array("lat" => "49.004551", "long" => "8.402048"),
                 "PH K03" => array("lat" => "49.000645", "long" => "8.404819"),
-                "PH N03" => array("lat" => "49.143360", "long" => "8.671320"),
+                "PH N03" => array("lat" => "49.010698", "long" => "8.400978"),
     "PH N06" => array("lat" => "49.009933", "long" => "8.405402"),
     "PH N07" => array("lat" => "49.007574", "long" => "8.410178"),
     "PH N02" => array("lat" => "49.010680", "long" => "8.398533"),
@@ -35,7 +35,7 @@ $positions = array(
 	"Luisenstr. 23" => array("lat" => "49.000835", "long" => "8.404849"),
 	"Durlacher Allee 10" => array("lat" => "49.007958", "long" => "8.421447"),
 	"Rintheimer Str. 19" => array("lat" => "49.011320", "long" => "8.4261"),
-	"Bahnhofsplatz West" => array("lat" => "49.993735", "long" => "8.398436"),
+	"Bahnhofsplatz West" => array("lat" => "48.993794", "long" => "8.398608"),
 	//E-Ladestationen (10 Stück)
 	"Blumentorstraße" => array("lat" => "49.000155", "long" => "8.475735"),
 	"Gottesauer Platz" => array("lat" => "49.007276", "long" => "8.422964"),

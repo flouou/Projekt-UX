@@ -11,6 +11,24 @@
     width:90%;
     left: 210%;
 }
+
+.sideButton{
+    width: 18.75%;
+    height: 75%;
+}
+
+.bottomButtons{
+    left: 7%;    
+}
+
+.botSideButton{
+    width: 20%;
+}
+
+.botSideButton:nth-child(2){
+    margin-left: 11%;
+}
+
 .mapButton{
     width: 10%;
     height: 60px;

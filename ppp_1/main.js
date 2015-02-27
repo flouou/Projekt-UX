@@ -28,4 +28,19 @@ $(document).ready(function(){
         $('#map').toggleClass('swipeTo0px');
         $('#options').toggleClass('swipeTo100');
     });
+    
+    
+    //shake event
+    var myShakeEvent = new Shake({
+    threshold: 15,
+    timeout: 1000 
+    });
+    
+    myShakeEvent.start();
+    
+    window.addEventListener('shake', shakeEventDidOccur, false);
+
+    function shakeEventDidOccur () {
+        alert('shake!');
+    }
 });
