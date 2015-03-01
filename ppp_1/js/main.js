@@ -63,6 +63,56 @@ $(document).ready(function(){
         
     }
     
+    $( "#suchbegriff" ).autocomplete({
+        source: [ 
+            "Ritterstraße 16", 
+            "Rintheimer Straße 19", 
+            "Sophienstraße 128", 
+            "Waldstraße 15", 
+            "Kaiserallee 61", 
+            "Kriegsstraße 100", 
+            "Luisenstraße 23",
+            "Moltkrestraße",
+            "Bahnhofsplatz West",
+            "Durlacher Allee 10",
+            "Gottesauer Platz",
+            "Englerstraße",
+            "Hertzstraße",
+            "Kurzheckweg",
+            "Blumentorstraße",
+            "Steinstraße",
+            "Hans-Thoma-Straße",
+            "Hermann-Leichtlin-Straße",
+            "Stephanienstraße",
+            "Am Staatstheater",
+            "Kongresszentrum PH1",
+            "Kongresszentrum PH2",
+            "Luisenstraße",
+            "Herrenstraße / Zirkel",
+            "Kreuzstraße (C&A)",
+            "Kronenplatz",
+            "Passagehof",
+            "Schlossplatz",
+            "Zirkel (P&C)",
+            "Ettlinger Tor",
+            "Friedrichsplatz",
+            "Industrie- und Handelskammer (IHK)",
+            "Karstadt",
+            "Landesbibliothek",
+            "Marktplatz",
+            "Mendelssohnplatz (Scheck-In)",
+            "Akademiestraße",
+            "Ludwigsplatz",
+            "Duale Hochschule Baden-Württemberg (DHBW)",
+            "Filmpalast"
+        ]
+    });
+    
+    /*window.onresize= function(){
+        document.getElementById("content").style.height = window.innerHeight + 'px';
+		map.invalidateSize(); // relevant to your leaflet map to trigger resizing / redrawing /filling.
+    };*/
+    
     
     //shake event
     var myShakeEvent = new Shake({

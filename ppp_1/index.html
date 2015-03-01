@@ -16,6 +16,8 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <!--Icon Pack-->
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!--Autocomplete JQueryUi-->
+    <script src="js/jquery-ui.min.js"></script>
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
     <script src="js/map.js"></script>
@@ -32,19 +34,19 @@
             <div class="buttonGroup">
                 <div class="sideButton">
                     <i class="ion-search"></i>
-                    <span>Parkplatz <br />suchen</span>
+                    <span>Parkplatz<br />suchen</span>
                 </div>
                 <div class="sideButton">
                     <i class="ion-pricetag"></i>
-                    <span>eTicket <br />einlösen</span>
+                    <span>eTicket<br />einlösen</span>
                 </div>
                 <div class="sideButton">
                     <i class="ion-log-in"></i>
-                    <span>Parkhaus <br />einchecken</span>
+                    <span>Parkhaus<br />einchecken</span>
                 </div>
                 <div class="sideButton">
                     <i class="ion-person"></i>
-                    <span>Vorhandene <br />Tickets<br /></span>
+                    <span>Mein<br />Profil</span>
                 </div>
             </div>
             <div class="bottomButtons">
@@ -69,8 +71,12 @@
         <div class="mapButton fixedPos" id="mapButtonLeft"><i class="ion-search"></i></div>
 
         <div class="fixedPos" id="options">
-            <h1>Und ich bin die Optionen-Seite zum Filtern und Suchen.</h1>
-            <p>Und ebenfalls 95% breit.</p>
+            <div class="searchForm">
+                <form id="filterForm">
+                    <input type="text" id="suchbegriff">
+                    <button id="searchButton"><i class="ion-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 </body>
