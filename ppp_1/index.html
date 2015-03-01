@@ -24,6 +24,7 @@
     <script src="js/main.js"></script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/checkbox_bitte_in_css_verschieben.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
 </head>
 
@@ -71,11 +72,30 @@
         <div class="mapButton fixedPos" id="mapButtonLeft"><i class="ion-search"></i></div>
 
         <div class="fixedPos" id="options">
+            <h1>Suchen</h1>
+            <p>Suchen Sie hier nach bestimmten Parkmöglichkeiten.</p>
             <div class="searchForm">
                 <form id="filterForm">
                     <input type="text" id="suchbegriff">
                     <button id="searchButton"><i class="ion-search"></i></button>
                 </form>
+            </div>
+            <h1 style="margin-top: 100px;">Filtern</h1>
+            <p>Filtern Sie hier Ihre Suchergebnisse und die angezeigten Parkmöglichkeiten auf der Karte.</p>
+            <div class="customCheckbox">
+                <input type="checkbox" value="None" id="customCheckbox_PH" name="check" />
+                <label for="customCheckbox_PH"></label>
+                <span>Parkhäuser</span>
+            </div>
+            <div class="customCheckbox">
+                <input type="checkbox" value="None" id="customCheckbox_PP" name="check" />
+                <label for="customCheckbox_PP"></label>
+                <span>Parkplätze</span>
+            </div>
+            <div class="customCheckbox">
+                <input type="checkbox" value="None" id="customCheckbox_EL" name="check" />
+                <label for="customCheckbox_EL"></label>
+                <span>Elektro-Ladestationen</span>
             </div>
         </div>
     </div>

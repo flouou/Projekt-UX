@@ -3,6 +3,11 @@ body{
     background-color: #548DD4;
     font-family: 'Roboto', sans-serif;
 }
+h1{
+    font-family: 'Sansation';
+    color: rgb(84,141,212);
+}
+
 #content{
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
@@ -39,6 +44,7 @@ body{
     width: calc(85% - 30px);
     left: 215%;
     border-right: 30px solid #548DD4;
+    padding-left: 60px;
 }
 
 .logoImage{
@@ -175,7 +181,8 @@ body{
 .searchForm{
     width: 80%;
     height: 40px;
-    margin: 60px auto;
+    margin-top: 60px;
+    /*margin: 60px auto;*/
 }
 
 .searchForm form #suchbegriff{
@@ -224,7 +231,7 @@ body{
     background-color: rgba(0, 0, 0, 0);
     max-width: 80% !important;
     overflow-y: auto;
-    top: 95px !important;
+    top: 195px !important;
     padding-left: 0px;
     z-index: 100;
 }
