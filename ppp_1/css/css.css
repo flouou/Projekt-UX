@@ -220,16 +220,45 @@ body{
     left: 0px;
     width: 85%;
     border-left: 30px solid #548DD4;
+    padding-top: 10px;
+    
 }
 
 .faqContent{
     width: 80%;
-    height: 100%;
+    height: 80%;
     background-color: white;
     position: relative;
     top: 10%;
     left: 5%;
+    
 }
+.questionBox{
+    display: inline-block;
+    border: 1px solid #92D050;
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    height: auto;
+    width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    color: #92D040;
+}
+#icon{
+    color: #92D050;
+    position: absolute;
+    right: 5%;
+}
+.answerBox{
+    margin: 5px;
+    padding-left: 5px;
+    height: auto;
+    width: 95%;
+    color: #BDBDBD;   
+}
+
 
 /******************
 *   Map Styling   *
