@@ -276,19 +276,19 @@ body{
 #faq{
     width: 100%;
     height: 100%;
-    position: fixed;
+    /*position: fixed;*/
     left: 0px;
     background-color: white;
 }
 #main{
+    position:absolute;
     margin: 0px;
-    height: 100%;
+    height:100%;
     background-color: white;
     left: 0px;
-    width: 85%;
+    width: calc(100% - 30px);
     border-left: 30px solid #548DD4;
-    padding-top: 10px;
-    
+    overflow-y: auto;
 }
 
 .faqContent{
@@ -296,7 +296,7 @@ body{
     height: 80%;
     background-color: white;
     position: relative;
-    top: 10%;
+    top: 20px;
     left: 5%;
     
 }
