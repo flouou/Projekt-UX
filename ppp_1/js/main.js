@@ -108,12 +108,6 @@ $(document).ready(function(){
         ]
     });
     
-    /*window.onresize= function(){
-        document.getElementById("content").style.height = window.innerHeight + 'px';
-		map.invalidateSize(); // relevant to your leaflet map to trigger resizing / redrawing /filling.
-    };*/
-    
-    
     //shake event
     var myShakeEvent = new Shake({
         threshold: 15,
