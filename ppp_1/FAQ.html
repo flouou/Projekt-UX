@@ -16,34 +16,41 @@
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
     <script src="js/map.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/accordion.js"></script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
 </head>
     
-<body style="background-color: white; border-left: 30px solid #548DD4;">
+<body style="background-color: white;" >
     <div id="faq">
         <div id="main">
             <img class="logoImage" src="images/logo_transparent.png" />
-            <div class="faqContent">
-                <h1>FAQ - Häufig gestellte Fragen</h1>
-                <div class="questionBox"><b>Warum soll ich mich registrieren?</b>
-                    <i class="ion-chevron-down" id=icon></i>
+            <div class="faqContent accordion">
+                <h1 style="padding-left: 5px; margin-left:5px;">FAQ - Häufig gestellte Fragen</h1>
+                <div class="questionBox accordion-section">
+                    <a class="accordion-section-title" href="#accordion-1">
+                        Warum soll ich mich registrieren?
+                        <i class="ion-chevron-down" id=icon></i></a>
+                    <div id="accordion-1" class="answerBox accordion-section-content">
+                        <p> Nur wenn Sie sich registrieren haben Sie die Möglichkeit ein eTicket zu lösen. Das ermöglicht es Ihnen bargeldlos und
+                        minutengenau zu bezahlen.</p>
+                    </div>
                 </div>
-                <div class="answerBox">
-                    <p> Nur wenn Sie sich registrieren haben Sie die Möglichkeit ein eTicket zu lösen. Das ermöglicht es Ihnen bargeldlos und
-                    minutengenau zu bezahlen.</p>
-                </div>
-                <div class="questionBox"><b>Wie löse ich ein eTicket im Parkhaus?</b>
-                    <i class="ion-chevron-down" id=icon></i>
-                </div>
-                <div class="answerBox">
+                
+                <div class="questionBox accordion-section">
+                    <a class="accordion-section-title" href="#accordion-2">
+                    Wie löse ich ein eTicket im Parkhaus?
+                        <i class="ion-chevron-down" id=icon></i></a>
+                    
+                    <div id="accordion-2" class="answerBox accordion-section-content">
                     <p>Um ein eTicket im Parkhaus lösen zu können, muss ihr Handy NFC-fähig sein. Wenn das der Fall ist, 
                         können Sie beim Reinfahren in ein Parkhaus, den Button "Parkhaus einchecken" auf der Startseite wählen.
                         Halten Sie dann Ihr Handy an den Kontollautomaten, damit dieser die benötigten Daten übermitteln kann.
                         Ist die Registrierung erfolgreich verlaufen, öffnet sich die Schranke und auf Ihrem Gerät wird die Startzeit angezeigt.</p>
+                    </div>
                 </div>
+                
                 
             </div>
 
