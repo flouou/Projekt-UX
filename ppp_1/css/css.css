@@ -311,11 +311,8 @@ h1{
     display: inline-block;
     height: auto;
     width: 95%;
-    padding-top: 10px;
-    padding-bottom: 10px;
     padding-left: 5px;
-    padding-right: 5px;
-    margin: 5px;
+    margin: 3px;
     color: #92D040;
    
 }
@@ -329,7 +326,7 @@ h1{
     padding-left: 5px;
     height: auto;
     width: 95%;
-    color: #BDBDBD;
+    color: black;
     
 }
     
@@ -349,15 +346,16 @@ h1{
 /*----- Section Titles -----*/
 .accordion-section-title {
     color: #92D050;
-    
+    font-weight: bold;
     display:inline-block;
     transition:all linear 0.15s;
     border: 1px solid #92D050;
     box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
     text-decoration: none;
-    width:98%;
+    width:calc(100% - 30px);
     height: auto;
     padding:15px;
+    
 }
  
 .accordion-section-title.active, .accordion-section-title:hover {
