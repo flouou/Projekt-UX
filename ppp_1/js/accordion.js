@@ -19,6 +19,7 @@ $(document).ready(function() {
             $(this).addClass('active');
             // Open up the hidden content panel
             $('.accordion ' + currentAttrValue).slideDown(300).addClass('open'); 
+            $(".accordion").scrollTo("href");
         }
  
         e.preventDefault();
