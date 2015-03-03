@@ -1,0 +1,47 @@
+#nfc #main{
+    width: calc(100% - 30px);    
+}
+
+.nfcHeader{
+    margin-top: 60px !important; /*keine ahnung wieso*/
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.nfcIcon{
+    position: relative;
+    left: calc(50% - 50px);
+    margin: 0 auto;
+    font-size: 100px;  
+    color: #548DD4;
+    margin-top: 50px;
+}
+
+#nfc #main a{
+    text-decoration: none;    
+}
+
+.abbrechenButton{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    background-color: white;
+    color: #548DD4;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+}
+
+.abbrechenButton:active{
+    background-color: #548DD4;
+    color: white;
+}
+
+.abbrechenButton i{
+    color: #92D050;
+}
