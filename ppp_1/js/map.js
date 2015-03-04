@@ -4,6 +4,8 @@ var lgParkhaus = L.layerGroup();
 var lgParkplaetze = L.layerGroup();
 var lgEStationen = L.layerGroup();
 
+var greenPHIcon;
+
 $(document).ready(function () {
     map = L.map('map').setView([49.003871, 8.405114], 17);
     $(".leaflet-control-zoom").css("visibility", "hidden");
@@ -15,7 +17,13 @@ $(document).ready(function () {
             'Imagery © <a href="http://mapbox.com">Mapbox</a>',
         id: 'examples.map-i875mjb7'
     }).addTo(map);
-
+    
+    greenPHIcon = L.icon({
+                    iconUrl: '../images/icons/parkhaus_icon_grün_klein.png',
+                    iconSize:[43,54],
+                    iconAnchor: [21.5,54],
+                    popupAnchor: [0,-48]});
+    
     refresh();
 });
 
@@ -41,7 +49,7 @@ function printParkmarker() {
     for (var j in result) {
         var x = result[j].LAT;
         var y = result[j].LONG;
-        var marker = L.marker([x, y]);
+        var marker = L.marker([x, y],{icon: greenPHIcon});
         if (result[j].TYPE == 'Parkhaus') {
             var t = "<strong>" + result[j].PH_NAME + "</strong>, " + result[j].PH_STRASSE + " (" + result[j].STADTTEIL + ")<br>" + result[j].FREIE_PARKPLAETZE + " von " + result[j].GESAMTE_PARKPLAETZE + " Plätzen frei.";
             marker.bindPopup(t);
