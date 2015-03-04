@@ -5,6 +5,14 @@ var lgParkplaetze = L.layerGroup();
 var lgEStationen = L.layerGroup();
 
 var greenPHIcon;
+var yellowPHIcon;
+var redPHIcon;
+var iconWidth = 43;
+var iconHeight = 54;
+var iconAnchorX = 21.5;
+var iconAnchorY = 54;
+var iconPopupAnchorX = 0;
+var iconPopupAnchorY = -48;
 
 $(document).ready(function () {
     map = L.map('map').setView([49.003871, 8.405114], 17);
@@ -19,10 +27,10 @@ $(document).ready(function () {
     }).addTo(map);
     
     greenPHIcon = L.icon({
-                    iconUrl: '../images/icons/parkhaus_icon_grün_klein.png',
-                    iconSize:[43,54],
-                    iconAnchor: [21.5,54],
-                    popupAnchor: [0,-48]});
+                    iconUrl: 'images/icons/parkhaus_icon_grün_klein.png',
+                    iconSize:[iconWidth,iconHeight],
+                    iconAnchor: [iconAnchorX,iconAnchorY],
+                    popupAnchor: [iconPopupAnchorX,iconPopupAnchorY]});
     
     refresh();
 });
