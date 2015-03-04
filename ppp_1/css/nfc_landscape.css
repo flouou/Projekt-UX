@@ -1,5 +1,17 @@
 .nfcHeader{
-    margin-top: 30px !important;    
+    margin-top: 20px !important;    
+}
+
+.nfcHeader h1{
+    margin-bottom: 10px;    
+}
+
+.nfcHeader p{
+    margin-top: 0px;    
+}
+
+.nfcHeader:last-of-type{
+    margin-top: 10px !important;    
 }
 
 .nfcIcon{

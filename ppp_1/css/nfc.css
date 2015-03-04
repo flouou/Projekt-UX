@@ -9,13 +9,16 @@
     margin: 0 auto;
 }
 
+.nfcHeader:last-of-type{
+    margin-top: 20px !important;    
+}
+
 .nfcIcon{
     position: relative;
-    left: calc(50% - 50px);
-    margin: 0 auto;
-    font-size: 100px;  
+    left: calc(50% - 75px);
+    width: 150px;
     color: #548DD4;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 #nfc #main a{

@@ -1,0 +1,11 @@
+.landing-header{
+    margin: 20px auto 0px auto;
+}
+
+.landing-content{
+    margin: 0px auto 30px auto;
+}
+
+.landing-content:last-of-type{
+    margin: 0px auto 20px auto;
+}
