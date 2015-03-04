@@ -1,0 +1,48 @@
+.landing-body{
+    background-color: white;
+    color: white;
+}
+
+.landing-header{
+    width: 80%;
+    margin: 20px auto 0px auto;
+    color: #548DD4;
+    text-align: center;
+}
+
+.landing-header img{
+    height: 30px;    
+}
+
+.landing-body .ion-alert-circled{
+    color: #548DD4;
+    font-size: 80px;
+    width: 82px;
+    position: relative;
+    left: calc(50% - 41px);
+}
+
+.landing-content{
+    width: 80%;
+    margin: 0px auto 30px auto;
+    color: #548DD4; 
+    text-align: center;
+}
+
+.landing-content:last-of-type{
+    margin: 0px auto 20px auto;
+}
+
+.landing-button{
+    position: relative;
+    left: calc(50% - 90px);
+    color: #548DD4;
+    padding: 5px 10px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 25px;
+    border: 1px solid #92D050;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+}
