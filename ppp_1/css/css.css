@@ -42,7 +42,7 @@ h1{
 }
 #options{
     background-color: white;
-    width: calc(85% - 30px);
+    width: calc(85% - 90px);
     left: 215%;
     border-right: 30px solid #548DD4;
     padding-left: 60px;
@@ -286,6 +286,14 @@ h1{
 
 #body{
     background-color: white;
+    overflow-x:hidden;    
+}
+
+#faqLogo{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 150px);
+    top: 7.5px;
 }
 
 #faq{
@@ -293,6 +301,7 @@ h1{
     height: 100%;
     left: 0px;
     background-color: white;
+    
     
 }
 #main{
@@ -302,9 +311,11 @@ h1{
     min-height: 100%;
     background-color: white;
     left: 0px;
-    width: calc(100% - 30px);
+    width: 100%;
     border-left: 30px solid #548DD4;
     overflow-y: auto;
+    
+    
     
 }
 
@@ -313,17 +324,17 @@ h1{
     height: 80%;
     background-color: white;
     position: relative;
-    top: 20px;
-    left: 5%;
+    top: 20px;   
     
 }
 .questionBox{
     display: inline-block;
     height: auto;
-    width: 95%;
-    padding-left: 5px;
+    width: calc(100% - 15px);
+    padding-left: 5%;
     margin: 3px;
     color: #92D040;
+
    
 }
 #icon{
