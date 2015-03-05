@@ -17,7 +17,8 @@
 }
 
 .profil-accordion{
-    overflow: hidden;    
+    overflow: hidden;
+    padding-bottom:20px;
 }
 
 .profil-accordion .accordion-section .answerBox img{
