@@ -36,12 +36,28 @@ $(document).ready(function(){
     
     $('.sideButton:first').on('click',toggleBoth);
     
+    //Overlay-Swipe-Effect
+    
+    $('.overlay').on('swipeleft',function(){
+        if($('#mapButtonRight i').hasClass('ion-map') && $('#mapButtonLeft i').hasClass('ion-search')){
+            toggleStart();    
+        }
+    });
+    
+    $('.overlay').on('swiperight',function(){
+        if($('#mapButtonLeft i').hasClass('ion-map') && $('#mapButtonRight i').hasClass('ion-map')){
+            toggleSearch();    
+        }
+    });
+    
     function toggleBoth(){
         toggleStart();
         toggleSearch();
     }
     
     function toggleStart(){
+        $('.overlay').toggleClass('swipeToLeft0');
+        $('.overlay').toggle();
         $('#start').toggleClass('swipeToLeft100');
         $('#mapButtonRight').toggleClass('swipeTo0px');
         $('#mapButtonRight i').toggleClass('ion-map');
@@ -53,14 +69,14 @@ $(document).ready(function(){
     
     function toggleSearch(){
         toggleStart();
+        $('.overlay').toggleClass('swipeToLeft100');
         $('#start').toggleClass('swipeToLeft200');
         $('#mapButtonRight').toggleClass('swipeToLeft100');
         $('#mapButtonLeft i').toggleClass('ion-map');
         $('#mapButtonLeft i').toggleClass('ion-search');
         $('#map').toggleClass('swipeToLeft100');
         $('#options').toggleClass('swipeTo15');
-        $('#mapButtonLeft').toggleClass('swipeTo0px');
-        
+        $('#mapButtonLeft').toggleClass('swipeTo0px'); 
     }
     
     $( "#suchbegriff" ).autocomplete({

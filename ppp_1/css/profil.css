@@ -3,7 +3,7 @@ body{
     color: #548DD4;
     height: auto; 
     min-height: 100vh;
-    border-left:30px solid blue;
+    border-left:30px solid #548DD4;
 }
 #backToMainButton{
     position: absolute;

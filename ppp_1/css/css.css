@@ -177,6 +177,24 @@ h1{
 }
 
 /*******************
+*  Graues Overlay  *
+*******************/
+
+.overlay{
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 100%;
+    width: 130%;
+    height:100%;
+    margin: 0px;
+    margin-left: -15%;
+    margin-right: 15%;
+    z-index:100;
+    /*-webkit-transition: all .7s;
+    transition: all .7s;*/
+}
+
+/*******************
 *  Suchbildschirm  *
 *******************/
 
@@ -255,6 +273,10 @@ h1{
 
 .swipeTo15{
     left: 15% !important;
+}
+
+.swipeToLeft20{
+    left: -15% !important;    
 }
 
 .swipeToLeft100{

@@ -37,6 +37,13 @@
     background-color: white;
 }
 
+.overlay{
+    left: 100%;
+    width:120%;
+    margin-left:-10%;
+    margin-right:10%;
+}
+
 .swipeTo80{
     left: 90% !important;    
 }
