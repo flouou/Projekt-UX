@@ -1,6 +1,7 @@
 #profil-body{
     background-color: white;
     color: #548DD4;
+    height: auto;   
 }
 
 #profil-main{
@@ -9,16 +10,16 @@
     min-height: 100%;
     height: auto;
     position: absolute;
-    overflow-y: hidden;
-}
-
-#profilLogo{
-    height: 45px;
+    overflow-y: auto;
 }
 
 .profil-accordion{
-    overflow: hidden;
-    padding-bottom:20px;
+    height:100%;
+}
+
+.profil-accordion h1{
+    padding-left: 5%; 
+    margin-left:5px;
 }
 
 .profil-accordion .accordion-section .answerBox img{
