@@ -3,6 +3,7 @@ var xmlhttp;
 var lgParkhaus = L.layerGroup();
 var lgParkplaetze = L.layerGroup();
 var lgEStationen = L.layerGroup();
+var lgKostenlos = L.layerGroup();
 
 var greenPHIcon;
 var yellowPHIcon;
@@ -18,7 +19,7 @@ var iconPopupAnchorX = 0;
 var iconPopupAnchorY = -48;
 
 $(document).ready(function () {
-    map = L.map('map').setView([49.003871, 8.405114], 17);
+    map = L.map('map').setView([49.009654, 8.403903], 15);
     $(".leaflet-control-zoom").css("visibility", "hidden");
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
@@ -28,7 +29,7 @@ $(document).ready(function () {
         id: 'examples.map-i875mjb7'
     }).addTo(map);
     
-    map.locate({setView: true, maxZoom: 16});
+    //map.locate({setView: true, maxZoom: 16});
     
     greenPHIcon = L.icon({
                     iconUrl: 'images/icons/parkhaus_icon_grün_klein.png',
@@ -112,14 +113,26 @@ function printParkmarker() {
             lgParkplaetze.addLayer(marker);
             map.addLayer(lgParkplaetze);
         } else if (result[j].TYPE == 'ELadestation') {
-            t = "<strong>" + result[j].STANDORT + "</strong> (" + result[j].STADTTEIL + ")<br>" +
-                "Steckertyp: " + result[j].STECKDOSE + ",<br>" +
+            if(result[j].STECKDOSE.length > 0) {
+                t = "<strong>" + result[j].STANDORT + "</strong> (" + result[j].STADTTEIL + ")<br>" +
+                    "Steckertyp: " + result[j].STECKDOSE + ",<br>" +
+                    "Ladestation ist " + result[j].LADESTATION + ".";
+            } else {
+                t = "<strong>" + result[j].STANDORT + "</strong> (" + result[j].STADTTEIL + ")<br>" +
                 "Ladestation ist " + result[j].LADESTATION + ".";
-            
+            }
             marker = L.marker([x,y], {icon: eStationIcon});
             marker.bindPopup(t);
             lgEStationen.addLayer(marker);
             map.addLayer(lgEStationen);
+        } else if(result[j].TYPE == 'kostenlos'){
+            t = "<strong>" + result[j].STANDORT + "</strong><br>" +
+                "Es stehen " + result[j].anzahl + " kostenlose Parkplätze zur Verfügung.";
+            
+            marker = L.marker([x,y]);
+            marker.bindPopup(t);
+            lgKostenlos.addLayer(marker);
+            map.addLayer(lgKostenlos);
         }
         //L.marker([x, y]).addTo(map).bindPopup(t);
     }

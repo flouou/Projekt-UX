@@ -46,7 +46,14 @@ $positions = array(
                 "Bahnhofsstraße" => array("lat" => "49.162944", "long" => "8.490006"),
                 "Herrmann-Leichtlin-Straße" => array("lat" => "48.997133", "long" => "8.359062"),
                 "Kurzheckweg" => array("lat" => "49.022256", "long" => "8.3438"),
-                "Hertzstraße" => array("lat" => "49.020824", "long" => "8.365542")
+                "Hertzstraße" => array("lat" => "49.020824", "long" => "8.365542"));
+                //Kostenlose Parkplätze. Nur eine Auswahl - 5 Stück
+$kostenlosePlaetze = array(
+                "Erzbergerstraße" => array("STANDORT" => "Erzbergerstraße", "LAT" => "49.018064", "LONG" => "8.385103", "TYPE" => "kostenlos", "anzahl" => "75"),
+                "Waldparkplatz" => array("STANDORT" => "Waldparkplatz", "LAT" => "49.015342", "LONG" => "8.418961", "TYPE" => "kostenlos", "anzahl" => "65"),
+                "Ernst-Friedrich-Straße" => array("STANDORT" => "Ernst-Friedrich-Straße", "LAT" => "48.998523", "LONG" => "8.462975", "TYPE" => "kostenlos", "anzahl" => "40"),
+                "Wilhelmstraße" => array("STANDORT" => "Wilhelmstraße", "LAT" => "49.000739", "LONG" => "8.405748", "TYPE" => "kostenlos", "anzahl" => "15"),
+                "Peter-und-Paul-Platz" => array("STANDORT" => "Peter-und-Paul-Platz", "LAT" => "49.0107029", "LONG" => "8.3652292", "TYPE" => "kostenlos", "anzahl" => "23"),
     );
 
 $posKeys = getArrayKeyArray($positions);
@@ -58,7 +65,7 @@ $results = array(); //array, in das alle Fields und somit alle Einträge geschri
 //$results[] = readEStationenData($positions);
 //$results[] = readParkhausData($positions, $posKeys);
 
-$results = array_merge(readParkplatzData($positions, $posKeys), readEStationenData($positions, $posKeys), readParkhausData($positions, $posKeys));
+$results = array_merge($kostenlosePlaetze, readParkplatzData($positions, $posKeys), readEStationenData($positions, $posKeys), readParkhausData($positions, $posKeys));
 echo json_encode($results);
 
 function readParkhausData($pos, $keys){
