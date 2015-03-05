@@ -6,31 +6,19 @@ body{
     border-left:30px solid blue;
 }
 #backToMainButton{
-    position: relative;
+    position: absolute;
     left: 85%;
     float: left;
 }
 
-#profilLogoImage{
-    left: 0px;
-}
-
-
-/*#profil-main{
-    border-left: 30px solid #548DD4;  
-    width: 85%;
-    min-height: 100%;
-    height: auto;
-    position: absolute;
-    overflow-y: auto;
-}*/
 #profilContent{
     clear: both;
     width: calc(100% - 30px);
     height: 80%;
     background-color: white;
     position: relative;
-    margin-top: 20px;      
+    margin-top: 20px;
+    padding-bottom: 20px;
 }
 .questionBox{
     display: inline-block;
@@ -39,6 +27,19 @@ body{
     padding-left: 5%;
     margin: 3px;
     color: #92D040;
+}
+.answerBox{
+    margin: 5px;
+    padding-left: 5px;
+    height: auto;
+    width: 95%;
+    color: black;
+    
+}
+#icon{
+    color: #92D050;
+    position: absolute;
+    right: 7%;
 }
 .accordion, .accordion * {
     -webkit-box-sizing:border-box; 
@@ -98,7 +99,9 @@ body{
     padding:15px;
     
 }
- 
+.accordion-section-title i{
+    float: right;
+}
 .accordion-section-title.active, .accordion-section-title:hover {
     text-decoration:none;
 }
