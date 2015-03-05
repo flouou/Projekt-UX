@@ -1,0 +1,48 @@
+#profil-body{
+    background-color: white;
+    color: #548DD4;
+}
+
+#profil-main{
+    border-left: 30px solid #548DD4;  
+    width: 85%;
+    min-height: 100%;
+    height: auto;
+    position: absolute;
+    overflow-y: auto;
+}
+
+#profilLogo{
+    height: 45px;
+}
+
+.profil-accordion{
+    overflow-y: auto;    
+}
+
+.profil-accordion .accordion-section .answerBox img{
+    width: 100%;
+}
+
+.profil-accordion .accordion-section .answerBox ul{
+    padding-left: 0px;
+    list-style: none;
+    color: #548DD4;
+}
+
+.profil-accordion .accordion-section .answerBox ul li{
+    font-size: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #92D050;
+}
+
+.profil-accordion .accordion-section .answerBox ul li span{
+    font-weight: bold;
+}
+
+.profil-accordion .accordion-section .answerBox ul li span i{
+    float:right;
+    vertical-align: middle;
+    font-size: 30px;
+    color: #92D050;   
+}
