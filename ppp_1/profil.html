@@ -19,18 +19,21 @@
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
-    <link rel="stylesheet" href="css/faq.css" />
     <!--temporär-->
     <link rel="stylesheet" href="css/profil.css" />
     <link rel="stylesheet" href="css/profil_landscape.css" />
 </head>
     
-<body id="profil-body" >
-    <div id="profil-main">
+<body>
+    <!--<div id="profil-main">-->
 
-        <img class="logoImage" src="images/logo_transparent.png" />
-
-        <div class="faqContent accordion profil-accordion">
+        <img class="logoImage" id="profilLogoImage" src="images/logo_transparent.png" />
+        <div class="mapButton absPos" id="backToMainButton">
+            <a href="#">
+                <i class="ion-backspace-outline"></i>
+            </a>
+        </div>
+        <div id="profilContent" class="accordion profil-accordion">
             <h1>
                 Mein Profil
             </h1>
@@ -102,12 +105,7 @@
                 </div><!-- end #accordion-4-->
             </div><!-- end .questionBox.accordion-section-->
         </div><!-- end .faqContent.accordion-->
-    </div><!-- end #profil-main-->       
-    <div class="mapButton absPos" id="mapButtonRight">
-        <a href="index.html">
-            <i class="ion-backspace-outline"></i>
-        </a>
-    </div>
+    <!--</div><!-- end #profil-main-->       
 
 </body>
     

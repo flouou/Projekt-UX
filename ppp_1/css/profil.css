@@ -1,18 +1,55 @@
-#profil-body{
+body{
     background-color: white;
     color: #548DD4;
-    height: auto;   
+    height: auto; 
+    min-height: 100vh;
+    border-left:30px solid blue;
+}
+#backToMainButton{
+    position: relative;
+    left: 85%;
+    float: left;
 }
 
-#profil-main{
+#profilLogoImage{
+    left: 0px;
+}
+
+
+/*#profil-main{
     border-left: 30px solid #548DD4;  
     width: 85%;
     min-height: 100%;
     height: auto;
     position: absolute;
     overflow-y: auto;
+}*/
+#profilContent{
+    clear: both;
+    width: calc(100% - 30px);
+    height: 80%;
+    background-color: white;
+    position: relative;
+    margin-top: 20px;      
 }
+.questionBox{
+    display: inline-block;
+    height: auto;
+    width: calc(100% - 15px);
+    padding-left: 5%;
+    margin: 3px;
+    color: #92D040;
+}
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.accordion {
+    overflow:hidden;
 
+}
 .profil-accordion{
     height:100%;
 }
@@ -47,4 +84,30 @@
     vertical-align: middle;
     font-size: 30px;
     color: #92D050;   
+}
+.accordion-section-title {
+    color: #92D050;
+    font-weight: bold;
+    display:inline-block;
+    transition:all linear 0.15s;
+    border: 1px solid #92D050;
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    text-decoration: none;
+    width:100%;
+    height: auto;
+    padding:15px;
+    
+}
+ 
+.accordion-section-title.active, .accordion-section-title:hover {
+    text-decoration:none;
+}
+ 
+.accordion-section:last-child .accordion-section-title {
+    /*border-bottom:none;*/
+}
+ 
+/*----- Section Content -----*/
+.accordion-section-content {
+    display:none;
 }
