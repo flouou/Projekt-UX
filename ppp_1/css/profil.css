@@ -9,7 +9,7 @@
     min-height: 100%;
     height: auto;
     position: absolute;
-    overflow-y: auto;
+    overflow-y: hidden;
 }
 
 #profilLogo{
@@ -17,7 +17,7 @@
 }
 
 .profil-accordion{
-    overflow-y: auto;    
+    overflow: hidden;    
 }
 
 .profil-accordion .accordion-section .answerBox img{
