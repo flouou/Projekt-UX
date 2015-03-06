@@ -67,8 +67,8 @@ $(document).ready(function(){
     
     function toggleStart(){
         $('.invisibleSwipe').toggle();
-        $('.overlay').toggleClass('swipeToLeft0');
-        $('.overlay').toggle();
+        $('.overlay').fadeToggle('fast');
+        $('.overlay').toggleClass('swipeTo0px');
         $('#start').toggleClass('swipeToLeft100');
         $('#mapButtonRight').toggleClass('swipeTo0px');
         $('#mapButtonRight i').toggleClass('ion-map');

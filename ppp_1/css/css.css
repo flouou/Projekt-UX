@@ -182,7 +182,7 @@ h1{
 
 .overlay{
     position:fixed;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
     left: 100%;
     width: 130%;
     height:100%;
@@ -190,8 +190,8 @@ h1{
     margin-left: -15%;
     margin-right: 15%;
     z-index:100;
-    /*-webkit-transition: all .7s;
-    transition: all .7s;*/
+    -webkit-transition: all .3s;
+    transition: all .3s;
 }
 
 /*******************
