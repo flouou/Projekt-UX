@@ -195,6 +195,27 @@ h1{
 }
 
 /*******************
+*  InvisibleSwipe  *
+*******************/
+
+.invisibleSwipe{
+    position:fixed;
+    width:20px;
+    height:100%;
+    /*background-color: blue;*/
+    z-index:100;
+    display:none;
+}
+
+.invisibleSwipeLeft{
+    left:0%;    
+}
+
+.invisibleSwipeRight{
+    right:0%;    
+}
+
+/*******************
 *  Suchbildschirm  *
 *******************/
 

@@ -50,12 +50,23 @@ $(document).ready(function(){
         }
     });
     
+    //Invisible Map Swipe
+    
+    $('.invisibleSwipeLeft').on('swiperight',function(){
+        toggleStart();    
+    });
+    
+    $('.invisibleSwipeRight').on('swipeleft',function(){
+        toggleSearch();    
+    });
+    
     function toggleBoth(){
         toggleStart();
         toggleSearch();
     }
     
     function toggleStart(){
+        $('.invisibleSwipe').toggle();
         $('.overlay').toggleClass('swipeToLeft0');
         $('.overlay').toggle();
         $('#start').toggleClass('swipeToLeft100');
