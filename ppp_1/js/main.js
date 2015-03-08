@@ -91,6 +91,7 @@ $(document).ready(function(){
     }
     
     $( "#suchbegriff" ).autocomplete({
+        minLength: 3,
         source: [ 
             "Ritterstraße 16", 
             "Rintheimer Straße 19", 
