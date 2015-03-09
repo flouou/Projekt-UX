@@ -1,0 +1,4 @@
+responsive font-size für menü-icon. könnte mit javascript so umgesetzt werden
+
+var fontSize = parseInt($("#mapButtonRight").height())+"px";
+$("#mapButtonRight i").css('font-size', fontSize);
