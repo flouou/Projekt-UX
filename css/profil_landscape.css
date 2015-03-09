@@ -4,3 +4,6 @@
 #backToMainButton{
     left: 90%;
 }
+#profilLogo{
+    left: calc(50% - 140px); 
+}

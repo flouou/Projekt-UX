@@ -10,6 +10,12 @@ body{
     left: 85%;
     float: left;
 }
+#profilLogo{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 135px);
+    top: 7.5px;
+}
 
 #profilContent{
     clear: both;
