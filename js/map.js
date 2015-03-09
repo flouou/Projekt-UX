@@ -18,14 +18,16 @@ var iconAnchorY = 54;
 var iconPopupAnchorX = 0;
 var iconPopupAnchorY = -48;
 
+var checkInButton = '<a href="#" class="parkXButton">Ins Parkhaus einchecken</a>';
+var buyTicketButton = '<a href="#" class="parkXButton">Ticket lösen</a>';
+
+
 $(document).ready(function () {
     map = L.map('map').setView([49.009654, 8.403903], 15);
     $(".leaflet-control-zoom").css("visibility", "hidden");
 
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+        
         id: 'examples.map-i875mjb7'
     }).addTo(map);
     
@@ -88,7 +90,13 @@ function printParkmarker() {
             var ges = result[j].GESAMTE_PARKPLAETZE;
             var frei = result[j].FREIE_PARKPLAETZE;
             var bel = 1-(frei/ges);
-            t = "<strong>" + result[j].PH_NAME + "</strong>, " + result[j].PH_STRASSE + " (" + result[j].STADTTEIL + ")<br>" + frei + " von " + ges + " Plätzen frei.";
+            t = "<strong>" + result[j].PH_NAME + "</strong>, " +
+                result[j].PH_STRASSE +
+                " (" + result[j].STADTTEIL + ")<br>" +
+                frei +
+                " von " + ges +
+                " Plätzen frei." + 
+                checkInButton;
             
             if(bel<=0.5){
                 marker = L.marker([x,y], {icon: greenPHIcon});    
@@ -102,11 +110,12 @@ function printParkmarker() {
             lgParkhaus.addLayer(marker);
             map.addLayer(lgParkhaus);
         } else if (result[j].TYPE == 'Parkplatz') {
-            t = "<strong>" + result[j].STANDORT + "</strong><br>" +
+            t = '<p class="popupText"><strong>' + result[j].STANDORT + "</strong><br>" +
                 result[j].STELLPLÄTZE + " Plätze verfügbar<br>" +
                 "Höchst-Park-Dauer: " + result[j].HÖCHST_PARK_DAUER + ",<br>" +
                 "Gebührenpflichtiger Zeitraum: " + result[j].GEBÜHRENPFL_PARKZEIT + ",<br>" +
-                "Gebühren: " + result[j].GEBÜHREN;
+                "Gebühren: " + result[j].GEBÜHREN+"<br>"+
+                buyTicketButton + "</p>";
             
             marker = L.marker([x,y], {icon: parkplatzIcon});
             marker.bindPopup(t);
