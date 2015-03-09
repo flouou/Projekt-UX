@@ -200,9 +200,8 @@ h1{
 
 .invisibleSwipe{
     position:fixed;
-    width:5px;
+    width:15px;
     height:100%;
-    /*background-color: blue;*/
     z-index:100;
     display:none;
 }
@@ -306,7 +305,9 @@ h1{
     border-bottom: 1px solid #92D050;
 }
 
-/*CSS-Angaben für die Animationen*/
+/************************
+*      Animationen      *
+************************/
 .swipeToLeft80{
     left: -85% !important;    
 }
