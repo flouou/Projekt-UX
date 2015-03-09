@@ -105,18 +105,21 @@ h1{
 
 .bottomButtons{
     width: 80%;
-    height: 20%;
+    height: 15%;
     background-color: white;
     position: absolute;
     top: 78%;
-    left: 10%;
+    left: 30%;
+    align-content: center;
 }
 
 .botSideButton{
     display:block;
     color: #92D050;
     font-size: 50px;
+    line-height:100%;
     margin-top: 5px;
+    margin: 0 auto;
     width: 30%;
     height: 50%;
     display: inline-block;
