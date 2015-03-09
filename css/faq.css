@@ -12,6 +12,8 @@ body{
 h1{
     font-family: 'Sansation';
     color: rgb(84,141,212);
+    padding-left: 5%;
+    margin-left:5px;
 }
 #backToMainButton{
     position: absolute;

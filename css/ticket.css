@@ -1,0 +1,166 @@
+/*********************
+*   Ticket Styling   *
+*********************/
+
+@font-face {font-family: 'Sansation'; src: url('../fonts/Sansation.ttf')}
+body{
+    background-color: white;
+    color: #548DD4;
+    height: auto; 
+    min-height: 100vh;
+    border-left:30px solid #548DD4;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-family: 'Sansation';
+    color: rgb(84,141,212);
+    padding-left: 5%;
+    margin-left:5px;
+}
+#ticketLogo{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 135px);
+    top: 7.5px;
+}
+#backToMainButton{
+    position: absolute;
+    left: 85%;
+    float: left;
+}
+.ticketContent{
+    width: calc(100% - 30px);
+    height: auto;
+    background-color: white;
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    
+}
+.absPos{
+    position: absolute;
+}
+.ticketMap{
+    width: calc(100% - 15px);
+    height: 200px; 
+    position: relative;  
+    margin-left: 5%;
+}
+/* Nur Temporär bis Lösung Dominik*/
+
+/****************************
+*   Zurück-Button Styling   *
+****************************/
+.mapButton{
+    top: 0px;
+    width: 15%;
+    height: 60px;
+    z-index: 10000;
+    background-color: white;
+    -webkit-transition: left .2s;
+    transition: left .3s;
+    line-height: 60px;
+    text-align: center;
+}
+
+.mapButton:active{
+    background-color: #548DD4;   
+}
+
+.mapButton:active i{
+    color: white;    
+}
+
+.mapButton i{
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #548DD4;
+}
+/******************
+*   Map Styling   *
+******************/
+.leaflet-popup-close-button{
+    border-radius:100% !important;
+    top:-5px !important;
+    right:-5px !important;
+    background-color: #548DD4 !important;
+    padding: 5px !important;
+    color: white !important;
+    width: 14px !important;
+}
+/*******************
+*  Suchbildschirm  *
+*******************/
+.searchForm{
+    width: 80%;
+    height: 40px;
+    margin-left: 5%;
+}
+
+.searchForm #suchbegriff{
+    width: 78%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    display:inline-block;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    z-index: 1;
+}
+
+.searchForm #suchbegriff:focus{
+    outline: 0;    
+}
+
+.searchForm #searchButton{
+    width:18%;
+    height: 40px;
+    margin: 0px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    background-color: white;
+    color: #92D050;
+    display: inline-block;
+    font-size: 20px;
+    z-index: 100;
+    background-color: white;
+    outline: 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+.searchForm #searchButton:active;{
+    background-color: #548DD4;
+}
+
+.searchForm #searchButton:focus{
+    outline: 0;    
+}
+
+#ui-id-1{
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    max-width: 80% !important;
+    overflow-y: auto;
+    top: 150px !important;
+    left: 30px;
+    padding-left: 0px;
+    z-index: 100;
+    border: 1px solid #92D050;
+    border-bottom: none;
+}
+
+#ui-id-1 li{
+    margin-top:8px;    
+    color: #548DD4;
+    border-bottom: 1px solid #92D050;
+}
+/*Ende Temp-Lsg.*/
