@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
-    <script src="js/map.js"></script>
+    <script src="js/ticket.js"></script>
     <!--Eigenes CSS-->
     <!--<link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />-->
@@ -30,7 +30,7 @@
     <img id="ticketLogo" src="images/logo_transparent.png" />
     
     <div class="mapButton absPos" id="backToMainButton">
-        <a href="main.html">
+        <a href="ticket.html">
             <i class="ion-backspace-outline"></i>
         </a>
     </div>
@@ -38,32 +38,15 @@
     <div class="ticketContent">
         <h1>eTicket lösen</h1>
         
-        <div class="ticketMap" id="map">
-            
-        </div>
-        
         <div>
-            <h1>Suchen</h1>
+            <h1>Startpunkt setzen</h1>
             <div class="searchForm">
-                <input type="text" id="suchbegriff">
-                <div id="searchButton"><i class="ion-search"></i></div>
+                <input type="text" id="startzeit">
+                <div id="searchButton"><i class="ion-log-in"></i></div>
             </div>
         </div>
         
-        <div>
-            <h1>Favoriten</h1>
-                <ul>
-                    <li>
-                        <a href="ticket_2.html">Duale Hochschule Baden Württemberg (DHBW)</a>
-                    </li>
-                    <li>
-                        <a href="ticket_2.html">Am Staatstheater</a>
-                    </li>
-                    <li>
-                        <a href="ticket_2.html">Englerstraße</a>
-                    </li>
-                </ul>
-        </div>
+        
         
     </div>
 </body> 
