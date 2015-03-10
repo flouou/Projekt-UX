@@ -49,21 +49,17 @@ $positions = array(
                 "Hertzstraße" => array("lat" => "49.020824", "long" => "8.365542"));
                 //Kostenlose Parkplätze. Nur eine Auswahl - 5 Stück
 $kostenlosePlaetze = array(
-                "Erzbergerstraße" => array("STANDORT" => "Erzbergerstraße", "LAT" => "49.018064", "LONG" => "8.385103", "TYPE" => "kostenlos", "anzahl" => "75"),
-                "Waldparkplatz" => array("STANDORT" => "Waldparkplatz", "LAT" => "49.015342", "LONG" => "8.418961", "TYPE" => "kostenlos", "anzahl" => "65"),
-                "Ernst-Friedrich-Straße" => array("STANDORT" => "Ernst-Friedrich-Straße", "LAT" => "48.998523", "LONG" => "8.462975", "TYPE" => "kostenlos", "anzahl" => "40"),
-                "Wilhelmstraße" => array("STANDORT" => "Wilhelmstraße", "LAT" => "49.000739", "LONG" => "8.405748", "TYPE" => "kostenlos", "anzahl" => "15"),
-                "Peter-und-Paul-Platz" => array("STANDORT" => "Peter-und-Paul-Platz", "LAT" => "49.0107029", "LONG" => "8.3652292", "TYPE" => "kostenlos", "anzahl" => "23"),
+                "Erzbergerstraße" => array("ID" => "Erzbergerstraße","STANDORT" => "Erzbergerstraße", "LAT" => "49.018064", "LONG" => "8.385103", "TYPE" => "kostenlos", "anzahl" => "75"),
+                "Waldparkplatz" => array("ID" => "Waldparkplatz","STANDORT" => "Waldparkplatz", "LAT" => "49.015342", "LONG" => "8.418961", "TYPE" => "kostenlos", "anzahl" => "65"),
+                "Ernst-Friedrich-Straße" => array("ID" => "Ernst-Friedrich-Straße","STANDORT" => "Ernst-Friedrich-Straße", "LAT" => "48.998523", "LONG" => "8.462975", "TYPE" => "kostenlos", "anzahl" => "40"),
+                "Wilhelmstraße" => array("ID" => "Wilhelmstraße","STANDORT" => "Wilhelmstraße", "LAT" => "49.000739", "LONG" => "8.405748", "TYPE" => "kostenlos", "anzahl" => "15"),
+                "Peter-und-Paul-Platz" => array("ID" => "Peter-und-Paul-Platz","STANDORT" => "Peter-und-Paul-Platz", "LAT" => "49.0107029", "LONG" => "8.3652292", "TYPE" => "kostenlos", "anzahl" => "23"),
     );
 
 $posKeys = getArrayKeyArray($positions);
 
 
 $results = array(); //array, in das alle Fields und somit alle Einträge geschrieben werden. Ein Eintrag pro PH.
-
-//$results[] = readParkplatzData($positions);
-//$results[] = readEStationenData($positions);
-//$results[] = readParkhausData($positions, $posKeys);
 
 $results = array_merge($kostenlosePlaetze, readParkplatzData($positions, $posKeys), readEStationenData($positions, $posKeys), readParkhausData($positions, $posKeys));
 echo json_encode($results);
@@ -89,17 +85,21 @@ function readParkhausData($pos, $keys){
         }
         $fields['TYPE'] = "Parkhaus";
         if(in_array($fields['PH_KEY'],$keys)){
-            $fields['LAT'] = $pos[$fields['PH_KEY']]['lat'];
-            $fields['LONG'] = $pos[$fields['PH_KEY']]['long'];
-            $res[] = $fields;
+            $k = $fields['PH_KEY'];
+            $n = $fields['PH_NAME'];
+            $fields['LAT'] = $pos[$k]['lat'];
+            $fields['LONG'] = $pos[$k]['long'];
+            $fields['ID'] = $fields['PH_NAME'];
+            $res[$n] = $fields;
         } else if(in_array($fields['PH_NAME'],$keys)){
-            $fields['PH_KEY'] = $fields['PH_NAME'];
-            $fields['LAT'] = $pos[$fields['PH_NAME']]['lat'];
-            $fields['LONG'] = $pos[$fields['PH_NAME']]['long'];
-            $res[] = $fields;
-        }        
+            $n = $fields['PH_NAME'];
+            $fields['PH_KEY'] = $n;
+            $fields['LAT'] = $pos[$n]['lat'];
+            $fields['LONG'] = $pos[$n]['long'];
+            $fields['ID'] = $fields['PH_NAME'];
+            $res[$n] = $fields;
+        }
     }
-    
     return $res;   
 }
 function readParkplatzData($pos,$keys){
@@ -121,13 +121,14 @@ function readParkplatzData($pos,$keys){
             }
         }
         $fields['TYPE'] = "Parkplatz";
-        if(in_array($fields['STANDORT'],$keys)){
-            $fields['LAT'] = $pos[$fields['STANDORT']]['lat'];
-            $fields['LONG'] = $pos[$fields['STANDORT']]['long'];
-            $res[] = $fields;
+        $s = $fields['STANDORT'];
+        $fields['ID'] = $s;
+        if(in_array($s,$keys)){
+            $fields['LAT'] = $pos[$s]['lat'];
+            $fields['LONG'] = $pos[$s]['long'];
+            $res[$s] = $fields;
         }
     }
-    
     return $res; 
 }
 function readEStationenData($pos,$keys){
@@ -149,13 +150,14 @@ function readEStationenData($pos,$keys){
             }
         }   
 	   $fields['TYPE'] = "ELadestation";
-        if(in_array($fields['STANDORT'],$keys)){
-            $fields['LAT'] = $pos[$fields['STANDORT']]['lat'];
-            $fields['LONG'] = $pos[$fields['STANDORT']]['long'];
-            $res[] = $fields;
+        $s = $fields['STANDORT'];
+        $fields['ID'] = $s;
+        if(in_array($s,$keys)){
+            $fields['LAT'] = $pos[$s]['lat'];
+            $fields['LONG'] = $pos[$s]['long'];
+            $res[$s] = $fields;
         }
     }
-    
     return $res; 
 }
 ?>
