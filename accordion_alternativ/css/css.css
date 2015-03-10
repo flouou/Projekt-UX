@@ -1,0 +1,363 @@
+@font-face {font-family: 'Sansation'; src: url('../fonts/Sansation.ttf')}
+body{
+    margin: 0px;
+    background-color: #548DD4;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-family: 'Sansation';
+    color: rgb(84,141,212);
+}
+
+#content{
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    width: 300%;
+    height: 100%;
+    position: fixed;
+    left: 0px;
+}
+.fixedPos{
+    position: fixed;
+}
+#start, #map, #options{
+    margin: 0px;
+    height: 100%;
+    -webkit-transition: all .3s;
+}
+
+#start{
+    background-color: white;
+    left: 0px;
+    width: 85%;
+    border-left: 30px solid #548DD4;
+}
+
+#map{
+    background-color: #548DD4;
+    left: 100%;
+    width: 130%;
+    margin-left: -15%;
+    margin-right: 15%;
+}
+#options{
+    background-color: white;
+    width: calc(85% - 30px);
+    left: 215%;
+    border-right: 30px solid #548DD4;
+    padding-left: 0px;
+}
+
+.logoImage{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 123px);
+    top: 7.5px;
+}
+
+.buttonGroup{
+    width: 80%;
+    height: 40%;
+    background-color: white;
+    position: relative;
+    top: 10%;
+    left: 5%;
+}
+
+.sideButton{
+    width: 40%;
+    height: 40%;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #92D050;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    margin-top: 5%;
+    margin-left: 5%;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.sideButton:active{
+    background-color: #548DD4;
+}
+
+.sideButton:active span{
+    color: white;    
+}
+
+.sideButton i{
+    display:block;
+    color: #92D050;
+    font-size: 30px;
+    margin-top: 5px;
+}
+
+.sideButton span{
+    color: #548DD4;
+    margin: 0px;
+    padding: 0px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.bottomButtons{
+    width: 80%;
+    height: 15%;
+    background-color: white;
+    position: absolute;
+    top: 78%;
+    left: 30%;
+    align-content: center;
+}
+
+.botSideButton{
+    display:block;
+    color: #92D050;
+    font-size: 50px;
+    line-height:100%;
+    margin-top: 5px;
+    margin: 0 auto;
+    width: 30%;
+    height: 50%;
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #92D050;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    position: absolute;
+    text-align: center;
+    padding: 10px;
+}
+
+.botSideButton:nth-child(2){
+    left: 48%;
+}
+
+.botSideButton:active{
+    background-color: #548DD4;
+}
+
+.mapButton{
+    top: 0px;
+    width: 15%;
+    height: 60px;
+    z-index: 10000;
+    background-color: white;
+    -webkit-transition: left .2s;
+    transition: left .3s;
+    line-height: 60px;
+    text-align: center;
+}
+
+.mapButton:active{
+    background-color: #548DD4;   
+}
+
+.mapButton:active i{
+    color: white;    
+}
+
+.mapButton i{
+    font-size: 40px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    color: #548DD4;
+}
+
+#mapButtonRight{
+    left: 85%;
+    border-bottom-right-radius: 5px;
+}
+
+#mapButtonLeft{
+    left: 215%;
+    border-bottom-left-radius: 5px;
+}
+
+/*******************
+*  Graues Overlay  *
+*******************/
+
+.overlay{
+    position:fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    left: 100%;
+    width: 130%;
+    height:100%;
+    margin: 0px;
+    margin-left: -15%;
+    margin-right: 15%;
+    z-index:100;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+
+/*******************
+*  InvisibleSwipe  *
+*******************/
+
+.invisibleSwipe{
+    position:fixed;
+    width:15px;
+    height:100%;
+    z-index:100;
+    display:none;
+}
+
+.invisibleSwipeLeft{
+    left:0%;    
+}
+
+.invisibleSwipeRight{
+    right:0%;    
+}
+
+/*******************
+*  Suchbildschirm  *
+*******************/
+
+#options h1{
+    margin: 10px 0px;
+    margin-left: 10%;
+}
+
+#options h1:last-of-type{
+    margin-top: 50px;    
+}
+
+#options p{
+    margin-left: 10%;
+    margin-top: 0px;
+    padding: 0px;
+    font-weight: bold;
+    color: #548DD4;
+}
+
+.searchForm{
+    width: 80%;
+    height: 40px;
+    margin: 10px auto;
+}
+
+.searchForm #suchbegriff{
+    width: 78%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    display:inline-block;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    z-index: 1;
+}
+
+.searchForm #suchbegriff:focus{
+    outline: 0;    
+}
+
+.searchForm #searchButton{
+    width:18%;
+    height: 40px;
+    margin: 0px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    background-color: white;
+    color: #92D050;
+    display: inline-block;
+    font-size: 20px;
+    z-index: 100;
+    background-color: white;
+    outline: 0;
+    text-align: center;
+    line-height: 40px;
+}
+
+.searchForm #searchButton:active;{
+    background-color: #548DD4;
+}
+
+.searchForm #searchButton:focus{
+    outline: 0;    
+}
+
+.ui-autocomplete#ui-id-1{
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: white;
+    max-width: 80% !important;
+    overflow-y: auto;
+    top: 150px !important;
+    left: 30px;
+    padding-left: 0px;
+    z-index: 100;
+    border: 1px solid #92D050;
+    border-bottom: none;
+}
+
+#ui-id-1 li{
+    margin-top:8px;    
+    color: #548DD4;
+    border-bottom: 1px solid #92D050;
+}
+
+/************************
+*      Animationen      *
+************************/
+.swipeToLeft80{
+    left: -85% !important;    
+}
+
+.swipeTo80{
+    left: 85% !important;    
+}
+
+.swipeTo15{
+    left: 15% !important;
+}
+
+.swipeToLeft20{
+    left: -15% !important;    
+}
+
+.swipeToLeft100{
+    left: -100% !important;
+}
+
+.swipeToLeft200{
+    left: -200% !important;    
+}
+
+.swipeTo0px{
+    left: 0 !important;    
+}
+
+.swipeTo100{
+    left: 100% !important;    
+}
+
+.swipeTo200{
+    left:200% !important;    
+}
+
+
+/******************
+*   Map Styling   *
+******************/
+
+.leaflet-popup-close-button{
+    border-radius:100% !important;
+    top:-5px !important;
+    right:-5px !important;
+    background-color: #548DD4 !important;
+    padding: 5px !important;
+    color: white !important;
+    width: 14px !important;
+}

@@ -1,0 +1,64 @@
+#start{
+    width: 90%;
+}
+#map{
+    left: 100%;
+    width: 120%;
+    margin-left: -10%;
+    margin-right: 10%;
+}
+#options{
+    width:calc(90% - 30px);
+    left: 210%;
+}
+
+.sideButton{
+    width: 18.75%;
+    height: 75%;
+}
+
+.bottomButtons{
+    left: 38%;    
+}
+
+.botSideButton{
+    width: 16%;
+    font-size: 35px;
+    padding-top: 0px;
+}
+
+.botSideButton:nth-child(2){
+    margin-left: 25%;
+}
+
+.mapButton{
+    width: 10%;
+    height: 60px;
+    background-color: white;
+}
+
+.overlay{
+    left: 100%;
+    width:120%;
+    margin-left:-10%;
+    margin-right:10%;
+}
+
+#options h1{
+    margin-top: 5px;
+    margin-left: 10%;
+}
+
+.swipeTo80{
+    left: 90% !important;    
+}
+
+.swipeTo15{
+    left: 10% !important;    
+}
+#mapButtonRight{
+    left: 90%;
+}
+#mapButtonLeft{
+    left: 200%;
+}

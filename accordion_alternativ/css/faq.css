@@ -1,0 +1,107 @@
+/******************
+*   FAQ Styling   *
+******************/
+
+body{
+    background-color: white;
+    color: #548DD4;
+    height: auto; 
+    min-height: 100vh;
+    border-left:30px solid #548DD4;
+}
+h1{
+    font-family: 'Sansation';
+    color: rgb(84,141,212);
+    padding-left: 5%;
+    margin-left:5px;
+}
+#backToMainButton{
+    position: absolute;
+    left: 85%;
+    float: left;
+}
+
+#faqLogo{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 135px);
+    top: 7.5px;
+}
+
+.faqContent{
+    width: calc(100% - 30px);
+    height: 80%;
+    background-color: white;
+    position: relative;
+    margin-top: 20px;   
+    
+}
+.questionBox{
+    display: inline-block;
+    height: auto;
+    width: calc(100% - 15px);
+    padding-left: 5%;
+    margin: 3px;
+    color: #92D040;
+
+   
+}
+#icon{
+    color: #92D050;
+    position: absolute;
+    right: 7%;
+}
+.answerBox{
+    margin: 5px;
+    padding-left: 5px;
+    height: auto;
+    width: 95%;
+    color: black;
+    
+}
+.absPos{
+    position: absolute;
+}
+
+/************************
+*   Accordion Styling   *
+************************/
+
+.accordion, .accordion * {
+    -webkit-box-sizing:border-box; 
+    -moz-box-sizing:border-box; 
+    box-sizing:border-box;
+}
+ 
+.accordion {
+    overflow:hidden;
+
+}
+ 
+/*----- Section Titles -----*/
+.accordion-section-title {
+    color: #92D050;
+    font-weight: bold;
+    display:inline-block;
+    transition:all linear 0.15s;
+    border: 1px solid #92D050;
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    text-decoration: none;
+    width:100%;
+    height: auto;
+    padding:15px;
+    
+}
+ 
+.accordion-section-title.active, .accordion-section-title:hover {
+    text-decoration:none;
+}
+ 
+.accordion-section:last-child .accordion-section-title {
+    /*border-bottom:none;*/
+}
+ 
+/*----- Section Content -----*/
+.accordion-section-content {
+    display:none;
+}
