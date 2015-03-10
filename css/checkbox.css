@@ -32,12 +32,6 @@ input[type="checkbox"] {
 	left: 2px;
 }
 
-.customCheckbox label:hover::after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	filter: alpha(opacity=30);
-	opacity: 0.5;
-}
-
 .customCheckbox input[type=checkbox]:checked + label:after {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
