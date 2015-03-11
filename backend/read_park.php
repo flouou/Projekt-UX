@@ -23,7 +23,7 @@ $positions = array(
                 "PH W02" => array("lat" => "49.010440", "long" => "8.394485"),
                 "PH W04" => array("lat" => "49.007664", "long" => "8.395791"),
                 "PH W02" => array("lat" => "49.008319", "long" => "8.393184"),
-                "Berufsakademie Karlsruhe" => array("lat" => "49.025616", "long" => "8.385395"),
+                "Berufsakademie Karlsruhe" => array("lat" => "49.025445", "long" => "8.385638"),
                 "Filmpalast" => array("lat" => "49.000380", "long" => "8.385570"),
                 //Parkplätze/Parkscheinautomaten (nicht alle) (11 Stück)
                 "Moltkestr." => array("lat" => "49.014438", "long" => "8.390808"),

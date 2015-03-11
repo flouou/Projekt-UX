@@ -6,12 +6,15 @@ var lgParkhaus = L.layerGroup();
 var lgParkplaetze = L.layerGroup();
 var lgEStationen = L.layerGroup();
 var lgKostenlos = L.layerGroup();
+var standortMarker;
 
 var greenPHIcon;
 var yellowPHIcon;
 var redPHIcon;
 var parkplatzIcon;
 var eStationIcon;
+var standortIcon;
+var kostenlosIcon;
 var iconWidth = 43;
 var iconHeight = 54;
 var iconAnchorX = 21.5;
@@ -54,8 +57,19 @@ function initMap(targetDiv, vheight){
                     iconSize:[iconWidth,iconHeight],
                     iconAnchor: [iconAnchorX,iconAnchorY],
                     popupAnchor: [iconPopupAnchorX,iconPopupAnchorY]});
-    
+    kostenlosIcon = L.icon({
+                    iconUrl: 'images/icons/kostenlos_icon_klein.png',
+                    iconSize:[iconWidth,iconHeight],
+                    iconAnchor: [iconAnchorX,iconAnchorY],
+                    popupAnchor: [iconPopupAnchorX,iconPopupAnchorY]});
+    standortIcon = L.icon({
+                    iconUrl: 'images/standort_klein.png',
+                    iconSize:[40,40],
+                    iconAnchor: [20,40],
+                    popupAnchor: [0,-32]});
+    map.locate({maxZoom:15});
     loadData('initial');
+    map.on('locationfound', onLocationFound);
 }
 function refreshMapData(){
     loadData('update');
@@ -76,7 +90,7 @@ function loadData(mode) {
                 map.addLayer(lgKostenlos);
             } else if(mode == "update"){
                 updatePopupText();
-            }
+            }       
         }
     }
     xmlhttp.open('GET', 'backend/read_park.php', true);
@@ -107,32 +121,28 @@ function printParkmarker() {
             
             marker.bindPopup(t);
             lgParkhaus.addLayer(marker);
-            //map.addLayer(lgParkhaus);
         } else if (parken[j].TYPE == 'Parkplatz') {
             t = getParkplatzPopupText(parken[j]);
             marker = L.marker([x,y], {icon: parkplatzIcon});
             marker.bindPopup(t);
             lgParkplaetze.addLayer(marker);
-            //map.addLayer(lgParkplaetze);
         } else if (parken[j].TYPE == 'ELadestation') {
             if(parken[j].STECKDOSE.length > 0) {
-                t = "<strong>" + parken[j].STANDORT + "</strong> (" + parken[j].STADTTEIL + ")<br>" +
+                t = '<p class="popupText"><strong>' + parken[j].STANDORT + "</strong> (" + parken[j].STADTTEIL + ")<br>" +
                     "Steckertyp: " + parken[j].STECKDOSE + ",<br>" +
-                    "Ladestation ist " + parken[j].LADESTATION + ".";
+                    "Ladestation ist " + parken[j].LADESTATION + ".</p>";
             } else {
-                t = "<strong>" + parken[j].STANDORT + "</strong> (" + parken[j].STADTTEIL + ")<br>" +
-                "Ladestation ist " + parken[j].LADESTATION + ".";
+                t = '<p class="popupText"><strong>' + parken[j].STANDORT + "</strong> (" + parken[j].STADTTEIL + ")<br>" +
+                "Ladestation ist " + parken[j].LADESTATION + ".</p>";
             }
             marker = L.marker([x,y], {icon: eStationIcon});
             marker.bindPopup(t);
             lgEStationen.addLayer(marker);
-            //map.addLayer(lgEStationen);
         } else if(parken[j].TYPE == 'kostenlos'){
             t = getKostenlosPopupText(parken[j]);
-            marker = L.marker([x,y]);
+            marker = L.marker([x,y], {icon: kostenlosIcon});
             marker.bindPopup(t);
             lgKostenlos.addLayer(marker);
-            //map.addLayer(lgKostenlos);
         }
         markers[j] = marker;
     }
@@ -153,8 +163,8 @@ function getParkplatzPopupText(pm){
                 buyTicketButton;
 }
 function getKostenlosPopupText(pm){
-    return "<strong>" + pm.STANDORT + "</strong><br>" +
-                "Es stehen " + pm.anzahl + " kostenlose Parkplätze zur Verfügung.";
+    return '<p class="popupText"><strong>' + pm.STANDORT + "</strong><br>" +
+                "Es stehen " + pm.anzahl + " kostenlose Parkplätze zur Verfügung.</p>";
 }
 function updatePopupText(){
     parken = JSON.parse(xmlhttp.responseText);
@@ -192,4 +202,11 @@ function removeEStationenLayer(){
 }
 function addEStationenLayer(){
     map.addLayer(lgEStationen);
+}
+function onLocationFound(e){
+    //Für Reverse-Geocoding siehe http://wiki.openstreetmap.org/wiki/Nominatim
+    standortMarker = L.marker(e.latlng).setIcon(standortIcon);
+    standortMarker.bindPopup('<p class="popupText"><strong>Ihr Standort</strong></p>');
+    standortMarker.setZIndexOffset(300);
+    standortMarker.addTo(map);
 }
