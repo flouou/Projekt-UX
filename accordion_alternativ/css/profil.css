@@ -117,6 +117,14 @@ body{
 .accordion-section-title.active, .accordion-section-title:hover {
     text-decoration:none;
 }
+
+.ion-chevron-down{
+    float:right;    
+}
+
+.ion-chevron-up{
+    float:right;
+}
  
 /*----- Section Content -----*/
 /*.accordion-section-content {

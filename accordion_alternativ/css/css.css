@@ -302,7 +302,7 @@ h1{
     border-bottom: none;
 }
 
-#ui-id-1 li{
+.ui-autocomplete#ui-id-1 li{
     margin-top:8px;    
     color: #548DD4;
     border-bottom: 1px solid #92D050;

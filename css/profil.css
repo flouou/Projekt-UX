@@ -25,15 +25,16 @@ body{
     position: relative;
     margin-top: 20px;
     padding-bottom: 20px;
+    padding-left:10%;
 }
-.questionBox{
+/*.questionBox{
     display: inline-block;
     height: auto;
     width: calc(100% - 15px);
     padding-left: 5%;
     margin: 3px;
     color: #92D040;
-}
+}*/
 .answerBox{
     margin: 5px;
     padding-left: 5px;
@@ -42,6 +43,7 @@ body{
     color: black;
     
 }
+
 #icon{
     color: #92D050;
     position: absolute;
@@ -61,32 +63,32 @@ body{
     height:100%;
 }
 
-.profil-accordion h1{
+.profil-header{
     padding-left: 5%; 
     margin-left:5px;
 }
 
-.profil-accordion .accordion-section .answerBox img{
+.profil-accordion .answerBox img{
     width: 100%;
 }
 
-.profil-accordion .accordion-section .answerBox ul{
+.profil-accordion .answerBox ul{
     padding-left: 0px;
     list-style: none;
     color: #548DD4;
 }
 
-.profil-accordion .accordion-section .answerBox ul li{
+.profil-accordion .answerBox ul li{
     font-size: 20px;
     margin-top: 20px;
     border-bottom: 1px solid #92D050;
 }
 
-.profil-accordion .accordion-section .answerBox ul li span{
+.profil-accordion .answerBox ul li span{
     font-weight: bold;
 }
 
-.profil-accordion .accordion-section .answerBox ul li span i{
+.profil-accordion .answerBox ul li span i{
     float:right;
     vertical-align: middle;
     font-size: 30px;
@@ -103,7 +105,11 @@ body{
     width:100%;
     height: auto;
     padding:15px;
-    
+    margin: 2px 0px;
+}
+
+.accordion-section-title:focus{
+    outline:none;    
 }
 .accordion-section-title i{
     float: right;
@@ -111,12 +117,16 @@ body{
 .accordion-section-title.active, .accordion-section-title:hover {
     text-decoration:none;
 }
- 
-.accordion-section:last-child .accordion-section-title {
-    /*border-bottom:none;*/
+
+.ion-chevron-down{
+    float:right;    
+}
+
+.ion-chevron-up{
+    float:right;
 }
  
 /*----- Section Content -----*/
-.accordion-section-content {
+/*.accordion-section-content {
     display:none;
-}
+}*/
