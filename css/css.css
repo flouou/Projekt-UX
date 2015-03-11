@@ -77,6 +77,7 @@ h1{
     margin-left: 5%;
     text-align: center;
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -294,7 +295,7 @@ h1{
     background-color: white;
     max-width: 80% !important;
     overflow-y: auto;
-    top: 150px !important;
+    top: 140px !important;
     left: 30px;
     padding-left: 0px;
     z-index: 100;

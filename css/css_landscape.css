@@ -49,6 +49,16 @@
     margin-left: 10%;
 }
 
+#options h1:last-of-type{
+    margin-top: 10px;    
+}
+
+.customCheckbox{
+    margin: 0px 20px;
+    margin-right:200px;
+    display:inline-block;
+}
+
 .swipeTo80{
     left: 90% !important;    
 }

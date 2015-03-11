@@ -23,6 +23,14 @@
     <script src="js/shake.js"></script>
     <script src="js/map.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            //Initalisiere die Map bzw. erzeuge Map in targetDiv mit spezifischer View-Height: initMap(targetDiv, viewHeight)
+            initMap('map', 15);
+            //starte Timer, um die Daten alle 2 Minuten zu aktualisieren
+            setInterval(refreshMapData,120000);
+        });
+    </script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/map.css" />
@@ -42,7 +50,7 @@
                 
                 <a class="sideButton" href="ticket.html">
                     <i class="ion-pricetag"></i>
-                    <span>eTicket<br />einlösen</span>
+                    <span>eTicket<br />lösen</span>
                 </a>
                 
                 <a href="NFC.html" class="sideButton">
@@ -55,10 +63,6 @@
                 </a>
             </div>
             <div class="bottomButtons">
-                <!--<div class="botSideButton">
-                    <i class="ion-gear-b"></i>
-                    </div>-->
-                
                 <a class="botSideButton" href="FAQ.html">
                     <div>
                         <i class="ion-help"></i>
@@ -104,6 +108,11 @@
                 <input type="checkbox" value="None" id="customCheckbox_EL" name="check" />
                 <label for="customCheckbox_EL"></label>
                 <span style="white-space: nowrap">Elektro-Ladestationen</span>
+            </div>
+            <div class="customCheckbox">
+                <input type="checkbox" value="None" id="customCheckbox_KP" name="check" />
+                <label for="customCheckbox_KP"></label>
+                <span style="white-space: nowrap">Kostenlose Parkplätze</span>
             </div>
         </div>
     </div>
