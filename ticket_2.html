@@ -22,9 +22,9 @@
     <script src="js/ticket.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            datum();
+            setDatum();
+            setInterval(setDatum,60000);
         });
-        //datum();
     </script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
@@ -50,7 +50,7 @@
             <div class="searchForm" >
                 
                 <input class="suchbegriff" type="datetime" id="zeit"  value="">
-                <div id="searchButton"><i class="ion-log-in"></i></div>
+                <div id="searchButton" onclick=""><i class="ion-log-in"></i></div>
             </div>
             
         </div>

@@ -1,13 +1,35 @@
+
 function read(id){
     return document.getElementById(id).value;
 }
-function write(id, val){
-    document.getElementById(id).innerHTML = val;
-}
-function datum(){
+
+//Datum beim Laden der Seite setzen
+
+function setDatum(){
     var datum = new Date();
-    //alert(datum);
+    //Datum formatieren
+    var tag = datum.getDate();
+    var monat = datum.getMonth();
+    var jahr = datum.getYear()+1900;
+    var std = datum.getHours();
+    var min = datum.getMinutes();
     
-    document.getElementById('zeit').value = datum;
-    //write("zeit", datum);
+    //0 vor einstellige Zahlen setzten
+    if(tag < 10){
+        tag = "0" + tag;
+    }
+    
+    if(monat < 10){
+        monat = "0" + monat;
+    }
+    if(std < 10){
+        std = "0" + std;
+    }
+    
+    if(min < 10){
+        min = "0" + min;
+    }
+        
+    document.getElementById('zeit').value = tag + "." + monat + "." + jahr + "  -  " + std + ":" + min;
 }
+
