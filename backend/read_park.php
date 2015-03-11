@@ -83,6 +83,9 @@ function readParkhausData($pos, $keys){
                 $fields[$name] = $value;
             }
         }
+        if($fields['PH_NAME'] == "Berufsakademie Karlsruhe" || $fields['PH_NAME'] == "Filmpalast"){
+            $fields['FREIE_PARKPLAETZE'] = 35;
+        }
         $fields['TYPE'] = "Parkhaus";
         if(in_array($fields['PH_KEY'],$keys)){
             $k = $fields['PH_KEY'];

@@ -22,10 +22,10 @@ var iconAnchorY = 54;
 var iconPopupAnchorX = 0;
 var iconPopupAnchorY = -48;
 
-var checkInButton = '<p class="buttonWrapper"><a href="#" class="parkXButton">Ins Parkhaus einchecken</a></p>';
-var buyTicketButton = '<p class="buttonWrapper"><a href="#" class="parkXButton">eTicket lösen</a></p>';
+var checkInButton = '<p class="buttonWrapper"><a href="NFC.html" class="parkXButton">Ins Parkhaus einchecken</a></p>';
+var buyTicketButton = '<p class="buttonWrapper"><a href="ticket.html" class="parkXButton">eTicket lösen</a></p>';
 
-function initMap(targetDiv, vheight){
+function initMap(targetDiv, vheight, toLocation){
     map = L.map(String(targetDiv)).setView([49.009654, 8.403903], parseInt(vheight));    
     $(".leaflet-control-zoom").css("visibility", "hidden");
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
@@ -67,7 +67,8 @@ function initMap(targetDiv, vheight){
                     iconSize:[40,40],
                     iconAnchor: [20,40],
                     popupAnchor: [0,-32]});
-    map.locate({maxZoom:15});
+    
+    map.locate({setView: toLocation, maxZoom:15});
     loadData('initial');
     map.on('locationfound', onLocationFound);
 }

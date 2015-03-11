@@ -2,7 +2,7 @@ $(document).ready(function(){
     //Initalisiere die Map bzw. erzeuge Map in targetDiv mit spezifischer View-Height: initMap(targetDiv, viewHeight)
     initMap('map', 15);
     //starte Timer, um die Daten alle 2 Minuten zu aktualisieren
-    setInterval(refreshMapData,120000);
+    setInterval(refreshMapData,120000,false);
 });
 $(document).ready(function(){
     
