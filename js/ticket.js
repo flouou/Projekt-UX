@@ -33,3 +33,5 @@ function setDatum(){
     document.getElementById('zeit').value = tag + "." + monat + "." + jahr + "  -  " + std + ":" + min;
 }
 
+
+
