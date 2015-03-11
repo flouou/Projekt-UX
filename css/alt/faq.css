@@ -62,6 +62,15 @@ h1{
 .absPos{
     position: absolute;
 }
+#profilContent{
+    clear: both;
+    width: calc(100% - 30px);
+    height: 80%;
+    background-color: white;
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left:10%;
 
 /************************
 *   Accordion Styling   *
@@ -77,8 +86,74 @@ h1{
     overflow:hidden;
 
 }
- 
-/*----- Section Titles -----*/
+.profil-accordion{
+    height:100%;
+}
+
+.profil-header{
+    padding-left: 5%; 
+    margin-left:5px;
+}
+
+.profil-accordion .answerBox img{
+    width: 100%;
+}
+
+.profil-accordion .answerBox ul{
+    padding-left: 0px;
+    list-style: none;
+    color: #548DD4;
+}
+
+.profil-accordion .answerBox ul li{
+    font-size: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #92D050;
+}
+
+.profil-accordion .answerBox ul li span{
+    font-weight: bold;
+}
+
+.profil-accordion .answerBox ul li span i{
+    float:right;
+    vertical-align: middle;
+    font-size: 30px;
+    color: #92D050;   
+}
+.accordion-section-title {
+    color: #92D050;
+    font-weight: bold;
+    display:inline-block;
+    transition:all linear 0.15s;
+    border: 1px solid #92D050;
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    text-decoration: none;
+    width:100%;
+    height: auto;
+    padding:15px;
+    margin: 2px 0px;
+}
+
+.accordion-section-title:focus{
+    outline:none;    
+}
+.accordion-section-title i{
+    float: right;
+}
+.accordion-section-title.active, .accordion-section-title:hover {
+    text-decoration:none;
+}
+
+.ion-chevron-down{
+    float:right;    
+}
+
+.ion-chevron-up{
+    float:right;
+}
+
+/*----- Section Titles -----
 .accordion-section-title {
     color: #92D050;
     font-weight: bold;
@@ -101,7 +176,7 @@ h1{
     /*border-bottom:none;*/
 }
  
-/*----- Section Content -----*/
+/*----- Section Content -----
 .accordion-section-content {
     display:none;
-}
+}*/

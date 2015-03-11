@@ -15,31 +15,33 @@
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
-    <script src="js/accordion.js"></script>
+    <script src="js/accordion_jquery.js"></script>
+    <script src="js/jquery-ui.min-accordion.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
-    <link rel="stylesheet" href="css/faq.css" />
-    <link rel="stylesheet" href="css/faq_landscape.css" media="(orientation: landscape)" />
+    <link rel="stylesheet" href="css/profil.css" />
+    <link rel="stylesheet" href="css/profil_landscape.css" media="(orientation: landscape)" />
 </head>
     
 <body>           
-    <img class="logoImage" id="faqLogo" src="images/logo_transparent.png" />
+    <img class="logoImage" id="profilLogo" src="images/logo_transparent.png" />
     
     <div class="mapButton absPos" id="backToMainButton">
         <a href="main.html">
             <i class="ion-backspace-outline"></i>
         </a>
     </div>
+        <h1 class="profil-header">FAQ - Häufig gestellte Fragen</h1>
+    
+    <div id="profilContent" class="accordion profil-accordion">
+        
 
-    <div class="faqContent accordion">
-        <h1>FAQ - Häufig gestellte Fragen</h1>
-
-        <div class="questionBox accordion-section">
-            <a class="accordion-section-title" href="#accordion-1">
-                Warum soll ich mich registrieren?
-                <i class="ion-chevron-down" id=icon></i></a>
-            <div id="accordion-1" class="answerBox accordion-section-content">
+        <h3 class="accordion-section-title">
+            Warum soll ich mich registrieren?
+        </h3>
+            <div class="answerBox accordion-section-content">
                 <p> Nur wenn Sie sich registrieren, haben Sie die Möglichkeit ein eTicket zu lösen. Das ermöglicht es Ihnen bargeldlos und
                     minutengenau zu bezahlen. </p>
                 <p>Das von Ihnen gespeicherte Kennzeichen wird dem elektronischen System des Ordnungsamtes übermittelt, sodass die Mitarbeiter
@@ -47,13 +49,11 @@
                 <p>Sie haben die Möglichkeit mit Kreditkarte oder PayPal zu bezahlen. Die bei der Registrierung eingestellte Bezahlmethode
                     können Sie jederzeit unter "Mein Konto" ändern.</p>
             </div>
-        </div>
 
-        <div class="questionBox accordion-section">
-            <a class="accordion-section-title" href="#accordion-2">
-                Wie kann ich nach einem Parkplatz suchen?
-                <i class="ion-chevron-down" id=icon></i></a>
-            <div id="accordion-2" class="answerBox accordion-section-content">
+        <h3 class="accordion-section-title">
+            Wie kann ich nach einem Parkplatz suchen?
+        </h3>    
+            <div class="answerBox accordion-section-content">
             <p>Um einen Parkplatz zu suchen, können sie zunächst durch eine Wischbewegung, oder mit Hilfe des Kartensymbols am oberen rechten
                 Rand, nach rechts auf die Kartenansicht wechseln. Es werden Ihnen alle Parkhäuser, Parkautomaten und Ladestationen für
                 elektrische Autos angezeigt. Durch Anklicken einer Markierung öffnen sich Zusatzinformationen zur Parkmöglichkeit.</p>
@@ -61,38 +61,32 @@
                 rechten Rand, verwenden. In der Suchmaske können Sie den Zielort eingeben und sich Parkmöglichkeiten auf der Karte 
                 anzeigen lassen, sowie verschiedene Filteroptionen wählen (z.B. nur Parkhäuser anzeigen).</p>
             </div>
-        </div>
 
-        <div class="questionBox accordion-section">
-            <a class="accordion-section-title" href="#accordion-3">
-                Was bedeuten die Symbole auf der Karte?
-                <i class="ion-chevron-down" id=icon></i></a>
-            <div id="accordion-3" class="answerBox accordion-section-content">
+        <h3 class="accordion-section-title">
+            Was bedeuten die Symbole auf der Karte?
+        </h3>
+            <div class="answerBox accordion-section-content">
                 <p>Die Pins symbolisierten Ihnen, welche Art von Parkplatz sich an der Stelle befindet (Parkhaus, Parkautomat, etc.). Die
                     verschiedenen Farben geben Ihnen als Ampel an, ob noch Parkplätze verfügbar sind. Bei Rot sind keine Parkplätze mehr
                     vorhanden, gelb zeigt nur noch wenige Parkplätze an und bei grün sind noch ausreichend freie Parkplätze vorhanden.    
                 </p>
             </div>
-        </div>
 
-        <div class="questionBox accordion-section">
-            <a class="accordion-section-title" href="#accordion-4">
+        <h3 class="accordion-section-title">
                 Wie löse ich ein eTicket in einem Parkhaus?
-                <i class="ion-chevron-down" id=icon></i></a>
-            <div id="accordion-4" class="answerBox accordion-section-content">
+        </h3>
+            <div class="answerBox accordion-section-content">
                 <p>Um ein eTicket im Parkhaus lösen zu können, muss ihr Handy NFC-fähig sein. Wenn das der Fall ist, 
                     können Sie beim Reinfahren in ein Parkhaus, den Button "Parkhaus einchecken" auf der Startseite wählen.
                     Halten Sie dann Ihr Handy an den Kontrollautomaten, damit dieser die benötigten Daten übermitteln kann.
                     Ist die Registrierung erfolgreich verlaufen, öffnet sich die Schranke und auf Ihrem Gerät wird die Startzeit angezeigt.    
                 </p>
             </div>
-        </div>
 
-        <div class="questionBox accordion-section">
-            <a class="accordion-section-title" href="#accordion-5">
+        <h3 class="accordion-section-title">
                 Wie löse ich ein eTicket an einem Parkautomaten?
-                <i class="ion-chevron-down" id=icon></i></a>
-            <div id="accordion-5" class="answerBox accordion-section-content">
+        </h3>
+            <div class="answerBox accordion-section-content">
                 <p>Wählen Sie dazu den Button „eTicket lösen“ auf der Startseite. Wenn Sie die Ortungsfunktion Ihres Gerätes angeschaltet
                     haben, werden Ihnen die Parkautomaten in einem Umkreis von 500m angezeigt und Sie können den gewünschten auswählen.</p>
                 <p>Wenn Sie die Ortung nicht nutzen, können Sie über die Suchleiste Ihren Standort angeben. Ihnen werden dann die
@@ -101,7 +95,6 @@
                     Minuten) lösen möchten oder ob Sie einen Startzeitpunkt setzten möchten. In beiden Fällen erhalten Sie eine
                     Benachrichtigung, wenn Ihr Ticket abgelaufen ist bzw. die zulässige Höchstparkdauer erreicht wurde.</p>
             </div>
-        </div>
         
     </div>
 

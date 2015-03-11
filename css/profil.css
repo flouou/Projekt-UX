@@ -64,8 +64,8 @@ body{
 }
 
 .profil-header{
-    padding-left: 5%; 
-    margin-left:5px;
+    padding-left: 10%; 
+    /*margin-left:5px;*/
 }
 
 .profil-accordion .answerBox img{
