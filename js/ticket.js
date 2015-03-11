@@ -8,6 +8,6 @@ function datum(){
     var datum = new Date();
     //alert(datum);
     
-    document.getElementById('zeit').value = 'datum';
+    document.getElementById('zeit').value = datum;
     //write("zeit", datum);
 }
