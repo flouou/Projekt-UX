@@ -14,14 +14,12 @@
     <!--Icon Pack-->
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Eigenes JavaScript-->
-    <script src="js/jquery-ui.min-accordion.js"></script>
     <script src="js/shake.js"></script>
-    <script src="js/accordion_jquery.js"></script>
+    <script src="js/accordion.js"></script>
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
     <!--temporär-->
-    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">-->
     <link rel="stylesheet" href="css/profil.css" />
     <link rel="stylesheet" href="css/profil_landscape.css" media="(orientation: landscape)"/>
 </head>
@@ -35,33 +33,41 @@
                 <i class="ion-backspace-outline"></i>
             </a>
         </div>
-        <h1 class="profil-header">
-                Mein Profil
-        </h1>
         <div id="profilContent" class="accordion profil-accordion">
+            <h1>
+                Mein Profil
+            </h1>
 
-                <h3 class="accordion-section-title">
+            <div class="questionBox accordion-section">
+                <a class="accordion-section-title" href="#accordion-1">
                     Zahlungsoptionen
-                </h3>
-                <div class="answerBox accordion-section-content">
+                    <i class="ion-chevron-down" id="icon"></i>
+                </a>
+                <div id="accordion-1" class="answerBox accordion-section-content">
                     <img src="http://placehold.it/200x100" />
                 </div><!-- end #accordion-1-->
+            </div><!-- end .questionBox.accordion-section-->
 
-                <h3 class="accordion-section-title">
+            <div class="questionBox accordion-section">
+                <a class="accordion-section-title" href="#accordion-2">
                     Rechnungen
-                </h3>
-                <div class="answerBox accordion-section-content">
+                    <i class="ion-chevron-down" id=icon></i>
+                </a>
+                <div id="accordion-2" class="answerBox accordion-section-content">
                     <ul>
                         <li><span>25. März 2015</span> - Duale Hochschule Baden Württemberg (DHBW) - 2.50€ (8h 38min)</li>
                         <li><span>21. März 2015</span> - Ettlinger Tor - 1.86€ (2h 12min)</li>
                         <li><span>03. März 2015</span> - Am Staatstheater - 3.22€ (4h 12min)</li>
                     </ul>
                 </div><!-- end #accordion-2-->
+            </div><!-- end .questionBox.accordion-section-->
 
-                <h3 class="accordion-section-title">
+            <div class="questionBox accordion-section">
+                <a class="accordion-section-title" href="#accordion-3">
                     Meine Favoriten
-                </h3>
-                <div class="answerBox accordion-section-content">
+                    <i class="ion-chevron-down" id=icon></i>
+                </a>
+                <div id="accordion-3" class="answerBox accordion-section-content">
                     <ul>
                         <li>
                             Duale Hochschule Baden Württemberg (DHBW)
@@ -74,11 +80,14 @@
                         </li>
                     </ul>
                 </div><!-- end #accordion-3-->
+            </div><!-- end .questionBox.accordion-section-->
 
-                <h3 class="accordion-section-title">
+            <div class="questionBox accordion-section">
+                <a class="accordion-section-title" href="#accordion-4">
                     Persönliche Daten
-                </h3>
-                <div class="answerBox accordion-section-content">
+                    <i class="ion-chevron-down" id=icon></i>
+                </a>
+                <div id="accordion-4" class="answerBox accordion-section-content">
                     <ul>
                         <li>
                             <span>Name <i class="ion-edit"></i></span><br />
@@ -95,6 +104,7 @@
                     </ul>
                 </div><!-- end #accordion-4-->
             </div><!-- end .questionBox.accordion-section-->
+        </div><!-- end .faqContent.accordion-->
     <!--</div><!-- end #profil-main-->       
 
 </body>
