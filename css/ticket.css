@@ -16,7 +16,8 @@ h1{
     font-family: 'Sansation';
     color: rgb(84,141,212);
     padding-left: 5%;
-    margin-left:5px;
+    margin-left: 5%;
+    
 }
 #ticketLogo{
     height: 45px;
@@ -46,13 +47,13 @@ h1{
     width: calc(100% - 15px);
     height: 150px; 
     position: relative;  
-    margin-left: 5%;
+    margin-left: 10%;    
 }
 ul{
     padding-left: 0px;
     list-style: none;
     color: #548DD4;
-    margin-left: 6%;
+    margin-left: 10%;
 }
 ul li{
     font-size: 20px;
@@ -64,61 +65,15 @@ a{
     text-decoration: none;
     color: #548DD4;
 }
-/* Nur Temporär bis Lösung Dominik*/
-
-/****************************
-*   Zurück-Button Styling   *
-****************************/
-.mapButton{
-    top: 0px;
-    width: 15%;
-    height: 60px;
-    z-index: 10000;
-    background-color: white;
-    -webkit-transition: left .2s;
-    transition: left .3s;
-    line-height: 60px;
-    text-align: center;
-}
-
-.mapButton:active{
-    background-color: #548DD4;   
-}
-
-.mapButton:active i{
-    color: white;    
-}
-
-.mapButton i{
-    font-size: 40px;
-    width: 100%;
-    text-align: center;
-    vertical-align: middle;
-    color: #548DD4;
-}
-/******************
-*   Map Styling   *
-******************/
-.leaflet-popup-close-button{
-    border-radius:100% !important;
-    top:-5px !important;
-    right:-5px !important;
-    background-color: #548DD4 !important;
-    padding: 5px !important;
-    color: white !important;
-    width: 14px !important;
-}
-/*******************
-*  Suchbildschirm  *
-*******************/
 .searchForm{
-    width: calc(100% - 22px);
+    width: calc(100% - 30px);
+    margin-left: 10%;
     height: 40px;
-    margin-left: 5%;
-    padding-left: 2px;
+    
+    
 }
 
-.searchForm #startzeit{
+.searchForm .suchbegriff{
     width: 78%;
     height: 40px;
     margin: 0px;
@@ -132,14 +87,15 @@ a{
     z-index: 1;
 }
 
-.searchForm #startzeit:focus{
+.searchForm .suchbegriff:focus{
     outline: 0;    
 }
 
 .searchForm #searchButton{
-    width:18%;
+    position: absolute;
+    width:15%;
     height: 40px;
-    margin: 0px;
+    margin: 2px;
     border: 1px solid #92D050;
     border-radius: 5px;
     background-color: white;
@@ -151,6 +107,7 @@ a{
     outline: 0;
     text-align: center;
     line-height: 40px;
+    margin-top: 0px;
 }
 
 .searchForm #searchButton:active;{
@@ -160,5 +117,12 @@ a{
 .searchForm #searchButton:focus{
     outline: 0;    
 }
+/*
+.searchForm{
+    width: calc(100% - 30px);
+    margin-left: 10%;
+}
+.searchForm #searchButton{
+    width: 15%;
+}*/
 
-/*Ende Temp-Lsg.*/

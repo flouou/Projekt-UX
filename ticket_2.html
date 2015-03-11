@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <title>Prototyping Test_1</title>
+    <title>eTicket lösen</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <!--Roboto Font-->
     <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <!--Inhalte für die Karte einbinden-->
@@ -19,9 +20,12 @@
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
     <script src="js/ticket.js"></script>
+    <script type="text/javascript">
+        datum();
+    </script>
     <!--Eigenes CSS-->
-    <!--<link rel="stylesheet" href="css/css.css" />
-    <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />-->
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
     <link rel="stylesheet" href="css/ticket.css" />
     <link rel="stylesheet" href="css/ticket_landscape.css" media="(orientation: landscape)" />
 </head>
@@ -40,10 +44,26 @@
         
         <div>
             <h1>Startpunkt setzen</h1>
-            <div class="searchForm">
-                <input type="text" id="startzeit">
+            <div class="searchForm" >
+                
+                <input class="suchbegriff" type="datetime" id="zeit"  value="">
                 <div id="searchButton"><i class="ion-log-in"></i></div>
             </div>
+            
+        </div>
+    
+            
+            <h1>Parkdauer festlegen</h1>
+            <div  class="searchForm">
+                <select class="suchbegriff" id="">
+                    <option>15 Minuten</option>
+                    <option>20 Minuten</option>
+                    <option>25 Minuten</option>
+                    <option>30 Minuten</option>
+                </select>
+                <div id="searchButton"><i class="ion-log-in"></i></div>
+            </div>
+            
         </div>
         
         
