@@ -1,4 +1,5 @@
 @font-face {font-family: 'Sansation'; src: url('../fonts/Sansation.ttf')}
+@font-face {font-family: 'Roboto'; src: url('../fonts/Roboto-Thin.ttf')}
 body{
     margin: 0px;
     background-color: #548DD4;
