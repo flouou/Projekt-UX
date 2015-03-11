@@ -1,5 +1,6 @@
 #nfc #main{
-    width: calc(100% - 30px);    
+    width: calc(100% - 30px);
+    font-weight: bold;
 }
 
 .nfcHeader{
