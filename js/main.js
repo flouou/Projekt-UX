@@ -139,7 +139,11 @@ $(document).ready(function(){
             "Ludwigsplatz",
             "Duale Hochschule Baden-Württemberg (DHBW)",
             "Filmpalast"
-        ]
+        ],
+        messages: {
+            noResults: '',
+            results: function() {}
+        }
     });
     
     $( ".suchbegriffTicket" ).autocomplete({
@@ -155,7 +159,11 @@ $(document).ready(function(){
             "Moltkrestraße",
             "Bahnhofsplatz West",
             "Durlacher Allee 10"
-        ]
+        ],
+        messages: {
+            noResults: '',
+            results: function() {}
+        }
     });
     
     
