@@ -118,6 +118,28 @@ a{
 .searchForm #searchButton:focus{
     outline: 0;    
 }
+.abbrechenButton{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    border: 1px solid #92D050;
+    background-color: white;
+    color: #548DD4;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+}
+
+.abbrechenButton:active{
+    background-color: #548DD4;
+    color: white;
+}
+
+.abbrechenButton i{
+    color: #92D050;
+}
 /*
 .searchForm{
     width: calc(100% - 30px);

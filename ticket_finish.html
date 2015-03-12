@@ -41,50 +41,20 @@
     </div>
 
     <div class="ticketContent">
-        <h1>Gewählter Parkplatz:</h1>
-            <ul>
-                <li>
-                    <span>
-                        <?php
-                            echo $_GET['parkplatz'];
-                        ?>
-                    </span>
-                </li>
-            </ul>
+        <h1>Parkticket gebucht</h1>
+            <p style="margin-left: 10%; font-weight: bold;">Sie haben Ihr Parkticket erfolgreich gebucht!</p>
         
-        <div>
-            <p style="margin-left: 10%; font-weight: bold;">Wählen Sie entweder den aktuellen Startzeitpunkt oder bestimmen Sie eine feste Parkdauer</p>
-            <h1>Startzeitpunkt</h1>
-            
-            <form class="searchForm" action="ticket_finish.html">
-                <input class="suchbegriff" type="datetime" id="zeit" disabled="disabled">
-                <input type="submit"id="searchButton" value="&#xf29e">
-            </form>
-            
-        </div>
-    
-            
-            <h1>Parkdauer</h1>
-            <form class="searchForm" action="ticket_finish.html">
-                <select class="suchbegriff" id="" style="height: 43px; ">
-                    <option>15 Minuten</option>
-                    <option>20 Minuten</option>
-                    <option>25 Minuten</option>
-                    <option>30 Minuten</option>
-                </select>
-                <input type="submit"id="searchButton" value="&#xf29e">
-            </form>
         
+            
             <a href="main.html">
                 <div class="abbrechenButton">
-                    <i class="ion-close-circled"></i> Abbrechen
+                    <i class="ion-android-checkmark-circle"></i> OK
                 </div> 
             </a>
             
         </div>
+
         
-        
-        
-    </div>
+
 </body> 
 </html>
