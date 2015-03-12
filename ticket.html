@@ -23,10 +23,13 @@
     <script src="js/main.js"></script>
     <script>
         $(document).ready(function(){
-    //Initalisiere die Map bzw. erzeuge Map in targetDiv mit spezifischer View-Height: initMap(targetDiv, viewHeight)
-    initMap('ticketMap', 15, true);
-    //starte Timer, um die Daten alle 2 Minuten zu aktualisieren
-    setInterval(refreshMapData,120000);
+            //Initalisiere die Map bzw. erzeuge Map in targetDiv mit spezifischer View-Height: initMap(targetDiv, viewHeight)
+            initMap('ticketMap', 15, true);
+            //starte Timer, um die Daten alle 2 Minuten zu aktualisieren
+            setInterval(refreshMapData,120000);
+            /*removeParkhausLayer();
+            removeEStationenLayer();
+            removeKostenlosLayer();*/
 });
     </script>
     <!--Eigenes CSS-->
@@ -48,7 +51,7 @@
     </div>
 
     <div class="ticketContent">
-        <h1>eTicket lösen</h1>
+        <h1>Parkplatz auswählen</h1>
         
         <div class="ticketMap" id="ticketMap">
             

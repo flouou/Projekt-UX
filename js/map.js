@@ -21,6 +21,7 @@ var iconAnchorX = 21.5;
 var iconAnchorY = 54;
 var iconPopupAnchorX = 0;
 var iconPopupAnchorY = -48;
+var mapTargetDiv;
 
 var checkInButton = '<p class="buttonWrapper"><a href="NFC.html" class="parkXButton">Ins Parkhaus einchecken</a></p>';
 var buyTicketButton = '<p class="buttonWrapper"><a href="ticket.html" class="parkXButton">eTicket lösen</a></p>';
@@ -31,6 +32,7 @@ function initMap(targetDiv, vheight, toLocation){
     L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
         id: 'examples.map-i875mjb7'
     }).addTo(map);
+    mapTargetDiv = targetDiv;
     
     greenPHIcon = L.icon({
                     iconUrl: 'images/icons/parkhaus_icon_grün_klein.png',
@@ -71,6 +73,7 @@ function initMap(targetDiv, vheight, toLocation){
     map.locate({setView: toLocation, maxZoom:15});
     loadData('initial');
     map.on('locationfound', onLocationFound);
+    map.on('locationerror', onLocationError);
 }
 function refreshMapData(){
     loadData('update');
@@ -91,7 +94,12 @@ function loadData(mode) {
                 map.addLayer(lgKostenlos);
             } else if(mode == "update"){
                 updatePopupText();
-            }       
+            }
+            if(mapTargetDiv == "ticketMap"){
+                removeEStationenLayer();
+                removeKostenlosLayer();
+                removeParkhausLayer();
+            }
         }
     }
     xmlhttp.open('GET', 'backend/read_park.php', true);
@@ -204,10 +212,19 @@ function removeEStationenLayer(){
 function addEStationenLayer(){
     map.addLayer(lgEStationen);
 }
+function removeKostenlosLayer(){
+    map.removeLayer(lgKostenlos);
+}
+function addKostenlosLayer(){
+    map.addLayer(lgKostenlos);
+}
 function onLocationFound(e){
     //Für Reverse-Geocoding siehe http://wiki.openstreetmap.org/wiki/Nominatim
     standortMarker = L.marker(e.latlng).setIcon(standortIcon);
     standortMarker.bindPopup('<p class="popupText"><strong>Ihr Standort</strong></p>');
     standortMarker.setZIndexOffset(300);
     standortMarker.addTo(map);
+}
+function onLocationError(e){
+    map.setView([49.009654, 8.403903], 15);
 }
