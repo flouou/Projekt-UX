@@ -125,6 +125,11 @@ body{
 .ion-chevron-up{
     float:right;
 }
+/*Schrift innerhlab des <p> fett für FAQ */
+
+p{
+    font-weight: bold;
+}
  
 /*----- Section Content -----*/
 /*.accordion-section-content {

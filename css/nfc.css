@@ -1,5 +1,7 @@
+@font-face {font-family: 'Roboto'; src: url('../fonts/Roboto-Thin.ttf')}
 #nfc #main{
-    width: calc(100% - 30px);    
+    width: calc(100% - 30px);
+    font-weight: bold;
 }
 
 .nfcHeader{

@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
     <link rel="icon" type="image/png" href="images/favicon.png" />
-    <!--Roboto Font-->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
     <!--Inhalte für die Karte einbinden-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
@@ -56,25 +54,25 @@
         
         <div>
             <h1>Startpunkt setzen</h1>
-            <div class="searchForm" >
-                
-                <input class="suchbegriff" type="datetime" id="zeit"  value="">
-                <div id="searchButton" onclick=""><i class="ion-log-in"></i></div>
-            </div>
+            
+            <form class="searchForm" action="">
+                <input class="suchbegriff" type="datetime" id="zeit" disabled="disabled">
+                <input type="submit"id="searchButton" value="&#xf29e">
+            </form>
             
         </div>
     
             
             <h1>Parkdauer festlegen</h1>
-            <div  class="searchForm">
-                <select class="suchbegriff" id="">
+            <form class="searchForm" action="">
+                <select class="suchbegriff" id="" style="height: 43px; ">
                     <option>15 Minuten</option>
                     <option>20 Minuten</option>
                     <option>25 Minuten</option>
                     <option>30 Minuten</option>
                 </select>
-                <div id="searchButton"><i class="ion-log-in"></i></div>
-            </div>
+                <input type="submit"id="searchButton" value="&#xf29e">
+            </form>
             
         </div>
         
