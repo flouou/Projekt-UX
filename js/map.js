@@ -24,7 +24,6 @@ var iconPopupAnchorY = -48;
 var mapTargetDiv;
 
 var checkInButton = '<p class="buttonWrapper"><a href="NFC.html" class="parkXButton">Ins Parkhaus einchecken</a></p>';
-var buyTicketButton = '<p class="buttonWrapper"><a href="ticket.html" class="parkXButton">eTicket lösen</a></p>';
 
 function initMap(targetDiv, vheight, toLocation){
     map = L.map(String(targetDiv)).setView([49.009654, 8.403903], parseInt(vheight));    
@@ -169,7 +168,7 @@ function getParkplatzPopupText(pm){
                 "Höchst-Park-Dauer: " + pm.HÖCHST_PARK_DAUER + ",<br>" +
                 "Gebührenpflichtiger Zeitraum: " + pm.GEBÜHRENPFL_PARKZEIT + ",<br>" +
                 "Gebühren: " + pm.GEBÜHREN+"</p>"+
-                buyTicketButton;
+                getBuyTicketButtonText(pm.ID);
 }
 function getKostenlosPopupText(pm){
     return '<p class="popupText"><strong>' + pm.STANDORT + "</strong><br>" +
@@ -193,6 +192,11 @@ function updatePopupText(){
             markers[j].bindPopup(t);
         }
     }
+}
+function getBuyTicketButtonText(plcht){
+    var t = plcht.replace(" ", "+");
+    var buyTicketButton = '<p class="buttonWrapper"><a href="ticket_2.php?parkplatz='+t+'" class="parkXButton">eTicket lösen</a></p>';
+    return buyTicketButton;
 }
 function removeParkhausLayer(){
     map.removeLayer(lgParkhaus);
