@@ -46,7 +46,11 @@
         <h1>Gewählter Parkplatz:</h1>
             <ul>
                 <li>
-                    <span></span>
+                    <span>
+                        <?php
+                            echo $_GET['parkplatz'];
+                        ?>
+                    </span>
                 </li>
             </ul>
         
