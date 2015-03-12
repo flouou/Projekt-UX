@@ -142,6 +142,22 @@ $(document).ready(function(){
         ]
     });
     
+    $( ".suchbegriffTicket" ).autocomplete({
+        minLength: 2,
+        source: [ 
+            "Ritterstraße 16", 
+            "Rintheimer Straße 19", 
+            "Sophienstraße 128", 
+            "Waldstraße 15", 
+            "Kaiserallee 61", 
+            "Kriegsstraße 100", 
+            "Luisenstraße 23",
+            "Moltkrestraße",
+            "Bahnhofsplatz West",
+            "Durlacher Allee 10"
+        ]
+    });
+    
     
     /*window.onresize= function(){
         document.getElementById("content").style.height = window.innerHeight + 'px';
