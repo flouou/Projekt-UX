@@ -71,6 +71,13 @@
                     <option>20 Minuten</option>
                     <option>25 Minuten</option>
                     <option>30 Minuten</option>
+                    <option>35 Minuten</option>
+                    <option>40 Minuten</option>
+                    <option>45 Minuten</option>
+                    <option>50 Minuten</option>
+                    <option>55 Minuten</option>
+                    <option>60 Minuten</option>
+                    
                 </select>
                 <input type="submit"id="searchButton" value="&#xf29e">
             </form>
