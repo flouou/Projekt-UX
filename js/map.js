@@ -65,9 +65,9 @@ function initMap(targetDiv, vheight, toLocation){
                     popupAnchor: [iconPopupAnchorX,iconPopupAnchorY]});
     standortIcon = L.icon({
                     iconUrl: 'images/standort_klein.png',
-                    iconSize:[40,40],
-                    iconAnchor: [20,40],
-                    popupAnchor: [0,-32]});
+                    iconSize:[25,74],
+                    iconAnchor: [12.5,74],
+                    popupAnchor: [-1,-70]});
     
     map.locate({setView: toLocation, maxZoom:15});
     loadData('initial');
