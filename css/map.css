@@ -9,15 +9,15 @@
     font-size: 18px;
     font-family: 'Roboto';
     border:1px solid rgb(84,141,212) !important;
-    background-color: white;
-    color: rgb(84,141,212) !important;
+    background-color: rgb(84,141,212);
+    color: white !important;
     /*-webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);*/
 }
-.parkXButton:hover{
-    background-color: rgb(84,141,212);
-    color: white !important;
+.parkXButton:active{
+    background-color: white;
+    color: rgb(84,141,212) !important;
 }
 .popupText{
     position: relative;
