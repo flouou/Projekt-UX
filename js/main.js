@@ -1,9 +1,3 @@
-/*$(document).ready(function(){
-    //Initalisiere die Map bzw. erzeuge Map in targetDiv mit spezifischer View-Height: initMap(targetDiv, viewHeight)
-    initMap('map', 15);
-    //starte Timer, um die Daten alle 2 Minuten zu aktualisieren
-    setInterval(refreshMapData,120000,false);
-});*/
 $(document).ready(function(){
     
     //MapButtonRight
@@ -64,6 +58,27 @@ $(document).ready(function(){
     
     $('.invisibleSwipeRight').on('swipeleft',function(){
         toggleSearch();    
+    });
+    
+    //Toggle Checkbox and add/remove Map-XYZLayerGroups
+    $('.customCheckbox').change(function(e){
+        var ccId = e.target.id;
+        ccId = ccId.split("_")[1];
+        if(e.target.checked){
+            switch(ccId){
+                    case 'PH': addParkhausLayer(); break;
+                    case 'PP': addParkplatzLayer(); break;
+                    case 'EL': addEStationenLayer(); break;
+                    case 'KP': addKostenlosLayer(); break;
+            }
+        } else {
+            switch(ccId){
+                    case 'PH': removeParkhausLayer(); break;
+                    case 'PP': removeParkplatzLayer(); break;
+                    case 'EL': removeEStationenLayer(); break;
+                    case 'KP': removeKostenlosLayer(); break;
+            }
+        }
     });
     
     function toggleBoth(){

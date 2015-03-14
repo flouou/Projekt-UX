@@ -43,7 +43,7 @@ $positions = array(
                 "Steinstraße" => array("lat" => "49.006908", "long" => "8.408052"),
                 "Hans-Thoma-Straße" => array("lat" => "49.012783", "long" => "8.39878"),
                 "Stephanienstraße" => array("lat" => "49.010825", "long" => "8.389896"),
-                "Bahnhofsstraße" => array("lat" => "49.162944", "long" => "8.490006"),
+                "Bahnhofstraße" => array("lat" => "48.994641", "long" => "8.399869"),
                 "Herrmann-Leichtlin-Straße" => array("lat" => "48.997133", "long" => "8.359062"),
                 "Kurzheckweg" => array("lat" => "49.022256", "long" => "8.3438"),
                 "Hertzstraße" => array("lat" => "49.020824", "long" => "8.365542"));
