@@ -180,10 +180,10 @@ $(document).ready(function () {
             });
         }
     });
-    $("#suchbegriff").catcomplete({
+    $(".suchbegriffAllgemein").catcomplete({
         minLength: 3,
         select: function (event, ui) {
-            $("#suchbegriff").val(ui.item.label);
+            $(".suchbegriffAllgemein").val(ui.item.label);
             searchString = ui.item.value;
             return false;
         },

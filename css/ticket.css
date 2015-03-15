@@ -118,6 +118,10 @@ a{
 .searchForm #searchButton:focus{
     outline: 0;    
 }
+
+.ui-autocomplete#ui-id-1{
+    top: -220px !important;    
+}
 .abbrechenButton{
     width: 60%;
     margin: 0 auto;
@@ -148,4 +152,8 @@ a{
 .searchForm #searchButton{
     width: 15%;
 }*/
+
+.ui-helper-hidden-accessible{
+    display:none;    
+}
 
