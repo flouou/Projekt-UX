@@ -444,6 +444,14 @@ $(document).ready(function () {
             results: function () {}
         }
     });
+    
+    $("#suchbegriff").on("click", function () {
+        $(this).select();
+    });
+    
+    $("#suchbegriffTicket").on("click", function () {
+        $(this).select();
+    });
 
 
     /*window.onresize= function(){
