@@ -77,7 +77,9 @@ function readParkhausData($pos, $keys){
                 $name == 'FREIE_PARKPLAETZE' ||
                 $name == 'GESAMTE_PARKPLAETZE' ||
                 $name == 'PH_KEY' ||
-                $name == 'STADTTEIL'){
+                $name == 'STADTTEIL' ||
+                $name == 'OEFFNUNGSZEITEN1' ||
+                $name == 'OEFFNUNGSZEITEN2'){
 
                 $value = (string)$field['value'];
                 $fields[$name] = $value;

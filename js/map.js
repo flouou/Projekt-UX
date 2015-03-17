@@ -156,11 +156,17 @@ function printParkmarker() {
     }
 }
 function getParkhausPopupText(pm){
-    return '<p class="popupText"><strong>' + pm.PH_NAME + "</strong>, " +
+    var t = '<p class="popupText"><strong>' + pm.PH_NAME + "</strong>, " +
                 pm.PH_STRASSE +
                 " (" + pm.STADTTEIL + ")<br>" +
-                pm.FREIE_PARKPLAETZE + " von " + pm.GESAMTE_PARKPLAETZE + " Plätzen frei.</p>" + 
+                pm.FREIE_PARKPLAETZE + " von " + pm.GESAMTE_PARKPLAETZE + " Plätzen frei.<br>" + 
+                'Öffnungzeiten: ' + pm.OEFFNUNGSZEITEN1;
+                if(pm.OEFFNUNGSZEITEN2 != ''){
+                    t = t + ', '+pm.OEFFNUNGSZEITEN2;
+                }
+                t = t + '<br>' + 'Tarif: 1,80 pro Stunde, 1,20 ab der dritten angefangenen Stunde.</p>'
                 checkInButton;
+    return t;
 }
 function getParkplatzPopupText(pm){
     return '<p class="popupText"><strong>' + pm.STANDORT + "</strong><br>" +
