@@ -11,6 +11,6 @@
     width: calc(15% - 20px);
 }
 
-.ui-autocomplete#ui-id-1{
-    top: -184px !important;    
+#backToMainButton{
+    left: 90%;
 }

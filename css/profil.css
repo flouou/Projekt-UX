@@ -64,6 +64,8 @@ body{
 }
 
 .profil-header{
+    margin-top: 0px;
+    padding-top: 0.67em;
     padding-left: 10%; 
     /*margin-left:5px;*/
 }

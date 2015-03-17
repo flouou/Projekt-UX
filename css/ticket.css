@@ -35,7 +35,7 @@ h1{
     height: 80%;
     background-color: white;
     position: relative;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     overflow: hidden;
     padding-bottom: 5px;
     
@@ -120,7 +120,7 @@ a{
 }
 
 .ui-autocomplete#ui-id-1{
-    top: -220px !important;    
+    top: -28px !important;    
 }
 .abbrechenButton{
     width: 60%;

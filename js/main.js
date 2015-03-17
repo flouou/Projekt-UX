@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('#mapButtonRight').on('click', toggleStart);
 
     $('#mapButtonRight').on('swipeleft', function () {
-        if ($('#mapButtonRight i').hasClass('ion-map')) {
+        if ($('#mapButtonRight i').hasClass('ion-earth')) {
             toggleStart();
         }
     });
@@ -32,7 +32,7 @@ $(document).ready(function () {
     });
 
     $('#mapButtonLeft').on('swiperight', function () {
-        if ($('#mapButtonLeft i').hasClass('ion-map')) {
+        if ($('#mapButtonLeft i').hasClass('ion-earth')) {
             toggleSearch();
         }
     });
@@ -44,13 +44,13 @@ $(document).ready(function () {
     //Overlay-Swipe-Effect
 
     $('.overlay').on('swipeleft', function () {
-        if ($('#mapButtonRight i').hasClass('ion-map') && $('#mapButtonLeft i').hasClass('ion-search')) {
+        if ($('#mapButtonRight i').hasClass('ion-earth') && $('#mapButtonLeft i').hasClass('ion-search')) {
             toggleStart();
         }
     });
 
     $('.overlay').on('swiperight', function () {
-        if ($('#mapButtonLeft i').hasClass('ion-map') && $('#mapButtonRight i').hasClass('ion-map')) {
+        if ($('#mapButtonLeft i').hasClass('ion-earth') && $('#mapButtonRight i').hasClass('ion-earth')) {
             toggleSearch();
         }
     });
@@ -131,7 +131,7 @@ $(document).ready(function () {
         $('.overlay').toggleClass('swipeTo0px');
         $('#start').toggleClass('swipeToLeft100');
         $('#mapButtonRight').toggleClass('swipeTo0px');
-        $('#mapButtonRight i').toggleClass('ion-map');
+        $('#mapButtonRight i').toggleClass('ion-earth');
         $('#mapButtonRight i').toggleClass('ion-navicon-round');
         $('#map').toggleClass('swipeTo0px');
         $('#options').toggleClass('swipeTo100');
@@ -143,7 +143,7 @@ $(document).ready(function () {
         $('.overlay').toggleClass('swipeToLeft100');
         $('#start').toggleClass('swipeToLeft200');
         $('#mapButtonRight').toggleClass('swipeToLeft100');
-        $('#mapButtonLeft i').toggleClass('ion-map');
+        $('#mapButtonLeft i').toggleClass('ion-earth');
         $('#mapButtonLeft i').toggleClass('ion-search');
         $('#map').toggleClass('swipeToLeft100');
         $('#options').toggleClass('swipeTo15');
@@ -190,24 +190,24 @@ $(document).ready(function () {
         source: [
             //Parkplätze
             {
-                value: "Ritterstraße 16",
+                value: "Ritterstr. 16",
                 category: "pp",
-                label: "Ritterstraße 16"
+                label: "Ritterstr. 16"
             },
             {
-                value: "Rintheimer Straße 19",
+                value: "Rintheimer Str. 19",
                 category: "pp",
-                label: "Rintheimer Straße 19"
+                label: "Rintheimer Str. 19"
             },
             {
-                value: "Sophienstraße 128",
+                value: "Sophienstr. 128",
                 category: "pp",
-                label: "Sophienstraße 128"
+                label: "Sophienstr. 128"
             },
             {
-                value: "Waldstraße 15",
+                value: "Waldstr. 15",
                 category: "pp",
-                label: "Waldstraße 15"
+                label: "Waldstr. 15"
             },
             {
                 value: "Kaiserallee 61",
@@ -215,19 +215,19 @@ $(document).ready(function () {
                 label: "Kaiserallee 61"
             },
             {
-                value: "Kriegsstraße 100",
+                value: "Kriegsstr. 100",
                 category: "pp",
-                label: "Kriegsstraße 100"
+                label: "Kriegsstr. 100"
             },
             {
-                value: "Luisenstraße 23",
+                value: "Luisenstr. 23",
                 category: "pp",
-                label: "Luisenstraße 23"
+                label: "Luisenstr. 23"
             },
             {
-                value: "Moltkestraße",
+                value: "Moltkestr.",
                 category: "pp",
-                label: "Moltkestraße"
+                label: "Moltkestr."
             },
             {
                 value: "Bahnhofsplatz West",
@@ -276,9 +276,9 @@ $(document).ready(function () {
                 label: "Hans-Thoma-Straße"
             },
             {
-                value: "Hermann-Leichtlin-Straße",
+                value: "Herrmann-Leichtlin-Straße",
                 category: "el",
-                label: "Hermann-Leichtlin-Straße"
+                label: "Herrmann-Leichtlin-Straße"
             },
             {
                 value: "Stephanienstraße",
@@ -428,14 +428,14 @@ $(document).ready(function () {
     $(".suchbegriffTicket").autocomplete({
         minLength: 2,
         source: [
-            "Ritterstraße 16",
-            "Rintheimer Straße 19",
-            "Sophienstraße 128",
-            "Waldstraße 15",
+            "Ritterstr. 16",
+            "Rintheimer Str. 19",
+            "Sophienstr. 128",
+            "Waldstr. 15",
             "Kaiserallee 61",
-            "Kriegsstraße 100",
-            "Luisenstraße 23",
-            "Moltkrestraße",
+            "Kriegsstr. 100",
+            "Luisenstr. 23",
+            "Moltkestr.",
             "Bahnhofsplatz West",
             "Durlacher Allee 10"
         ],

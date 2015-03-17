@@ -32,11 +32,11 @@
 </head>
     
 <body>           
-    <img id="ticketLogo" src="images/logo_transparent.png" />
+    <!--<img id="ticketLogo" src="images/logo_transparent.png" />-->
     
     <div class="mapButton absPos" id="backToMainButton">
         <a href="ticket.html">
-            <i class="ion-backspace-outline"></i>
+            <i class="ion-arrow-left-c"></i>
         </a>
     </div>
 
@@ -64,7 +64,7 @@
         </div>
     
             
-            <h1>Parkdauer</h1>
+            <!--<h1>Parkdauer</h1>
             <form class="searchForm" action="ticket_finish.html">
                 <select class="suchbegriff" id="" style="height: 43px; ">
                     <option>15 Minuten</option>
@@ -80,7 +80,7 @@
                     
                 </select>
                 <input type="submit"id="searchButton" value="&#xf29e">
-            </form>
+            </form>-->
         
             <a href="main.html">
                 <div class="abbrechenButton">
