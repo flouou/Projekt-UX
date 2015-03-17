@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Prototyping Test_1</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#548DD4">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!--JQuery-->
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery.mobile.custom.min.js"></script>
+    <!--Icon Pack-->
+    <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!--Eigenes JavaScript-->
+    <script src="js/jquery-ui.min-accordion.js"></script>
+    <script src="js/shake.js"></script>
+    <script src="js/accordion_jquery.js"></script>
+    <!--Eigenes CSS-->
+    <link rel="stylesheet" href="css/css.css" />
+    <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
+    <!--temporär-->
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css">-->
+    <link rel="stylesheet" href="css/profil.css" />
+    <link rel="stylesheet" href="css/profil_landscape.css" media="(orientation: landscape)"/>
+</head>
+    
+<body>
+    <!--<div id="profil-main">-->
+
+        <img class="logoImage" id="profilLogo" src="images/logo_transparent.png" />
+        <div class="mapButton absPos" id="backToMainButton">
+            <a href="main.html">
+                <i class="ion-backspace-outline"></i>
+            </a>
+        </div>
+        <h1 class="profil-header">
+                Mein Profil
+        </h1>
+        <div id="profilContent" class="accordion profil-accordion">
+
+                <h3 class="accordion-section-title">
+                    Persönliche Daten
+                </h3>
+                <div class="answerBox accordion-section-content">
+                    <ul>
+                        <li>
+                            <span>Name <i class="ion-edit"></i></span><br />
+                            Marc S. van Hinten
+                        </li>
+                        <li>
+                            <span>Kennzeichen</span><br />
+                            KA-SM-6969
+                        </li>
+                        <li>
+                            <span>E-Mail</span><br />
+                            marcs@van-hinten.com
+                        </li>
+                    </ul>
+                </div><!-- end #accordion-4-->
+
+                
+
+                <h3 class="accordion-section-title">
+                    Meine Favoriten
+                </h3>
+                <div class="answerBox accordion-section-content">
+                    <ul>
+                        <li>
+                            Duale Hochschule Baden Württemberg (DHBW)
+                        </li>
+                        <li>
+                            Am Staatstheater
+                        </li>
+                        <li>
+                            Englerstraße
+                        </li>
+                    </ul>
+                </div><!-- end #accordion-3-->
+
+                <h3 class="accordion-section-title">
+                    Rechnungen
+                </h3>
+                <div class="answerBox accordion-section-content">
+                    <ul>
+                        <li><span>25. März 2015</span> - Duale Hochschule Baden Württemberg (DHBW) - 2.50€ (8h 38min)</li>
+                        <li><span>21. März 2015</span> - Ettlinger Tor - 1.86€ (2h 12min)</li>
+                        <li><span>03. März 2015</span> - Am Staatstheater - 3.22€ (4h 12min)</li>
+                    </ul>
+                </div><!-- end #accordion-2-->
+                
+                <h3 class="accordion-section-title">
+                    Zahlungsoptionen
+                </h3>
+                <div class="answerBox accordion-section-content">
+                    <img src="http://placehold.it/200x100" />
+                </div><!-- end #accordion-1-->
+            </div><!-- end .questionBox.accordion-section-->
+    <!--</div><!-- end #profil-main-->       
+
+</body>
+    
+</html>

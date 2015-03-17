@@ -1,0 +1,16 @@
+#faqLogo{
+    left: calc(50% - 140px); 
+}
+.ticketMap{
+    width: calc(100% - 15px);
+    height: 200px; 
+    position: relative;  
+    margin-left: 10%;
+}
+.searchForm #searchButton{
+    width: calc(15% - 20px);
+}
+
+.ui-autocomplete#ui-id-1{
+    top: -184px !important;    
+}

@@ -1,0 +1,48 @@
+input[type="checkbox"] {
+    visibility: hidden;
+}
+.customCheckbox {
+	width: 30px;
+	height: 30px;
+    background: rgb(84,141,212);
+	margin: 20px;
+	position: relative;
+}
+
+.customCheckbox label {
+	cursor: pointer;
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	left: 5px;
+	top: 5px;
+    background: white;
+}
+
+.customCheckbox label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+    content: '';
+	position: absolute;
+	width: 16px;
+	height: 16px;
+	background: rgb(146,208,80);
+	top: 2px;
+	left: 2px;
+}
+
+.customCheckbox input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
+.customCheckbox span{
+    position: relative;
+    left: 50px;
+    line-height: 30px;
+    margin: 0px;
+    top: -20px;
+    width:150px;
+}

@@ -1,0 +1,159 @@
+/*********************
+*   Ticket Styling   *
+*********************/
+
+@font-face {font-family: 'Sansation'; src: url('../fonts/Sansation.ttf')}
+body{
+    background-color: white;
+    color: #548DD4;
+    height: auto; 
+    min-height: 100vh;
+    border-left:30px solid #548DD4;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+}
+h1{
+    font-family: 'Sansation';
+    color: rgb(84,141,212);
+    padding-left: 5%;
+    margin-left: 5%;
+    
+}
+#ticketLogo{
+    height: 45px;
+    position: relative;
+    left: calc(50% - 135px);
+    top: 7.5px;
+}
+#backToMainButton{
+    position: absolute;
+    left: 85%;
+    float: left;
+}
+.ticketContent{
+    width: calc(100% - 30px);
+    height: 80%;
+    background-color: white;
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    padding-bottom: 5px;
+    
+}
+.absPos{
+    position: absolute;
+}
+.ticketMap{
+    width: calc(100% - 15px);
+    height: 250px; 
+    position: relative;  
+    margin-left: 10%;    
+}
+ul{
+    padding-left: 0px;
+    list-style: none;
+    color: #548DD4;
+    margin-left: 10%;
+}
+ul li{
+    font-size: 20px;
+    margin-top: 20px;
+    border-bottom: 1px solid #92D050;
+    
+}
+a{
+    text-decoration: none;
+    color: #548DD4;
+}
+.searchForm{
+    width: calc(100% - 30px);
+    margin-left: 10%;
+    height: 40px;
+    
+    
+}
+
+.searchForm .suchbegriff{
+    width: 78%;
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    display:inline-block;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    z-index: 1;
+}
+
+.searchForm .suchbegriff:focus{
+    outline: 0;    
+}
+
+.searchForm #searchButton{
+    position: absolute;
+    width:15%;
+    height: 43px;
+    margin: 2px;
+    border: 1px solid #92D050;
+    border-radius: 5px;
+    background-color: white;
+    color: #92D050;
+    display: inline-block;
+    font-size: 20px;
+    z-index: 100;
+    background-color: white;
+    outline: 0;
+    text-align: center;
+    line-height: 40px;
+    margin-top: 0px;
+    font-family: ionicons;
+}
+
+.searchForm #searchButton:active;{
+    background-color: #548DD4;
+}
+
+.searchForm #searchButton:focus{
+    outline: 0;    
+}
+
+.ui-autocomplete#ui-id-1{
+    top: -220px !important;    
+}
+.abbrechenButton{
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 50px;
+    border: 1px solid #92D050;
+    background-color: white;
+    color: #548DD4;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+}
+
+.abbrechenButton:active{
+    background-color: #548DD4;
+    color: white;
+}
+
+.abbrechenButton i{
+    color: #92D050;
+}
+/*
+.searchForm{
+    width: calc(100% - 30px);
+    margin-left: 10%;
+}
+.searchForm #searchButton{
+    width: 15%;
+}*/
+
+.ui-helper-hidden-accessible{
+    display:none;    
+}
+

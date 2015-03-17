@@ -1,0 +1,23 @@
+.nfcHeader{
+    margin-top: 0px !important;    
+}
+
+.nfcHeader h1{
+    margin-bottom: 5px;    
+}
+
+.nfcHeader p{
+    margin-top: 0px;    
+}
+
+.nfcHeader:last-of-type{
+    margin-top: 0px !important;    
+}
+
+.nfcIcon{
+    margin-top: -45px;    
+}
+
+.abbrechenButton{
+    margin-top: 10px !important;    
+}

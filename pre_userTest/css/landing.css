@@ -1,0 +1,55 @@
+.landing-body{
+    background-color: white;
+    color: #548DD4;
+    font-weight: bold;
+}
+
+.landing-header{
+    width: 80%;
+    margin: 30px auto 20px auto;
+    text-align: center;
+}
+
+.landing-header img{
+    height: 30px;    
+}
+
+.landing-body .ion-alert-circled{
+    font-size: 80px;
+    width: 82px;
+    position: relative;
+    left: calc(50% - 41px);
+}
+
+.landing-content{
+    width: 80%;
+    margin: 20px auto 40px auto;
+    text-align: center;
+}
+
+.landing-content:last-of-type{
+    margin: 0px auto 40px auto;
+}
+
+.landing-button{
+    position: relative;
+    cursor: pointer;
+    left: calc(50% - 90px);
+    padding: 5px 10px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 25px;
+    border: 1px solid #92D050;
+    -webkit-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 22px -9px rgba(0,0,0,0.75);
+}
+
+.landing-button i{
+    color: #92D050;
+}
+
+.landing-button:active{
+    background-color: #548DD4;
+    color: white;
+}
