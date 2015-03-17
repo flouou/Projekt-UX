@@ -468,7 +468,7 @@ $(document).ready(function () {
             }
         });   
     }
-    al();
+    
     //shake event
     var myShakeEvent = new Shake({
         threshold: 15,
