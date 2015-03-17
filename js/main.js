@@ -454,11 +454,20 @@ $(document).ready(function () {
     });
 
 
-    /*window.onresize= function(){
-        document.getElementById("content").style.height = window.innerHeight + 'px';
-		map.invalidateSize(); // relevant to your leaflet map to trigger resizing / redrawing /filling.
-    };*/
+    //alertify - shake meldung
+    alertify.set({ labels: {
+        ok     : "Hilfe",
+        cancel : "Nein, danke"
+    } });
+    var al = function(){
+        alertify.confirm("Brauchen Sie Hilfe oder weitere Informationen?", function (e) {
+            if (e) {
+                window.location = "FAQ.html";
+            } else {
 
+            }
+        });   
+    }
 
     //shake event
     var myShakeEvent = new Shake({
@@ -469,8 +478,8 @@ $(document).ready(function () {
     myShakeEvent.start();
 
     window.addEventListener('shake', shakeEventDidOccur, false);
-
+    
     function shakeEventDidOccur() {
-        alert('Brauchen Sie Hilfe?');
+        al();
     }
 });
