@@ -53,7 +53,8 @@
             </ul>
         
         <div>
-            <p style="margin-left: 10%; font-weight: bold;">Wählen Sie entweder den aktuellen Startzeitpunkt oder bestimmen Sie eine feste Parkdauer</p>
+            
+            <p style="margin-left: 10%; font-weight: bold;">Um Ihre Parkdauer minutengenau abzurechnen, setzten Sie hier den Startzeitpunkt. Die aktuelle Zeit wird Ihnen unten angezeigt. Bitte bestätigen Sie mit dem Button rechts neben der Zeitangabe, wenn Sie zahlungsplichtig ein eTicket lösen möchten.</p>
             <h1>Startzeitpunkt</h1>
             
             <form class="searchForm" action="ticket_finish.html">
