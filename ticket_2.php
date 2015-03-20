@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
     <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
     <!--JQuery-->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
     <!--Icon Pack-->
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
@@ -46,7 +46,8 @@
                 <li>
                     <span>
                         <?php
-                            echo $_GET['parkplatz'];
+                            $parkplatz = $_GET['parkplatz'];
+                            echo $parkplatz;
                         ?>
                     </span>
                 </li>
@@ -57,8 +58,9 @@
             <p style="margin-left: 10%; font-weight: bold;">Um Ihre Parkdauer minutengenau abzurechnen, setzten Sie hier den Startzeitpunkt. Die aktuelle Zeit wird Ihnen unten angezeigt. Bitte bestätigen Sie mit dem Button rechts neben der Zeitangabe, wenn Sie zahlungsplichtig ein eTicket lösen möchten.</p>
             <h1>Startzeitpunkt</h1>
             
-            <form class="searchForm" action="ticket_finish.html">
-                <input class="suchbegriff" type="datetime" id="zeit" disabled="disabled">
+            <form class="searchForm" action="ticket_finish.php" method="GET">
+                <input class="suchbegriff" name="datetime" type="datetime" id="zeit" readonly="readonly">
+                <input class="invisibleinput" name="parkplatz" type="text" value="<?php echo $parkplatz ?>" readonly="readonly"/>
                 <input type="submit"id="searchButton" value="&#xf29e">
             </form>
             
@@ -83,7 +85,7 @@
                 <input type="submit"id="searchButton" value="&#xf29e">
             </form>-->
         
-            <a href="main.html">
+            <a href="main.php">
                 <div class="abbrechenButton">
                     <i class="ion-close-circled"></i> Abbrechen
                 </div> 

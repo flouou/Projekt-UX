@@ -19,6 +19,10 @@ h1{
     margin-left: 5%;
     
 }
+.specialtext {
+    margin-left: 10%;
+    font-weight: bold;
+}
 #ticketLogo{
     height: 45px;
     position: relative;
@@ -157,3 +161,6 @@ a{
     display:none;    
 }
 
+.invisibleinput{
+    display: none;
+}

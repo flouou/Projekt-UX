@@ -2,18 +2,33 @@
 <html>
 
 <head>
-    <title>NFC Connect</title>
+    <title>Parkhaus einchecken</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <!--JQuery-->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
     <!--Icon Pack-->
     <link rel="stylesheet" href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Eigenes JavaScript-->
     <script src="js/shake.js"></script>
+    <script src="js/ticket.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            //Zeit aktualisieren
+            setDatum();
+            setInterval(setDatum,60000);
+            
+            //Nach XX Sekunden wird NFC-Seite weitergeleitet
+            setTimeout(function(){
+                var time = $('#zeit').val();
+               window.location.href = "NFC_finish.php?parkhaus=Duale+Hochschule+Baden-Württemberg&datetime="+time; 
+            }, 7000);
+        });
+    </script>
+    
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
     <link rel="stylesheet" href="css/css_landscape.css" media="(orientation: landscape)" />
@@ -35,7 +50,8 @@
             <img class="nfcIcon" src="images/load_ani.gif" />
             
             <p class="nfcHeader">Es wird auf die Daten des Terminals gewartet</p>
-            <a href="main.html">
+            <input class="invisible" id="zeit" disabled="disabled"/>
+            <a href="main.php">
                 <div class="abbrechenButton">
                     <i class="ion-close-circled"></i> Abbrechen
                 </div> 

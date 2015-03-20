@@ -164,7 +164,7 @@ function getParkhausPopupText(pm){
                 if(pm.OEFFNUNGSZEITEN2 != ''){
                     t = t + ', '+pm.OEFFNUNGSZEITEN2;
                 }
-                t = t + '<br>' + 'Tarif: 1,80 pro Stunde, 1,20 ab der dritten angefangenen Stunde.</p>'
+                t = t + '<br>' + 'Tarif: 1,80 pro Stunde, 1,20 ab der dritten angefangenen Stunde.</p>'+
                 checkInButton;
     return t;
 }

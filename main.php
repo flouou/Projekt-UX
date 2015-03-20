@@ -8,7 +8,7 @@
     <meta name="theme-color" content="#548DD4">
     <link rel="icon" type="image/png" href="images/favicon.png" />
     <!--JQuery-->
-    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="js/jquery-2.1.3.min.js"></script>
     <script src="js/jquery.mobile.custom.min.js"></script>
     <!--Inhalte für die Karte einbinden-->
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
@@ -51,12 +51,25 @@
                 
                 <a class="sideButton" href="ticket.html">
                     <i class="ion-pricetag"></i>
-                    <span>eTicket<br />lösen</span>
+                    <?php
+                        if(isset($_COOKIE['parkplatz']) && $_COOKIE['parkplatz']=="true"){
+                            echo '<span>eTicket<br />beenden</span>';
+                        } else {
+                            echo '<span>eTicket<br />lösen</span>';
+                        }
+                    ?>
+                    
                 </a>
                 
                 <a href="NFC.html" class="sideButton">
                     <i class="ion-log-in"></i>
-                    <span>Parkhaus<br />einchecken</span>
+                    <?php
+                        if(isset($_COOKIE['parkhaus']) && $_COOKIE['parkhaus']=="true"){
+                            echo '<span>Aus Parkhaus<br />auschecken</span>';
+                        } else {
+                            echo '<span>Parkhaus<br />einchecken</span>';
+                        }
+                    ?>
                 </a>
                 <a href="profil.html" class="sideButton">
                     <i class="ion-person"></i>
