@@ -9,7 +9,7 @@ function setDatum(){
     var datum = new Date();
     //Datum formatieren
     var tag = datum.getDate();
-    var monat = datum.getMonth();
+    var monat = datum.getMonth()+1;
     var jahr = datum.getYear()+1900;
     var std = datum.getHours();
     var min = datum.getMinutes();
