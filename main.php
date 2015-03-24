@@ -49,28 +49,39 @@
                     <span>Parkplatz<br />suchen</span>
                 </div>
                 
-                <a class="sideButton" href="ticket.html">
-                    <i class="ion-pricetag"></i>
                     <?php
                         if(isset($_COOKIE['parkplatz']) && $_COOKIE['parkplatz']=="true"){
-                            echo '<span>eTicket<br />beenden</span>';
+                            echo '<a class="sideButton" href="ticket_checkout.php">
+                    <i class="ion-pricetag"></i><span>eTicket<br />beenden</span></a>';
                         } else {
-                            echo '<span>eTicket<br />lösen</span>';
+                            if(isset($_COOKIE['parkhaus']) && $_COOKIE['parkhaus']=="true"){
+                                echo '<a class="sideButton" onclick="alert(\'Nur eins von beidem!\')">
+                    <i class="ion-pricetag"></i><span>eTicket<br />lösen</span></a>';
+                            } else {
+                            echo '<a class="sideButton" href="ticket.html">
+                    <i class="ion-pricetag"></i><span>eTicket<br />lösen</span></a>';
+                            }
                         }
-                    ?>
                     
-                </a>
-                
-                <a href="NFC.html" class="sideButton">
-                    <i class="ion-log-in"></i>
-                    <?php
                         if(isset($_COOKIE['parkhaus']) && $_COOKIE['parkhaus']=="true"){
-                            echo '<span>Aus Parkhaus<br />auschecken</span>';
+                            echo '<a href="NFC_checkout.html" class="sideButton">
+                    <i class="ion-log-out"></i>
+                            <span>Aus Parkhaus<br />auschecken</span></a>';
                         } else {
-                            echo '<span>Parkhaus<br />einchecken</span>';
+                            if(isset($_COOKIE['parkplatz'])){
+                                echo '<a onclick="alert(\'Nur eins von beidem!\')" class="sideButton">
+                    <i class="ion-log-in"></i>
+                            <span>Parkhaus<br />einchecken</span></a>';
+                            } else {
+                                echo '<a href="NFC.html" class="sideButton">
+                    <i class="ion-log-in"></i>
+                            <span>Parkhaus<br />einchecken</span></a>';
+                            }
                         }
                     ?>
-                </a>
+                
+                    
+                
                 <a href="profil.html" class="sideButton">
                     <i class="ion-person"></i>
                     <span>Meine<br />Daten</span>
