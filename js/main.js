@@ -455,11 +455,12 @@ $(document).ready(function () {
 
 
     //alertify - shake meldung
-    alertify.set({ labels: {
-        ok     : "Hilfe",
-        cancel : "Nein, danke"
-    } });
+    
     var al = function(){
+        alertify.set({ labels: {
+            ok     : "Hilfe",
+            cancel : "Nein, danke"
+        } });
         alertify.confirm("Brauchen Sie Hilfe oder weitere Informationen?", function (e) {
             if (e) {
                 window.location = "FAQ.html";
