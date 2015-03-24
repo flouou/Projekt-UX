@@ -483,4 +483,11 @@ $(document).ready(function () {
     function shakeEventDidOccur() {
         al();
     }
+    
 });
+//Alertify-Meldung, wenn eine Art von Parken bereits aktiv ist
+function alertifyActivParking(){
+        alertify.alert("Es ist bereits ein Parkvorgang aktiv. Bitte beenden Sie diesen zunächst, um anschließend die gewünschte Funktion ausführen zu können.", function () {
+            alertify.message('OK');
+        });  
+    }

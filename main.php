@@ -55,7 +55,7 @@
                     <i class="ion-pricetag"></i><span>eTicket<br />beenden</span></a>';
                         } else {
                             if(isset($_COOKIE['parkhaus']) && $_COOKIE['parkhaus']=="true"){
-                                echo '<a class="sideButton" onclick="alert(\'Nur eins von beidem!\')">
+                                echo '<a class="sideButton" onclick="alertifyActivParking()">
                     <i class="ion-pricetag"></i><span>eTicket<br />lösen</span></a>';
                             } else {
                             echo '<a class="sideButton" href="ticket.html">
@@ -69,7 +69,7 @@
                             <span>Aus Parkhaus<br />auschecken</span></a>';
                         } else {
                             if(isset($_COOKIE['parkplatz'])){
-                                echo '<a onclick="alert(\'Nur eins von beidem!\')" class="sideButton">
+                                echo '<a onclick="alertifyActivParking()" class="sideButton">
                     <i class="ion-log-in"></i>
                             <span>Parkhaus<br />einchecken</span></a>';
                             } else {
