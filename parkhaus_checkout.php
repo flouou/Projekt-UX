@@ -1,8 +1,15 @@
+<?php //Cookies löschen
+$standort = $_COOKIE['standort'];
+$startzeitpunkt = $_COOKIE[ 'startzeitpunkt'];
+            setCookie( "parkhaus", "",-1);
+            setCookie( "startzeitpunkt", "",-1);
+            setCookie( "standort", "",-1);
+        ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Pakhaus auschecken</title>
+    <title>Parkhaus auschecken</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
@@ -26,22 +33,18 @@
         <h1>Aus dem Parkhaus ausgecheckt</h1>
         <p class="specialtext">Sie haben erfolgreich aus dem Parkhaus ausgecheckt!</p>
         <p class="specialtext">Parkhaus:
-            <?php echo $_COOKIE[ 'standort']; ?>
+            <?php echo $standort; ?>
         </p>
         <p class="specialtext">Startzeitpunkt:
-            <?php echo $_COOKIE[ 'startzeitpunkt']; ?>
+            <?php echo $startzeitpunkt; ?>
         </p>
         <p class="specialtext">Dauer: 2h 41 Minuten</p>
         <p class="specialtext">Parkgebühr: 2,79 €</p>
 
-        <?php //Cookies löschen
-            setCookie( "parkhaus", "",-1);
-            setCookie( "startzeitpunkt", "",-1);
-            setCookie( "standort", "",-1);
-        ?>
+        
         <a href="main.php">
             <div class="abbrechenButton">
-                <i class="ion-android-checkmark-circle"></i> Okay
+                <i class="ion-android-checkmark-circle"></i> OK
             </div>
         </a>
 

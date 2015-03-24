@@ -1,3 +1,10 @@
+<?php //Cookies löschen
+$standort = $_COOKIE['standort'];
+$startzeitpunkt = $_COOKIE['startzeitpunkt'];
+            setCookie( "parkplatz", "",-1);
+            setCookie( "startzeitpunkt", "",-1);
+            setCookie( "standort", "",-1);
+        ?>
 <!DOCTYPE html>
 <html>
 
@@ -26,22 +33,18 @@
         <h1>Parken beendet</h1>
         <p class="specialtext">Sie haben das Parken beendet! Sie sehen hier Ihre eTicket-Rechnung.</p>
         <p class="specialtext">Parkplatz:
-            <?php echo $_COOKIE[ 'standort']; ?>
+            <?php echo $standort; ?>
         </p>
         <p class="specialtext">Startzeitpunkt:
-            <?php echo $_COOKIE[ 'startzeitpunkt']; ?>
+            <?php echo $startzeitpunkt; ?>
         </p>
         <p class="specialtext">Dauer: 2h 41 Minuten</p>
         <p class="specialtext">Parkgebühr: 3,11 €</p>
 
-        <?php //Cookies löschen
-            setCookie( "parkplatz", "",-1);
-            setCookie( "startzeitpunkt", "",-1);
-            setCookie( "standort", "",-1);
-        ?>
+        
         <a href="main.php">
             <div class="abbrechenButton">
-                <i class="ion-android-checkmark-circle"></i> Okay
+                <i class="ion-android-checkmark-circle"></i> OK
             </div>
         </a>
 
