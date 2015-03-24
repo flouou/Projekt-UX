@@ -1,15 +1,12 @@
 <?php //Cookies löschen
 $standort = $_COOKIE['standort'];
 $startzeitpunkt = $_COOKIE['startzeitpunkt'];
-            setCookie( "parkplatz", "",-1);
-            setCookie( "startzeitpunkt", "",-1);
-            setCookie( "standort", "",-1);
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    <title>Parken beendet</title>
+    <title>eTicket-Übersicht</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
@@ -28,10 +25,14 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
 
 <body>
     <!--<img id="ticketLogo" src="images/logo_transparent.png" />-->
-
+<div class="mapButton absPos" id="backToMainButton">
+        <a href="main.php">
+            <i class="ion-arrow-left-c"></i>
+        </a>
+    </div>
     <div class="ticketContent">
-        <h1>Parken beendet</h1>
-        <p class="specialtext">Sie haben das Parken beendet! Sie sehen hier Ihre eTicket-Rechnung.</p>
+        <h1>Parken beenden</h1>
+        <p class="specialtext">Hier finden Sie alle Informationen über Ihr aktuelles, laufendes eTicket. Zum Beenden des Parkvorgangs bitte auf 'Beenden' klicken.</p>
         <p class="specialtext">Parkplatz:
             <?php echo $standort; ?>
         </p>
@@ -42,9 +43,9 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
         <p class="specialtext">Parkgebühr: 3,11 €</p>
 
         
-        <a href="main.php">
+        <a href="ticket_checkout.php">
             <div class="abbrechenButton">
-                <i class="ion-android-checkmark-circle"></i> OK
+                <i class="ion-close"></i> Beenden
             </div>
         </a>
 

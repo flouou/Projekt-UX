@@ -51,7 +51,7 @@
                 
                     <?php
                         if(isset($_COOKIE['parkplatz']) && $_COOKIE['parkplatz']=="true"){
-                            echo '<a class="sideButton" href="ticket_checkout.php">
+                            echo '<a class="sideButton" href="ticket_overview.php">
                     <i class="ion-pricetag"></i><span>eTicket<br />beenden</span></a>';
                         } else {
                             if(isset($_COOKIE['parkhaus']) && $_COOKIE['parkhaus']=="true"){
