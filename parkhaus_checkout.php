@@ -36,7 +36,7 @@ $startzeitpunkt = $_COOKIE[ 'startzeitpunkt'];
             <?php echo $standort; ?>
         </p>
         <p class="specialtext">Startzeitpunkt:
-            <?php echo $startzeitpunkt; ?>
+            <?php echo $startzeitpunkt." Uhr"; ?>
         </p>
         <p class="specialtext">Dauer: 2h 41 Minuten</p>
         <p class="specialtext">Parkgebühr: 2,79 €</p>
