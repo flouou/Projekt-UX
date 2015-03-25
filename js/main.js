@@ -4,6 +4,8 @@ var el = true;
 var kp = true;
 var searchString;
 $(document).ready(function () {
+    
+    var searchClicked = false;
 
     //MapButtonRight
     $('#mapButtonRight').on('click', toggleStart);
@@ -121,11 +123,14 @@ $(document).ready(function () {
     });
     
     function toggleBoth() {
+        searchClicked = true;
         toggleStart();
         toggleSearch();
+        searchClicked = false;
     }
 
     function toggleStart() {
+        showPinPopUp();
         $('.invisibleSwipe').toggle();
         $('.overlay').fadeToggle('fast');
         $('.overlay').toggleClass('swipeTo0px');
@@ -136,6 +141,7 @@ $(document).ready(function () {
         $('#map').toggleClass('swipeTo0px');
         $('#options').toggleClass('swipeTo100');
         $('#mapButtonLeft').toggleClass('swipeTo80');
+        searchClicked = false;
     }
 
     function toggleSearch() {
@@ -148,6 +154,7 @@ $(document).ready(function () {
         $('#map').toggleClass('swipeToLeft100');
         $('#options').toggleClass('swipeTo15');
         $('#mapButtonLeft').toggleClass('swipeTo0px');
+        searchClicked = false;
     }
     
     /*function openPopupAfterSearch(){
@@ -484,7 +491,32 @@ $(document).ready(function () {
         al();
     }
     
+    function pinPopUp(){
+        alertify.set({ labels: {
+            ok      : "Hilfe",
+            cancel  : "Schließen"
+        }});
+        alertify.confirm("Weitere Informationen zur Karte finden Sie in der Hilfe", function(e) {
+            if(e){
+                window.location = "FAQ.html";    
+            }else{
+
+            }
+        });
+        $('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
+    }
+    
+    
+    function showPinPopUp(){
+        if($('#mapButtonRight i').hasClass('ion-navicon-round') && $('#mapButtonLeft i').hasClass('ion-search')){
+            
+        }else if(searchClicked === false){
+            pinPopUp();  
+        }
+    }
+    
 });
+
 //Alertify-Meldung, wenn eine Art von Parken bereits aktiv ist
 function alertifyActivParking(){
         alertify.alert("Es ist bereits ein Parkvorgang aktiv. Bitte beenden Sie diesen zunächst, um anschließend die gewünschte Funktion ausführen zu können.", function () {

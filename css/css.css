@@ -394,3 +394,9 @@ a {
     color: white !important;
     width: 14px !important;
 }
+
+
+.pinPopUpCheckbox{
+    margin-top: 10px !important;
+    margin-left: -20px !important;
+}
