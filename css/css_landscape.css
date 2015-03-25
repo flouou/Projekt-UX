@@ -81,3 +81,8 @@
 #mapButtonLeft{
     left: 200%;
 }
+
+.pinPopUpCheckbox{
+    margin-top: 10px !important;
+    margin-left: -20px !important;
+}
