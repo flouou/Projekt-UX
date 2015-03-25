@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/alertify.core.css">
 </head>
     
-<body>           
+<body onload="onFaqLoad()">           
     <!--<img class="logoImage" id="profilLogo" src="images/logo_transparent.png" />-->
     
     <div class="mapButton absPos" id="backToMainButton">
@@ -92,12 +92,12 @@
             <div class="answerBox accordion-section-content">
                 <p>Die Pins symbolisierten Ihnen, welche Art von Parkplatz sich an der Stelle befindet (Parkhaus, Parkautomat, etc.). 
                     Die verschiedenen Farben geben Ihnen als Ampel an, ob noch Parkplätze verfügbar sind. </p>
-                    <p><img src=images/icons/parkhaus_icon_grün_klein.png style="width: 50px; heigth: 50px"> Parkhaus (>50% frei)</p>
-                    <p><img src=images/icons/parkhaus_icon_gelb_klein.png style="width: 50px; heigth: 50px"> Parkhaus (50% frei)</p>
-                    <p><img src=images/icons/parkhaus_icon_rot_klein.png style="width: 50px; heigth: 50px"> Parkhaus (<15% frei)</p>
-                    <p><img src=images/icons/parkplatz_icon_klein.png style="width: 50px; heigth: 50px"> Parkplatz an der Straße</p>
-                    <p><img src=images/icons/kostenlos_icon_klein.png style="width: 50px; heigth: 50px"> Kostenloser Parkplatz</p>
-                    <p><img src=images/icons/estation_icon_klein.png style="width: 50px; heigth: 50px"> Ladestation für Elektroautos</p>
+                    <p><img src=images/icons/parkhaus_icon_grün_klein.png class="faqPinLegende"> Parkhaus (>50% frei)</p>
+                    <p><img src=images/icons/parkhaus_icon_gelb_klein.png class="faqPinLegende"> Parkhaus (50% frei)</p>
+                    <p><img src=images/icons/parkhaus_icon_rot_klein.png class="faqPinLegende"> Parkhaus (<15% frei)</p>
+                    <p><img src=images/icons/parkplatz_icon_klein.png class="faqPinLegende"> Parkplatz an der Straße</p>
+                    <p><img src=images/icons/kostenlos_icon_klein.png class="faqPinLegende"> Kostenloser Parkplatz</p>
+                <p><nobr><img src=images/icons/estation_icon_klein.png class="faqPinLegende"> Ladestation für Elektroautos</nobr></p>
                 
             </div>
 

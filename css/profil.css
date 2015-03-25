@@ -70,10 +70,6 @@ body{
     /*margin-left:5px;*/
 }
 
-.profil-accordion .answerBox img{
-    width: 100%;
-}
-
 .profil-accordion .answerBox ul{
     padding-left: 0px;
     list-style: none;
@@ -96,6 +92,12 @@ body{
     font-size: 30px;
     color: #92D050;   
 }
+
+.profil-accordion .answerBox ul li span .zahlungEdit{
+    position: relative;
+    top: -10px;
+}
+
 .accordion-section-title {
     color: #92D050;
     font-weight: bold;
@@ -131,6 +133,15 @@ body{
 
 p{
     font-weight: bold;
+}
+
+.customCheckbox{
+    margin-left: 0px !important;    
+}
+
+.faqPinLegende{
+    width:50px;
+    vertical-align: middle;
 }
  
 /*----- Section Content -----*/

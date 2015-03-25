@@ -19,7 +19,7 @@
     <script src="js/jquery-ui.min-accordion.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     
-    
+    <link rel="stylesheet" href="css/checkbox.css" />
     
     <!--Eigenes CSS-->
     <link rel="stylesheet" href="css/css.css" />
@@ -113,7 +113,20 @@
                     Zahlungsoptionen
                 </h3>
                 <div class="answerBox accordion-section-content">
-                    <img src="http://placehold.it/200x100" />
+                    <ul>
+                        <li>
+                            <div class="customCheckbox">
+                                <input type="checkbox" value="None" id="customCheckbox_PayPal" name="check" checked/>
+                                <label for="customCheckbox_PayPal"></label>
+                                <span style="white-space: nowrap"><img src="images/de-pp-logo-100px.png"></span>
+                                <span></span>
+                            </div>
+                        </li>
+                        <li>
+                            <span><i class="ion-edit zahlungEdit"></i></span>
+                            Bearbeiten / Hinzufügen
+                        </li>
+                    </ul>
                 </div><!-- end #accordion-5-->
             </div><!-- end .questionBox.accordion-section-->
     <!--</div><!-- end #profil-main-->       

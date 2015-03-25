@@ -498,7 +498,7 @@ $(document).ready(function () {
         }});
         alertify.confirm("Weitere Informationen zur Karte finden Sie in der Hilfe", function(e) {
             if(e){
-                window.location = "FAQ.html";    
+                window.location = "FAQ.html#pins";
             }else{
 
             }
@@ -515,6 +515,8 @@ $(document).ready(function () {
         }
     }
     
+    
+    
 });
 
 //Alertify-Meldung, wenn eine Art von Parken bereits aktiv ist
@@ -523,3 +525,11 @@ function alertifyActivParking(){
             alertify.message('OK');
         });  
     }
+
+function onFaqLoad(){
+    if(window.location.hash === '#pins'){
+        console.log("hello");
+        $('.accordion').accordion('option', 'active', 4 );
+        $('body').scrollTo('.accordion-section-title:nth-of-type(6)');
+    }    
+}
