@@ -528,7 +528,6 @@ function alertifyActivParking(){
 
 function onFaqLoad(){
     if(window.location.hash === '#pins'){
-        console.log("hello");
         $('.accordion').accordion('option', 'active', 4 );
         $('body').scrollTo('.accordion-section-title:nth-of-type(6)');
     }    
