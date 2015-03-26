@@ -309,7 +309,7 @@ a {
     line-height: 40px;
 }
 
-.searchForm #searchButton:active;{
+.searchForm #searchButton:active{
     background-color: #548DD4;
 }
 

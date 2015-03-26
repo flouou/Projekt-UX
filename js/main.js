@@ -3,8 +3,10 @@ var ph = true;
 var el = true;
 var kp = true;
 var searchString;
+var isChecked = true;
+var showNotAgain = false;
+
 $(document).ready(function () {
-    var isChecked = true;
     var searchClicked = false;
 
     //MapButtonRight
@@ -99,7 +101,6 @@ $(document).ready(function () {
             case 'PH':
                 removeParkhausLayer();
                 ph = false;
-                console.log('PH');
                 break;
             case 'PP':
                 removeParkplatzLayer();
@@ -506,21 +507,21 @@ $(document).ready(function () {
             ok      : "Hilfe",
             cancel  : "Schließen"
         }});
-        alertify.confirm("Weitere Informationen zur Karte finden Sie in der Hilfe", function(e) {
+        alertify.confirm('Weitere Informationen zur Karte finden Sie in der Hilfe. <div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" onchange="setShowNotAgainCookie()" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>', function(e) {
             if(e){
                 window.location = "FAQ.html#pins";
             }else{
                 
             }
         });
-        $('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
+        //$('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
     }
     
     
     function showPinPopUp(){
         if($('#mapButtonRight i').hasClass('ion-navicon-round') && $('#mapButtonLeft i').hasClass('ion-search')){
             
-        }else if(searchClicked === false){
+        }else if(searchClicked === false && !isShowNotAgainCookieSet()){
             pinPopUp();  
         }
     }
@@ -541,4 +542,39 @@ function onFaqLoad(){
         $('.accordion').accordion('option', 'active', 4 );
         $('body').scrollTo('.accordion-section-title:nth-of-type(6)');
     }    
+}
+function setShowNotAgainCookie(){
+    //Wenn Cookie nicht gesetzt und Häkchen nicht drin, dann kein Cookie setzen und wieder anzeigen
+    //Wenn Cokie nicht gesetzt und Häkchen drin, dann Cookie setzen
+    //Wenn Cookie bereits gesetzt, dann showNotAgain auf true
+    console.log("setShowNotAgainCookie(): start");
+    console.log("checked? "+$('#customCheckbox_pinPopUp').attr('checked'));
+    if(!isShowNotAgainCookieSet() && !$('#customCheckbox_pinPopUp').attr('checked')){
+        showNotAgain = false;
+        console.log("Case 1; showNotAgain false");
+    } else if(!isShowNotAgainCookieSet() && $('#customCheckbox_pinPopUp').attr('checked')){
+        showNotAgain = true;
+        document.cookie = "showNotAgain=true; max-age="+3600*24;
+        console.log("Case 2; showNotAgain true");
+    } else if(isShowNotAgainCookieSet()){
+        showNotAgain = true;
+        console.log("Case 3; showNotAgain true");
+    } else {
+        console.log("undefined Case 4;");
+    }
+}
+function isShowNotAgainCookieSet(){
+    console.log("isShowNotCookieSet(): start");
+    if (document.cookie.indexOf("showNotAgain") >= 0){
+        showNotAgain = true;
+        console.log("isShowNotCookieSet(): true");
+        return true;
+    } else {
+        showNotAgain = false;
+        console.log("isShowNotCookieSet(): false");
+        return false;
+    }
+}
+function status(){
+    console.log("checked? "+$('#customCheckbox_pinPopUp').attr('checked'));
 }
