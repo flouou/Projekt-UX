@@ -4,7 +4,7 @@ var el = true;
 var kp = true;
 var searchString;
 $(document).ready(function () {
-    
+    var isChecked = true;
     var searchClicked = false;
 
     //MapButtonRight
@@ -89,12 +89,17 @@ $(document).ready(function () {
                 addKostenlosLayer();
                 kp = true;
                 break;
+            case 'pinPopUp':
+                /*isChecked = true;*/
+                console.log('hola');
+                break;
             }
         } else {
             switch (ccId) {
             case 'PH':
                 removeParkhausLayer();
                 ph = false;
+                console.log('PH');
                 break;
             case 'PP':
                 removeParkplatzLayer();
@@ -107,6 +112,10 @@ $(document).ready(function () {
             case 'KP':
                 removeKostenlosLayer();
                 kp = false;
+                break;
+            case 'pinPopUp':
+                /*isChecked = false;*/
+                console.log('hola');
                 break;
             }
         }
@@ -491,6 +500,7 @@ $(document).ready(function () {
         al();
     }
     
+    
     function pinPopUp(){
         alertify.set({ labels: {
             ok      : "Hilfe",
@@ -500,7 +510,7 @@ $(document).ready(function () {
             if(e){
                 window.location = "FAQ.html#pins";
             }else{
-
+                
             }
         });
         $('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
