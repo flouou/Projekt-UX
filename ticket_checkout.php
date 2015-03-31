@@ -47,9 +47,6 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
                 <i class="ion-android-checkmark-circle"></i> OK
             </div>
         </a>
-
     </div>
-
-
 </body>
 </html>

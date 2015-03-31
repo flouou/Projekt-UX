@@ -25,11 +25,12 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
 
 <body>
     <!--<img id="ticketLogo" src="images/logo_transparent.png" />-->
-<div class="mapButton absPos" id="backToMainButton">
+    <div class="mapButton absPos" id="backToMainButton">
         <a href="main.php">
             <i class="ion-arrow-left-c"></i>
         </a>
     </div>
+    
     <div class="ticketContent">
         <h1>Parken beenden</h1>
         <p class="specialtext">Hier finden Sie alle Informationen über Ihr aktuelles, laufendes eTicket. Zum Beenden des Parkvorgangs bitte auf 'Beenden' klicken.</p>
@@ -48,9 +49,6 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
                 <i class="ion-close"></i> Beenden
             </div>
         </a>
-
     </div>
-
-
 </body>
 </html>

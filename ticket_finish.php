@@ -37,19 +37,15 @@ setCookie("standort",$parkplatz,$expire);
     
     <div class="ticketContent">
         <h1>eTicket gebucht</h1>
-            <p class="specialtext">Sie haben Ihr Parkticket erfolgreich gebucht!</p>
-            <p class="specialtext">Startzeitpunkt: <?php echo $datetime; ?></p>
-            <p class="specialtext">Parkplatz: <?php echo $parkplatz; ?></p>
-            
-            <a href="main.php">
-                <div class="abbrechenButton">
-                    <i class="ion-android-checkmark-circle"></i> OK
-                </div>
-            </a>
-            
-        </div>
+        <p class="specialtext">Sie haben Ihr Parkticket erfolgreich gebucht!</p>
+        <p class="specialtext">Startzeitpunkt: <?php echo $datetime; ?></p>
+        <p class="specialtext">Parkplatz: <?php echo $parkplatz; ?></p>
 
-        
-
+        <a href="main.php">
+            <div class="abbrechenButton">
+                <i class="ion-android-checkmark-circle"></i> OK
+            </div>
+        </a>    
+    </div>
 </body> 
 </html>

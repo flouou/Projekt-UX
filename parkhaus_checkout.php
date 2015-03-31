@@ -28,7 +28,6 @@ $startzeitpunkt = $_COOKIE[ 'startzeitpunkt'];
 
 <body>
     <!--<img id="ticketLogo" src="images/logo_transparent.png" />-->
-
     <div class="ticketContent">
         <h1>Aus dem Parkhaus ausgecheckt</h1>
         <p class="specialtext">Sie haben erfolgreich aus dem Parkhaus ausgecheckt!</p>
@@ -40,18 +39,13 @@ $startzeitpunkt = $_COOKIE[ 'startzeitpunkt'];
         </p>
         <p class="specialtext">Dauer: 2h 41 Minuten</p>
         <p class="specialtext">Parkgebühr: 2,79 €</p>
-
         
         <a href="main.php">
             <div class="abbrechenButton">
                 <i class="ion-android-checkmark-circle"></i> OK
             </div>
         </a>
-
     </div>
-
-
-
 </body>
 
 </html>

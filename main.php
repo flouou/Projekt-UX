@@ -95,7 +95,7 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </div><!-- ende #start -->
 
         <div class="mapButton fixedPos" id="mapButtonRight"><i class="ion-earth"></i></div>
         
@@ -140,7 +140,7 @@
                 <label for="customCheckbox_KP"></label>
                 <span style="white-space: nowrap">Kostenlose Parkplätze</span>
             </div>
-        </div>
+        </div><!-- ende #options -->
     </div>
 </body>
 

@@ -33,19 +33,15 @@ setCookie("standort",$parkhaus,$expire);
     
     <div class="ticketContent">
         <h1>Ins Parkhaus eingecheckt</h1>
-            <p class="specialtext">Sie haben erfolgreich ins Parkhaus eingecheckt!</p>
-            <p class="specialtext">Startzeitpunkt: <?php echo $datetime; ?></p>
-            <p class="specialtext">Parkhaus: <?php echo $parkhaus; ?></p>
+        <p class="specialtext">Sie haben erfolgreich ins Parkhaus eingecheckt!</p>
+        <p class="specialtext">Startzeitpunkt: <?php echo $datetime; ?></p>
+        <p class="specialtext">Parkhaus: <?php echo $parkhaus; ?></p>
             
-            <a href="main.php">
-                <div class="abbrechenButton">
-                    <i class="ion-android-checkmark-circle"></i> OK
-                </div> 
-            </a>
-            
-        </div>
-
-        
-
+        <a href="main.php">
+            <div class="abbrechenButton">
+                <i class="ion-android-checkmark-circle"></i> OK
+            </div> 
+        </a>
+    </div>
 </body> 
 </html>

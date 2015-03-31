@@ -42,19 +42,18 @@
 
     <div class="ticketContent">
         <h1>Gewählter Parkplatz:</h1>
-            <ul>
-                <li>
-                    <span>
-                        <?php
-                            $parkplatz = $_GET['parkplatz'];
-                            echo $parkplatz;
-                        ?>
-                    </span>
-                </li>
-            </ul>
+        <ul>
+            <li>
+                <span>
+                    <?php
+                        $parkplatz = $_GET['parkplatz'];
+                        echo $parkplatz;
+                    ?>
+                </span>
+            </li>
+        </ul>
         
-        <div>
-            
+        <div>    
             <p style="margin-left: 10%; font-weight: bold;">Um Ihre Parkdauer minutengenau abzurechnen, setzten Sie hier den Startzeitpunkt. Die aktuelle Zeit wird Ihnen unten angezeigt. Bitte bestätigen Sie mit dem Button rechts neben der Zeitangabe, wenn Sie zahlungsplichtig ein eTicket lösen möchten.</p>
             <h1>Startzeitpunkt</h1>
             
@@ -62,39 +61,14 @@
                 <input class="suchbegriff" name="datetime" type="datetime" id="zeit" readonly="readonly">
                 <input class="invisibleinput" name="parkplatz" type="text" value="<?php echo $parkplatz ?>" readonly="readonly"/>
                 <input type="submit"id="searchButton" value="&#xf29e">
-            </form>
-            
-        </div>
-    
-            
-            <!--<h1>Parkdauer</h1>
-            <form class="searchForm" action="ticket_finish.html">
-                <select class="suchbegriff" id="" style="height: 43px; ">
-                    <option>15 Minuten</option>
-                    <option>20 Minuten</option>
-                    <option>25 Minuten</option>
-                    <option>30 Minuten</option>
-                    <option>35 Minuten</option>
-                    <option>40 Minuten</option>
-                    <option>45 Minuten</option>
-                    <option>50 Minuten</option>
-                    <option>55 Minuten</option>
-                    <option>60 Minuten</option>
-                    
-                </select>
-                <input type="submit"id="searchButton" value="&#xf29e">
-            </form>-->
-        
-            <a href="main.php">
-                <div class="abbrechenButton">
-                    <i class="ion-close-circled"></i> Abbrechen
-                </div> 
-            </a>
-            
+            </form>    
         </div>
         
-        
-        
-    </div>
+        <a href="main.php">
+            <div class="abbrechenButton">
+                <i class="ion-close-circled"></i> Abbrechen
+            </div> 
+        </a>    
+    </div><!-- end .ticketContent -->
 </body> 
 </html>
