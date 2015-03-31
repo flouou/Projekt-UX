@@ -9,7 +9,10 @@ var showNotAgain = false;
 $(document).ready(function () {
     var searchClicked = false;
 
-    //MapButtonRight
+    /*
+     *Funktionen, die beim Drücken des linken (ja, links) Buttons ausgeführt werden
+     *Alle Funktionen dienen zum Verschieben der verschiedenen Komponenten der App
+     */
     $('#mapButtonRight').on('click', toggleStart);
 
     $('#mapButtonRight').on('swipeleft', function () {
@@ -26,7 +29,10 @@ $(document).ready(function () {
 
     $('#start').on('swipeleft', toggleStart);
 
-    //MapButtonLeft
+    /*
+     *Funktionen, die beim Drücken des rechten (ja, rechts) Buttons ausgeführt werden
+     *Alle Funktionen dienen zum Verschieben der verschiedenen Komponenten der App
+     */
     $('#mapButtonLeft').on('click', toggleSearch);
 
     $('#mapButtonLeft').on('swipeleft', function () {
@@ -45,8 +51,10 @@ $(document).ready(function () {
 
     $('.sideButton:first').on('click', toggleBoth);
 
-    //Overlay-Swipe-Effect
-
+    /*
+     *Funktionen, die beim Swipen auf dem grauen Overlay, das angezeigt wird, wenn man sich ganz rechts
+     *oder ganz links auf der App befindet, ausgeführt werden
+     */
     $('.overlay').on('swipeleft', function () {
         if ($('#mapButtonRight i').hasClass('ion-earth') && $('#mapButtonLeft i').hasClass('ion-search')) {
             toggleStart();
@@ -59,8 +67,7 @@ $(document).ready(function () {
         }
     });
 
-    //Invisible Map Swipe
-
+    //Invisible Map Swipe am rechten und linken Bildschirmrand, wenn man sich auf der Kartenansicht befindet
     $('.invisibleSwipeLeft').on('swiperight', function () {
         toggleStart();
     });
@@ -69,7 +76,9 @@ $(document).ready(function () {
         toggleSearch();
     });
 
-    //Toggle Checkbox and add/remove Map-XYZLayerGroups
+    /*
+     *Je nach ausgewählten Filtern wird der jeweilige Pin-Layer sofort ein- oder ausgeblendet
+     */
     $('.customCheckbox').change(function (e) {
         var ccId = e.target.id;
         ccId = ccId.split("_")[1];
@@ -122,6 +131,10 @@ $(document).ready(function () {
         }
     });
     
+    /*
+     *Wenn Suchbutton auf der Suchseite gedrückt wird, schiebt sich der Bildschirm zur Karte und landet
+     *beim dementsprechenden Pin und öffnet dort das Pop-Up
+     */
     $('#searchButton').on('click', function(){
         var temp = markers[searchString];
         if(typeof temp !== 'undefined'){
@@ -132,13 +145,19 @@ $(document).ready(function () {
         } 
     });
     
+    /*
+     *Wird nur für den Button "Parkplatz suchen" benötigt
+     */
     function toggleBoth() {
         searchClicked = true;
         toggleStart();
         toggleSearch();
         searchClicked = false;
     }
-
+    
+    /*
+     *Zeige/Verstecke die Startseite (Menüseite)
+     */
     function toggleStart() {
         showPinPopUp();
         $('.invisibleSwipe').toggle();
@@ -153,7 +172,10 @@ $(document).ready(function () {
         $('#mapButtonLeft').toggleClass('swipeTo80');
         searchClicked = false;
     }
-
+    
+    /*
+     *Zeige/Verstecke die Suchseite (Filterseite)
+     */
     function toggleSearch() {
         toggleStart();
         $('.overlay').toggleClass('swipeToLeft100');
@@ -176,7 +198,9 @@ $(document).ready(function () {
         }
     }*/
 
-    //Suchergebniss-Filterung
+    /*
+     *Je nach Filterung werden auch nur die entsprechenden Autocomplete-Vorschläge angezeigt
+     */
     $.widget("custom.catcomplete", $.ui.autocomplete, {
         _renderMenu: function (ul, items) {
             var that = this;
@@ -197,6 +221,10 @@ $(document).ready(function () {
             });
         }
     });
+    
+    /*
+     *Zusammenbauen der allgemeinen Autocomplete-Funktion auf der Suchseite
+     */
     $(".suchbegriffAllgemein").catcomplete({
         minLength: 3,
         select: function (event, ui) {
@@ -441,7 +469,10 @@ $(document).ready(function () {
             }
         ]
     });
-
+    
+    /*
+     *Zusammenbauen der Filterfunktion für Ticket-Seite
+     */
     $(".suchbegriffTicket").autocomplete({
         minLength: 2,
         source: [
@@ -462,6 +493,9 @@ $(document).ready(function () {
         }
     });
     
+    /*
+     *Markiere gesamten Input des Suchfeldes, um Ändern des Begriffs zu erleichtern
+     */
     $("#suchbegriff").on("click", function () {
         $(this).select();
     });
@@ -471,8 +505,9 @@ $(document).ready(function () {
     });
 
 
-    //alertify - shake meldung
-    
+    /*
+     *Meldung, wenn das Smartphone geschüttelt wird
+     */    
     var al = function(){
         alertify.set({ labels: {
             ok     : "Hilfe",
@@ -487,7 +522,9 @@ $(document).ready(function () {
         });   
     }
     
-    //shake event
+    /*
+     *Allgemeines Shake-Event instanziieren
+     */
     var myShakeEvent = new Shake({
         threshold: 15,
         timeout: 1000
@@ -501,7 +538,9 @@ $(document).ready(function () {
         al();
     }
     
-    
+    /*
+     *Zusammenbauen des Pop-Ups, das auf die Legende für die Karte hinweist
+     */
     function pinPopUp(){
         alertify.set({ labels: {
             ok      : "Hilfe",
@@ -517,7 +556,9 @@ $(document).ready(function () {
         //$('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
     }
     
-    
+    /*
+     *Zeige/Verstecke je nach gesetztem Cookie, ob die Legende weiterhin gezeigt werden soll
+     */
     function showPinPopUp(){
         if($('#mapButtonRight i').hasClass('ion-navicon-round') && $('#mapButtonLeft i').hasClass('ion-search')){
             
@@ -530,13 +571,20 @@ $(document).ready(function () {
     
 });
 
-//Alertify-Meldung, wenn eine Art von Parken bereits aktiv ist
+/*
+ *Zeigt eine Meldung an, wenn bereits ein Parkvorgang aktiv ist und noch ein weiterer Parkvorgang getätigt werden soll
+ */
 function alertifyActivParking(){
         alertify.alert("Es ist bereits ein Parkvorgang aktiv. Bitte beenden Sie diesen zunächst, um anschließend die gewünschte Funktion ausführen zu können.", function () {
             alertify.message('OK');
         });  
     }
 
+/*
+ *Evaluiert beim Laden der FAQ-Seite, ob der Hash-Wert "pins" gesetzt ist.
+ *Das ist nur der Fall, wenn die FAQ-Seite über das Legenden-Pop-Up aufgerufen wird
+ *Dementsprechend öffnet sich das Accordion an der Legenden-Stelle und scrollt dort hin
+ */
 function onFaqLoad(){
     if(window.location.hash === '#pins'){
         $('.accordion').accordion('option', 'active', 4 );

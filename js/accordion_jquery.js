@@ -1,4 +1,8 @@
 $(document).ready(function(){
+    
+    /*
+     *Allgemeine Accordion einstellungen
+     */
     $('#profilContent').accordion({
         icons: { "header": "ion-chevron-down", "activeHeader": "ion-chevron-up" },
         collapsible: true,
@@ -6,10 +10,17 @@ $(document).ready(function(){
         active: false
     });
     
+    /*
+     *Scrolle zum jeweils geöffneten Accordion-Teil
+     */
     $('h3').on('click',function(){
         $('body').scrollTo(this);
     });
     
+    /*
+     *ScrollTo-Funktion, um auch ohne Anchor zu einem beliebigen Element der FAQ-Seite
+     *scrollen zu können
+     */
     $.fn.scrollTo = function( target, options, callback ){
         if(typeof options == 'function' && arguments.length == 2){ 
             callback = options; 
