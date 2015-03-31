@@ -17,11 +17,11 @@
     <script src="js/ticket.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            //Zeit aktualisieren
+            //Zeit aktualisieren, alle 60 Sekunden
             setDatum();
             setInterval(setDatum,60000);
             
-            //Nach XX Sekunden wird NFC-Seite weitergeleitet
+            //Nach 7 Sekunden wird NFC-Seite weitergeleitet
             setTimeout(function(){
                 var time = $('#zeit').val();
                window.location.href = "NFC_finish.php?parkhaus=Duale+Hochschule+Baden-Württemberg&datetime="+time; 
@@ -56,8 +56,8 @@
                     <i class="ion-close-circled"></i> Abbrechen
                 </div> 
             </a>  
-        </div>
-    </div>
+        </div><!-- div#main -->
+    </div><!-- div#nfc -->
 </body>
     
 </html>

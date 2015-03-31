@@ -1,4 +1,4 @@
-<?php //Cookies löschen
+<?php
 $standort = $_COOKIE['standort'];
 $startzeitpunkt = $_COOKIE['startzeitpunkt'];
 ?>

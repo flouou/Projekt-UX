@@ -1,9 +1,11 @@
-<?php //Cookies löschen
+<?php
+//Inhalte der Cookies zwischenspeichern
 $standort = $_COOKIE['standort'];
 $startzeitpunkt = $_COOKIE['startzeitpunkt'];
-            setCookie( "parkplatz", "",-1);
-            setCookie( "startzeitpunkt", "",-1);
-            setCookie( "standort", "",-1);
+//Löschen der Cookies durch setzen des Ablaufdatums auf -1
+setCookie( "parkplatz", "",-1);
+setCookie( "startzeitpunkt", "",-1);
+setCookie( "standort", "",-1);
 ?>
 <!DOCTYPE html>
 <html>

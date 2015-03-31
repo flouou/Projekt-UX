@@ -1,8 +1,12 @@
 <?php
 include 'functions.lib.php';
 
-//$positions;
+/*
+ * Positionsdaten der hinterlegten Parkmöglichkeiten:
+ * Parkhäuser, Parkplätze, E-Stationen sowie kostenlose Parkplätze (mit zusätzlichen Daten)
+ */
 $positions = array(
+                //Parkhäuser (alle verfügbaren, öffentlichen Parkhäuser)
                 "PH K04" => array("lat" => "49.003871", "long" => "8.405114"),
                 "PH K01" => array("lat" => "49.003934", "long" => "8.402119"),
                 "PH K02" => array("lat" => "49.004551", "long" => "8.402048"),
@@ -47,7 +51,9 @@ $positions = array(
                 "Herrmann-Leichtlin-Straße" => array("lat" => "48.997133", "long" => "8.359062"),
                 "Kurzheckweg" => array("lat" => "49.022256", "long" => "8.3438"),
                 "Hertzstraße" => array("lat" => "49.020824", "long" => "8.365542"));
-                //Kostenlose Parkplätze. Nur eine Auswahl - 5 Stück
+
+                //Kostenlose Parkplätze. Nur eine Auswahl - 5 Stück.
+                //Kostenlose Parkplätze werden nicht von einer XML-Datei eingelesen, sondern bleiben statisch
 $kostenlosePlaetze = array(
                 "Erzbergerstraße" => array("ID" => "Erzbergerstraße","STANDORT" => "Erzbergerstraße", "LAT" => "49.018064", "LONG" => "8.385103", "TYPE" => "kostenlos", "anzahl" => "75"),
                 "Waldparkplatz" => array("ID" => "Waldparkplatz","STANDORT" => "Waldparkplatz", "LAT" => "49.015342", "LONG" => "8.418961", "TYPE" => "kostenlos", "anzahl" => "65"),
@@ -58,20 +64,27 @@ $kostenlosePlaetze = array(
 
 $posKeys = getArrayKeyArray($positions);
 
-
 $results = array(); //array, in das alle Fields und somit alle Einträge geschrieben werden. Ein Eintrag pro PH.
 
 $results = array_merge($kostenlosePlaetze, readParkplatzData($positions, $posKeys), readEStationenData($positions, $posKeys), readParkhausData($positions, $posKeys));
 echo json_encode($results);
 
+/*
+ * Es werden die XML-Daten vom VMZ-Server geladen (URL ist im Browser aufrufbar und anzeigbar).
+ * Für jeden Eintrag werden nur gewünschte Attribute (siehe IF-Anweisung) im Ergebnis-Array gespeichert.
+ * Anschließend erfolgt die Ergänzung der Daten um die Positionsdaten.
+ */
 function readParkhausData($pos, $keys){
+    //Lade XML-Datei über Funktionsbaustein simplexml_load_file von der angegebenen Adresse
     $xml = simplexml_load_file('http://vmz.karlsruhe.de/entry-tba_Parkleitsystem/nullsearch?form=nullform');
     $r = $xml->results;
     $res = array();
+    //Für jedes 'result'-Element (Element wird so in XML-Datei benannt) gibt es mehrere 'field'-Elemente (Felder; vgl. Key-Value-Paare)
     foreach($r->result as $result){
         $fields = array();
         foreach($result->field as $field){
-        $name = (string)$field['name'];
+            $name = (string)$field['name'];
+            //Es sind nicht alle Felder befüllt und auch nicht alle interessieren, daher werden nur interessante Felder gespeichert
             if($name == 'PH_NAME' ||
                 $name == 'PH_STRASSE' ||
                 $name == 'FREIE_PARKPLAETZE' ||
@@ -89,16 +102,21 @@ function readParkhausData($pos, $keys){
             $fields['FREIE_PARKPLAETZE'] = 35;
         }
         
+        //Das Feld 'TYPE' ist nicht in der Original-Datei vorhanden, daher wird es hier auf den Wert 'Parkhaus' gesetzt
         $fields['TYPE'] = "Parkhaus";
         if(in_array($fields['PH_KEY'],$keys)){
             $k = $fields['PH_KEY'];
             $n = $fields['PH_NAME'];
+            
+            //Hinzufügen der Positionsdaten
             $fields['LAT'] = $pos[$k]['lat'];
             $fields['LONG'] = $pos[$k]['long'];
+            
+            //Feld 'ID' ist ebenfalls nicht in der Original-XML vorhanden uns wird hier auf den Namen des Parkhauses gesetzt.
+            //Diese Indexierung beseitzt jede Parkmöglichkeit (auch Parkplätze etc.) und wird auch auf JavaScript-Seite verwendet
             $fields['ID'] = $fields['PH_NAME'];
             $res[$n] = $fields;
         } else if(in_array($fields['PH_NAME'],$keys)){
-            
             $n = $fields['PH_NAME'];
             $fields['PH_KEY'] = $n;
             $fields['LAT'] = $pos[$n]['lat'];
@@ -112,6 +130,10 @@ function readParkhausData($pos, $keys){
     }
     return $res;   
 }
+
+/*
+ * Die Methode funktioniert analog zu readParkhausData, nur für die Parkplätze und lädt daher eine andere XML-Datei
+ */
 function readParkplatzData($pos,$keys){
     $xml = simplexml_load_file('http://vmz.karlsruhe.de/entry-tba_Parkschein/nullsearch?form=nullform');
     $r = $xml->results;
@@ -141,6 +163,10 @@ function readParkplatzData($pos,$keys){
     }
     return $res; 
 }
+
+/*
+ * Die Methode funktioniert analog zu readParkhausData, nur für die Elektro-Ladestationen und lädt daher eine andere XML-Datei
+ */
 function readEStationenData($pos,$keys){
     $positions = $pos;
     $xml = simplexml_load_file('http://vmz.karlsruhe.de/entry-tba_ELadestationen/nullsearch?form=nullform');

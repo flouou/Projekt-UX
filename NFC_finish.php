@@ -1,7 +1,9 @@
 <?php
+//Hole per GET übertragenen Daten und speichere sie in entsprechenden Variablen
 $datetime = $_GET['datetime'];
 $parkhaus = $_GET['parkhaus'];
 $expire = time()+3600*24;
+//Setze die Cookies um die Daten jederzeit auslesen zu können
 setCookie("parkhaus","true",$expire);
 setCookie("startzeitpunkt",$datetime,$expire);
 setCookie("standort",$parkhaus,$expire);
@@ -28,14 +30,20 @@ setCookie("standort",$parkhaus,$expire);
     
 </head>
     
-<body>           
-    <!--<img id="ticketLogo" src="images/logo_transparent.png" />-->
-    
+<body>    
     <div class="ticketContent">
         <h1>Ins Parkhaus eingecheckt</h1>
         <p class="specialtext">Sie haben erfolgreich ins Parkhaus eingecheckt!</p>
-        <p class="specialtext">Startzeitpunkt: <?php echo $datetime; ?></p>
-        <p class="specialtext">Parkhaus: <?php echo $parkhaus; ?></p>
+        <p class="specialtext">Startzeitpunkt:
+            <?php 
+                //Ausgabe des Startzeitpunkts
+                echo $datetime;
+            ?></p>
+        <p class="specialtext">Parkhaus:
+            <?php 
+                //Ausgabe des Parkhaus-Namen
+                echo $parkhaus;
+            ?></p>
             
         <a href="main.php">
             <div class="abbrechenButton">

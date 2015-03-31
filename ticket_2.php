@@ -20,6 +20,7 @@
     <script src="js/ticket.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
+            //Zeit aktualisieren, alle 60 Sekunden
             setDatum();
             setInterval(setDatum,60000);
         });
@@ -46,6 +47,7 @@
             <li>
                 <span>
                     <?php
+                        //Asugabe des Parkplatz-Namens
                         $parkplatz = $_GET['parkplatz'];
                         echo $parkplatz;
                     ?>

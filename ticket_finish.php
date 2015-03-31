@@ -1,7 +1,9 @@
 <?php
+//Hole per GET übertragenen Daten und speichere sie in entsprechenden Variablen
 $datetime = $_GET['datetime'];
 $parkplatz = $_GET['parkplatz'];
 $expire = time()+3600*24;
+//Setze die Cookies um die Daten jederzeit auslesen zu können
 setCookie("parkplatz","true",$expire);
 setCookie("startzeitpunkt",$datetime,$expire);
 setCookie("standort",$parkplatz,$expire);

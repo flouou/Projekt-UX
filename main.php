@@ -50,6 +50,7 @@
                 </div>
                 
                     <?php
+                        //Es soll nur eine Parkmöglichkeit ausgewählt werden, daher wird hier geprüft, ob bereits ein Parkvorgang aktiv ist (wenn ja, dann Cookie gesetzt)
                         if(isset($_COOKIE['parkplatz']) && $_COOKIE['parkplatz']=="true"){
                             echo '<a class="sideButton" href="ticket_overview.php">
                     <i class="ion-pricetag"></i><span>eTicket<br />beenden</span></a>';
