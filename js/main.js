@@ -3,7 +3,6 @@ var ph = true;
 var el = true;
 var kp = true;
 var searchString;
-var isChecked = true;
 var showNotAgain = false;
 
 $(document).ready(function () {
@@ -75,6 +74,14 @@ $(document).ready(function () {
     $('.invisibleSwipeRight').on('swipeleft', function () {
         toggleSearch();
     });
+    
+    /*
+     * Leeren Stern in vollen Stern umwandeln, wenn Favoriten-Button in PopUp geklickt wurde
+     */
+    $('.starButton').on('click', function(){
+        console.log('click');
+        alert('Wechsel dich!');
+    });
 
     /*
      *Je nach ausgewählten Filtern wird der jeweilige Pin-Layer sofort ein- oder ausgeblendet
@@ -101,7 +108,6 @@ $(document).ready(function () {
                 kp = true;
                 break;
             case 'pinPopUp':
-                /*isChecked = true;*/
                 console.log('hola');
                 break;
             }
@@ -124,7 +130,6 @@ $(document).ready(function () {
                 kp = false;
                 break;
             case 'pinPopUp':
-                /*isChecked = false;*/
                 console.log('hola');
                 break;
             }
@@ -188,15 +193,6 @@ $(document).ready(function () {
         $('#mapButtonLeft').toggleClass('swipeTo0px');
         searchClicked = false;
     }
-    
-    /*function openPopupAfterSearch(){
-            var temp = markers[searchString];
-        if(typeof temp !== 'undefined'){
-            var latlng = temp.getLatLng();
-            map.setView(latlng);
-            temp.openPopup();   
-        }
-    }*/
 
     /*
      *Je nach Filterung werden auch nur die entsprechenden Autocomplete-Vorschläge angezeigt
@@ -546,14 +542,13 @@ $(document).ready(function () {
             ok      : "Hilfe",
             cancel  : "Schließen"
         }});
-        alertify.confirm('Weitere Informationen zur Karte finden Sie in der Hilfe. <div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" onchange="setShowNotAgainCookie()" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>', function(e) {
+        alertify.confirm('Weitere Informationen zur Karte finden Sie in der Hilfe. <div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" onchange="toggleShowNotAgain()" name="check"/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>', function(e) {
             if(e){
                 window.location = "FAQ.html#pins";
             }else{
-                
+                setShowNotAgainCookie();
             }
         });
-        //$('p:contains("Weitere Informationen")').append('<div class="customCheckbox pinPopUpCheckbox"><input type="checkbox" value="None" id="customCheckbox_pinPopUp" name="check" checked/><label for="customCheckbox_pinPopUp"></label><span style="white-space: nowrap">Nicht mehr anzeigen</span></div>');
     }
     
     /*
@@ -575,10 +570,22 @@ $(document).ready(function () {
  *Zeigt eine Meldung an, wenn bereits ein Parkvorgang aktiv ist und noch ein weiterer Parkvorgang getätigt werden soll
  */
 function alertifyActivParking(){
-        alertify.alert("Es ist bereits ein Parkvorgang aktiv. Bitte beenden Sie diesen zunächst, um anschließend die gewünschte Funktion ausführen zu können.", function () {
+    alertify.alert("Es ist bereits ein Parkvorgang aktiv. Bitte beenden Sie diesen zunächst, um anschließend die gewünschte Funktion ausführen zu können.", function () {
             alertify.message('OK');
-        });  
+    });  
+}
+
+/*
+ * Zeigt eine Meldung an, wenn bereits ein Parkvorgang aktiv ist und in den PopUps auf den "Einchecken" oder "eTicket-lösen" geklickt wird
+ */
+function startParkProcessFromPopUpButton(url){
+    if(document.cookie.indexOf("standort")>=0){  //Standort-Cookie wird bei beiden Parkvorgängen gesetzt, daher Prüfung darauf
+        alertifyActivParking();
+    } else {
+        //Wenn kein Parkvorgang aktiv, dann Weiterleitung auf die in 'url' übergebene Adresse
+        window.location = url;
     }
+}
 
 /*
  *Evaluiert beim Laden der FAQ-Seite, ob der Hash-Wert "pins" gesetzt ist.
@@ -591,38 +598,37 @@ function onFaqLoad(){
         $('body').scrollTo('.accordion-section-title:nth-of-type(6)');
     }    
 }
+
+/*
+ * Erkennt die Status-Änderung, wenn das Häkchen im Legenden-Alert gesetzt oder entfernt wurde
+ */
+function toggleShowNotAgain(){
+    showNotAgain = !showNotAgain;
+}
+
+/*
+ * Wird beim Schließen des Legenden-Alerts ausgeführt. Wenn das Häkchen gesetzt wurde, wird ein entsprechendes Cookie gesetzt
+ */
 function setShowNotAgainCookie(){
-    //Wenn Cookie nicht gesetzt und Häkchen nicht drin, dann kein Cookie setzen und wieder anzeigen
-    //Wenn Cokie nicht gesetzt und Häkchen drin, dann Cookie setzen
-    //Wenn Cookie bereits gesetzt, dann showNotAgain auf true
-    console.log("setShowNotAgainCookie(): start");
-    console.log("checked? "+$('#customCheckbox_pinPopUp').attr('checked'));
-    if(!isShowNotAgainCookieSet() && !$('#customCheckbox_pinPopUp').attr('checked')){
-        showNotAgain = false;
-        console.log("Case 1; showNotAgain false");
-    } else if(!isShowNotAgainCookieSet() && $('#customCheckbox_pinPopUp').attr('checked')){
-        showNotAgain = true;
+    if(showNotAgain === true){
         document.cookie = "showNotAgain=true; max-age="+3600*24;
-        console.log("Case 2; showNotAgain true");
-    } else if(isShowNotAgainCookieSet()){
-        showNotAgain = true;
-        console.log("Case 3; showNotAgain true");
-    } else {
-        console.log("undefined Case 4;");
     }
 }
+
+/*
+ * Prüft, ob das Cookie für die Legenden-Anzeige bereits besteht
+ */
 function isShowNotAgainCookieSet(){
-    console.log("isShowNotCookieSet(): start");
     if (document.cookie.indexOf("showNotAgain") >= 0){
-        showNotAgain = true;
-        console.log("isShowNotCookieSet(): true");
+        console.log("isShowNotCookieSet(): Cookie besteht bereits. Legende wird nicht angezeigt.");
         return true;
     } else {
-        showNotAgain = false;
-        console.log("isShowNotCookieSet(): false");
+        console.log("isShowNotCookieSet(): Cookie besteht noch nicht. Legende wird angezeigt.");
         return false;
     }
 }
-function status(){
-    console.log("checked? "+$('#customCheckbox_pinPopUp').attr('checked'));
+
+function markAsFavorite(el){
+    $(el).toggleClass('ion-android-star-outline');
+    $(el).toggleClass('ion-android-star');
 }

@@ -30,3 +30,19 @@
     margin-top: 30px;
     text-align: center;
 }
+.starButton{
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    left: 0px;
+    top: 3px;
+    margin-right: 5px;
+    padding: 0px 14px;
+    height: 25px;
+    line-height: 18px;
+    font-size: 27px;
+    font-family: 'Roboto';
+    border:1px solid rgb(84,141,212) !important;
+    background-color: white;
+    color: rgb(84,141,212) !important;
+}

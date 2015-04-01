@@ -29,7 +29,7 @@ var iconPopupAnchorX = 0;
 var iconPopupAnchorY = -48;
 var mapTargetDiv;
 
-var checkInButton = '<p class="buttonWrapper"><a href="NFC.html" class="parkXButton">Ins Parkhaus einchecken</a></p>';
+var count = 0;
 
 /*
  * Methode zur Initialisierung der Karte. Karte wird in 'targetDiv' angezeigt, mit definierter Sichthöhe 'viewHeight'
@@ -178,6 +178,7 @@ function printParkmarker() {
                 t = '<p class="popupText"><strong>' + parken[j].STANDORT + "</strong> (" + parken[j].STADTTEIL + ")<br>" +
                 "Ladestation ist " + parken[j].LADESTATION + ".</p>";
             }
+            t= t + '<p class="buttonWrapper">'+getFavoriteStarButton(parken[j].ID)+'</p>';
             marker = L.marker([x,y], {icon: eStationIcon});
             marker.bindPopup(t);
             lgEStationen.addLayer(marker);
@@ -205,7 +206,7 @@ function getParkhausPopupText(pm){
                     t = t + ', '+pm.OEFFNUNGSZEITEN2;
                 }
                 t = t + '<br>' + 'Tarif: 1,80 pro Stunde, 1,20 ab der dritten angefangenen Stunde.</p>'+
-                checkInButton;
+                getCheckInButton(pm.ID);
     return t;
 }
 
@@ -226,7 +227,8 @@ function getParkplatzPopupText(pm){
  */
 function getKostenlosPopupText(pm){
     return '<p class="popupText"><strong>' + pm.STANDORT + "</strong><br>" +
-                "Es stehen " + pm.anzahl + " kostenlose Parkplätze zur Verfügung.</p>";
+                "Es stehen " + pm.anzahl + " kostenlose Parkplätze zur Verfügung.</p>" + 
+            '<p class="buttonWrapper">' + getFavoriteStarButton(pm.ID) + '</p>';
 }
 
 /*
@@ -258,8 +260,21 @@ function updatePopupText(){
  */
 function getBuyTicketButtonText(plcht){
     var t = plcht.replace(" ", "+");
-    var buyTicketButton = '<p class="buttonWrapper"><a href="ticket_2.php?parkplatz='+t+'" class="parkXButton">eTicket lösen</a></p>';
+    var buyTicketButton = '<p class="buttonWrapper">'+getFavoriteStarButton(plcht)+'<a onclick="startParkProcessFromPopUpButton(\'ticket_2.php?parkplatz='+t+'\')" class="parkXButton">eTicket lösen</a></p>';
     return buyTicketButton;
+}
+
+function getCheckInButton(ph_name){
+    return '<p class="buttonWrapper">'+getFavoriteStarButton(ph_name)+'<a onclick="startParkProcessFromPopUpButton(\'NFC.html\')" class="parkXButton">Ins Parkhaus einchecken</a>';
+}
+
+function getFavoriteStarButton(pm_name){
+    count++;
+    if(pm_name == "Duale Hochschule Baden-Württemberg" || pm_name == "Am Staatstheater" || pm_name == "Englerstraße"){
+        return '<span class="starButton ion-android-star" onclick="markAsFavorite(this)" id="star'+count+'"></span>';
+    } else {
+        return '<span class="starButton ion-android-star-outline" onclick="markAsFavorite(this)" id="star'+count+'"></span>';
+    }
 }
 
 /*
