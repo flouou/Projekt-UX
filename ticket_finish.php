@@ -13,7 +13,7 @@ setCookie("standort",$parkplatz,$expire);
 <html>
 
 <head>
-    <title>eTicket lösen</title>
+    <title>eParCar</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">

@@ -6,7 +6,7 @@ $startzeitpunkt = $_COOKIE['startzeitpunkt'];
 <html>
 
 <head>
-    <title>eTicket-Übersicht</title>
+    <title>eParCar</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#548DD4">
